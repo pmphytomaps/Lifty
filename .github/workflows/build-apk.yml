@@ -40,6 +40,12 @@ jobs:
         if: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
         run: echo "${{ secrets.ANDROID_KEYSTORE_BASE64 }}" | base64 -d > android/app/lifty-release.keystore
 
+      - name: Refuse unsigned release builds
+        if: ${{ secrets.ANDROID_KEYSTORE_BASE64 == '' }}
+        run: |
+          echo "::error::ANDROID_KEYSTORE_* secrets are not set. A debug-signed APK would never install over the real app, so this build stops here. Add the four secrets from KEYSTORE-README.txt (repo Settings -> Secrets and variables -> Actions) and re-run."
+          exit 1
+
       - name: Build release APK
         env:
           LIFTY_UPLOAD_STORE_FILE: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' && 'lifty-release.keystore' || '' }}
