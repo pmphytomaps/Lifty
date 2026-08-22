@@ -1,0 +1,56 @@
+import { getDb } from '../db/database';
+import type { Exercise } from './types';
+
+export interface ExerciseFilter {
+  search?: string;
+  equipment?: string | null;
+  muscle?: string | null;
+}
+
+export async function listExercises(f: ExerciseFilter = {}): Promise<Exercise[]> {
+  const where: string[] = ['is_archived = 0'];
+  const params: (string | number)[] = [];
+  if (f.search) {
+    where.push(`name LIKE ?`);
+    params.push(`%${f.search}%`);
+  }
+  if (f.equipment) {
+    where.push(`equipment = ?`);
+    params.push(f.equipment);
+  }
+  if (f.muscle) {
+    where.push(`(primary_muscle = ? OR secondary_muscles LIKE ?)`);
+    params.push(f.muscle, `%"${f.muscle}"%`);
+  }
+  return getDb().all<Exercise>(
+    `SELECT * FROM exercise WHERE ${where.join(' AND ')} ORDER BY name COLLATE NOCASE LIMIT 400`,
+    params,
+  );
+}
+
+export async function getExercise(id: string): Promise<Exercise | null> {
+  return getDb().get<Exercise>(`SELECT * FROM exercise WHERE id = ?`, [id]);
+}
+
+export async function recentExerciseIds(limit = 10): Promise<string[]> {
+  const rows = await getDb().all<{ exercise_id: string }>(
+    `SELECT we.exercise_id, MAX(w.started_at) AS last
+     FROM workout_exercise we JOIN workout w ON w.id = we.workout_id
+     WHERE w.finished_at IS NOT NULL
+     GROUP BY we.exercise_id ORDER BY last DESC LIMIT ?`,
+    [limit],
+  );
+  return rows.map((r) => r.exercise_id);
+}
+
+export async function createCustomExercise(input: {
+  name: string; equipment: string; primaryMuscle: string; category: 'strength' | 'cardio'; met?: number | null;
+}): Promise<string> {
+  const id = `u_${Date.now().toString(36)}_${Math.floor(Math.random() * 1e6).toString(36)}`;
+  await getDb().run(
+    `INSERT INTO exercise (id, name, equipment, primary_muscle, secondary_muscles, category, met, is_custom, created_at)
+     VALUES (?, ?, ?, ?, '[]', ?, ?, 1, ?)`,
+    [id, input.name.trim(), input.equipment, input.primaryMuscle, input.category, input.met ?? null, Date.now()],
+  );
+  return id;
+}

@@ -1,0 +1,22 @@
+[
+  { "id": "c_volleyball", "name": "Volleyball", "met": 4.0 },
+  { "id": "c_volleyball_comp", "name": "Volleyball (Competitive)", "met": 6.0 },
+  { "id": "c_beach_volleyball", "name": "Beach Volleyball", "met": 8.0 },
+  { "id": "c_badminton", "name": "Badminton", "met": 5.5 },
+  { "id": "c_badminton_comp", "name": "Badminton (Competitive)", "met": 7.0 },
+  { "id": "c_running", "name": "Running", "met": 9.0 },
+  { "id": "c_jogging", "name": "Jogging", "met": 7.0 },
+  { "id": "c_walking", "name": "Walking (Brisk)", "met": 4.3 },
+  { "id": "c_cycling", "name": "Cycling", "met": 7.5 },
+  { "id": "c_cycling_stationary", "name": "Cycling (Stationary)", "met": 6.8 },
+  { "id": "c_rowing_machine", "name": "Rowing (Machine)", "met": 7.0 },
+  { "id": "c_jump_rope", "name": "Jump Rope", "met": 11.0 },
+  { "id": "c_swimming", "name": "Swimming", "met": 7.0 },
+  { "id": "c_hiking", "name": "Hiking", "met": 6.0 },
+  { "id": "c_stair_climber", "name": "Stair Climber", "met": 9.0 },
+  { "id": "c_elliptical", "name": "Elliptical", "met": 5.0 },
+  { "id": "c_basketball", "name": "Basketball", "met": 6.5 },
+  { "id": "c_football", "name": "Football (Soccer)", "met": 7.0 },
+  { "id": "c_tennis", "name": "Tennis", "met": 7.3 },
+  { "id": "c_table_tennis", "name": "Table Tennis", "met": 4.0 }
+]
