@@ -36,7 +36,7 @@
   },
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
+    "android": "expo run:android",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
     "build:catalog": "node scripts/build-exercise-catalog.mjs"
