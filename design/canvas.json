@@ -1,0 +1,60 @@
+{
+  "artboards": [
+    { "file": "Tokens.dc.html", "x": 0, "y": 0, "w": 900, "h": 1120, "title": "Design tokens" },
+
+    { "file": "WorkoutTab.dc.html", "x": 0, "y": 1260, "w": 390, "h": 900, "title": "Workout tab" },
+    { "file": "Main.dc.html", "x": 480, "y": 1260, "w": 390, "h": 940, "title": "Active workout" },
+    { "file": "ExercisePicker.dc.html", "x": 960, "y": 1260, "w": 390, "h": 900, "title": "Exercise picker" },
+    { "file": "FinishWorkout.dc.html", "x": 1440, "y": 1260, "w": 390, "h": 900, "title": "Finish workout" },
+
+    { "file": "History.dc.html", "x": 0, "y": 2340, "w": 390, "h": 1010, "title": "History + calendar" },
+    { "file": "ExerciseDetail.dc.html", "x": 480, "y": 2340, "w": 390, "h": 1010, "title": "Exercise detail" },
+    { "file": "Stats.dc.html", "x": 960, "y": 2340, "w": 390, "h": 1010, "title": "Stats + records" },
+    { "file": "SettingsExport.dc.html", "x": 1440, "y": 2340, "w": 390, "h": 1220, "title": "Settings + export" }
+  ],
+  "annotations": [
+    {
+      "id": "read-me-first",
+      "x": -330,
+      "y": 0,
+      "w": 290,
+      "text": "LIFTY — screen designs\n\nDark, warm-charcoal ground with one hot accent. Barlow Condensed for numbers, Barlow for everything else.\n\nThese solve the same problems Hevy does but the look is our own — not a copy of theirs.\n\nEverything here is a static mockup. Tell me what to change before I build it."
+    },
+    {
+      "id": "previous-column",
+      "x": 1930,
+      "y": 1290,
+      "w": 280,
+      "text": "The PREVIOUS column is the whole app.\n\nGrey \"17.5 kg × 8\" is what you did last session, set for set. Tap it and the row fills in.\n\nMost sets should need zero typing: tap previous, tap the check. The ±2.5 / ±1 steppers appear under the row you're editing, so you rarely open the keypad."
+    },
+    {
+      "id": "one-handed",
+      "x": 1930,
+      "y": 1660,
+      "w": 280,
+      "text": "Sized for chalky hands mid-set:\n\n• check box 52×44\n• weight/reps fields 80×40 and 66×40\n• buttons 48–52 tall\n\nGreen means one thing only — that set is banked. Nothing else in the app is green."
+    },
+    {
+      "id": "backup-matters",
+      "x": 1930,
+      "y": 2380,
+      "w": 280,
+      "text": "Your data lives on the phone and nowhere else, so the backup banner is deliberately loud once you pass a week.\n\nCSV is for reading in Sheets. JSON is the one that can actually be restored — onto a new phone, or hers."
+    },
+    {
+      "id": "not-here",
+      "x": -330,
+      "y": 1290,
+      "w": 290,
+      "text": "Deliberately absent, per your calls:\n\nno feed, followers or sharing · no rest timer · no muscle heat map · no body measurements · no supersets or warm-up set types · no plate calculator · no RPE · no exercise illustrations (muscle chips instead)\n\nRest timer is the one I'd bet you end up wanting. Say the word and it goes in."
+    },
+    {
+      "id": "two-installs",
+      "x": -330,
+      "y": 1660,
+      "w": 290,
+      "text": "Two phones, two independent installs, no sync and no accounts.\n\nThe only thing that crosses between you is a backup file you hand over deliberately."
+    }
+  ],
+  "launch": { "view": "canvas" }
+}

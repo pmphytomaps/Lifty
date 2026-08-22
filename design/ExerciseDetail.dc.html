@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #0F0E0D; color: #F4F1EA;
+           font-family: 'Barlow', system-ui, -apple-system, sans-serif;
+           -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums; }
+    a { color: #F2652F; text-decoration: none; }
+    a:hover { color: #FF8355; }
+    .screen { width: 390px; background: #0F0E0D; display: flex; flex-direction: column; }
+    .cond { font-family: 'Barlow Condensed', 'Barlow', system-ui, sans-serif; }
+    .row { display: flex; align-items: center; }
+    .col { display: flex; flex-direction: column; }
+    .cap { font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: #6E685E; }
+    .card { background: #171614; border: 1px solid #24221F; border-radius: 14px; }
+    .inset { height: 44px; flex: none; }
+    .gut { padding-left: 16px; padding-right: 16px; }
+    .chip { font-size: 11.5px; font-weight: 600; padding: 4px 9px; border-radius: 999px; }
+    .tabbar { display: flex; background: #141311; border-top: 1px solid #24221F; padding: 9px 0 24px; flex: none; }
+    .tab { display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 1; color: #6E685E; }
+    .tab span { font-size: 11px; font-weight: 600; }
+    .setrow { display: flex; align-items: center; gap: 8px; height: 46px; padding: 0 4px; border-radius: 10px; }
+    .setno { width: 30px; text-align: center; font-size: 14.5px; font-weight: 700; color: #8A8377; flex: none; }
+    .prev { flex: 1; font-size: 13.5px; color: #6E685E; min-width: 0; }
+    .fld { width: 80px; height: 40px; flex: none; display: flex; align-items: center; justify-content: center;
+           background: #1D1C19; border: 1.5px solid #2A2723; border-radius: 10px; font-size: 16.5px; font-weight: 600; }
+    .fldr { width: 66px; }
+    .chk { width: 52px; height: 40px; flex: none; display: flex; align-items: center; justify-content: center;
+           border-radius: 10px; border: 1.5px solid #2A2723; color: #4A453D; }
+    .btn { height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center;
+           font-size: 16px; font-weight: 700; }
+  </style>
+</helmet>
+<div class="screen" style="height:1010px;">
+  <div class="inset"></div>
+
+  <div class="row gut" style="height:52px;flex:none;gap:10px;">
+    <div class="row" style="width:36px;height:36px;margin-left:-8px;justify-content:center;color:#A8A196;flex:none;">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+    </div>
+    <div style="flex:1;min-width:0;font-size:16.5px;font-weight:700;line-height:1.2;">Incline Bench Press (Dumbbell)</div>
+    <div style="color:#5C5750;font-size:18px;letter-spacing:1px;line-height:1;flex:none;">&#8942;</div>
+  </div>
+
+  <div class="row gut" style="gap:6px;flex:none;margin-bottom:16px;">
+    <span class="chip" style="color:#DE8A6E;background:rgba(222,138,110,0.15);">Chest</span>
+    <span class="chip" style="color:#C093CB;background:rgba(192,147,203,0.15);">Triceps</span>
+    <span class="chip" style="color:#C79A5A;background:rgba(199,154,90,0.15);">Shoulders</span>
+    <span style="font-size:11.5px;color:#5C5750;align-self:center;margin-left:2px;">Dumbbell</span>
+  </div>
+
+  <div class="col gut" style="gap:14px;flex:1;overflow:hidden;">
+
+    <div class="card" style="padding:14px 12px 10px;flex:none;">
+      <div class="row" style="justify-content:space-between;margin-bottom:2px;padding:0 2px;">
+        <div class="cap">Estimated 1RM</div>
+        <div class="row" style="gap:4px;">
+          <div class="row" style="height:24px;padding:0 10px;border-radius:999px;font-size:11.5px;font-weight:600;color:#8A8377;">3M</div>
+          <div class="row" style="height:24px;padding:0 10px;border-radius:999px;background:#2E2B27;font-size:11.5px;font-weight:700;color:#F4F1EA;">1Y</div>
+          <div class="row" style="height:24px;padding:0 10px;border-radius:999px;font-size:11.5px;font-weight:600;color:#8A8377;">All</div>
+        </div>
+      </div>
+      <div class="row" style="align-items:baseline;gap:8px;padding:0 2px;margin-bottom:8px;">
+        <div class="cond" style="font-size:32px;font-weight:700;line-height:1;">21,6<span style="font-size:15px;color:#8A8377;"> kg</span></div>
+        <div style="font-size:12.5px;font-weight:600;color:#35B86A;">+33% in 12 months</div>
+      </div>
+      <svg width="100%" viewBox="0 0 340 150" fill="none" style="display:block;">
+        <line x1="40" y1="12" x2="332" y2="12" stroke="#24221F" stroke-width="1"/>
+        <line x1="40" y1="43.4" x2="332" y2="43.4" stroke="#24221F" stroke-width="1"/>
+        <line x1="40" y1="74.9" x2="332" y2="74.9" stroke="#24221F" stroke-width="1"/>
+        <line x1="40" y1="106.3" x2="332" y2="106.3" stroke="#24221F" stroke-width="1"/>
+        <text x="4" y="16" fill="#5C5750" font-size="10" font-family="Barlow, sans-serif">22</text>
+        <text x="4" y="47.4" fill="#5C5750" font-size="10" font-family="Barlow, sans-serif">20</text>
+        <text x="4" y="78.9" fill="#5C5750" font-size="10" font-family="Barlow, sans-serif">18</text>
+        <text x="4" y="110.3" fill="#5C5750" font-size="10" font-family="Barlow, sans-serif">16</text>
+        <path d="M40 103.1 L66 103.1 L93 90.6 L119 84.3 L146 84.3 L172 73.3 L198 63.9 L225 63.9 L251 52.9 L277 41.9 L304 41.9 L330 18.3 L330 126 L40 126 Z" fill="#F2652F" fill-opacity="0.12"/>
+        <polyline points="40,103.1 66,103.1 93,90.6 119,84.3 146,84.3 172,73.3 198,63.9 225,63.9 251,52.9 277,41.9 304,41.9 330,18.3" stroke="#F2652F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="330" cy="18.3" r="4.5" fill="#F2652F" stroke="#171614" stroke-width="2.5"/>
+        <text x="40" y="143" fill="#5C5750" font-size="10" font-family="Barlow, sans-serif">Sep</text>
+        <text x="140" y="143" fill="#5C5750" font-size="10" font-family="Barlow, sans-serif">Jan</text>
+        <text x="238" y="143" fill="#5C5750" font-size="10" font-family="Barlow, sans-serif">May</text>
+        <text x="312" y="143" fill="#5C5750" font-size="10" font-family="Barlow, sans-serif">Aug</text>
+      </svg>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;flex:none;">
+      <div class="card col" style="padding:12px;gap:2px;">
+        <div class="cap" style="font-size:10px;">Heaviest set</div>
+        <div class="cond" style="font-size:22px;font-weight:700;line-height:1.1;color:#F2652F;">20 kg &times; 6</div>
+        <div style="font-size:11.5px;color:#6E685E;">19 Aug 2026</div>
+      </div>
+      <div class="card col" style="padding:12px;gap:2px;">
+        <div class="cap" style="font-size:10px;">Best est. 1RM</div>
+        <div class="cond" style="font-size:22px;font-weight:700;line-height:1.1;color:#F2652F;">21,6 kg</div>
+        <div style="font-size:11.5px;color:#6E685E;">19 Aug 2026</div>
+      </div>
+      <div class="card col" style="padding:12px;gap:2px;">
+        <div class="cap" style="font-size:10px;">Best set volume</div>
+        <div class="cond" style="font-size:22px;font-weight:700;line-height:1.1;">157,5 kg</div>
+        <div style="font-size:11.5px;color:#6E685E;">16 Aug 2026</div>
+      </div>
+      <div class="card col" style="padding:12px;gap:2px;">
+        <div class="cap" style="font-size:10px;">Most reps</div>
+        <div class="cond" style="font-size:22px;font-weight:700;line-height:1.1;">9 @ 17,5 kg</div>
+        <div style="font-size:11.5px;color:#6E685E;">12 Aug 2026</div>
+      </div>
+    </div>
+
+    <div class="cap" style="flex:none;margin-top:2px;">Every session &middot; 38 logged</div>
+
+    <div class="card col" style="padding:12px 13px;gap:8px;flex:none;">
+      <div class="row" style="justify-content:space-between;">
+        <div style="font-size:14.5px;font-weight:700;">22 Aug 2026</div>
+        <div style="font-size:12px;color:#6E685E;">Push A</div>
+      </div>
+      <div class="row" style="gap:6px;flex-wrap:wrap;">
+        <span style="font-size:13px;color:#C6BFB3;padding:3px 9px;border-radius:7px;background:#1D1C19;">17,5 &times; 7</span>
+        <span style="font-size:13px;color:#C6BFB3;padding:3px 9px;border-radius:7px;background:#1D1C19;">17,5 &times; 7</span>
+        <span style="font-size:13px;color:#C6BFB3;padding:3px 9px;border-radius:7px;background:#1D1C19;">17,5 &times; 7</span>
+      </div>
+    </div>
+
+    <div class="card col" style="padding:12px 13px;gap:8px;flex:none;">
+      <div class="row" style="justify-content:space-between;">
+        <div style="font-size:14.5px;font-weight:700;">19 Aug 2026</div>
+        <div class="row" style="gap:7px;">
+          <span style="font-size:11px;font-weight:700;color:#F2652F;">PR</span>
+          <div style="font-size:12px;color:#6E685E;">Push B</div>
+        </div>
+      </div>
+      <div class="row" style="gap:6px;flex-wrap:wrap;">
+        <span style="font-size:13px;color:#C6BFB3;padding:3px 9px;border-radius:7px;background:#1D1C19;">17,5 &times; 8</span>
+        <span style="font-size:13px;color:#F2652F;font-weight:700;padding:3px 9px;border-radius:7px;background:rgba(242,101,47,0.14);">20 &times; 6</span>
+        <span style="font-size:13px;color:#C6BFB3;padding:3px 9px;border-radius:7px;background:#1D1C19;">17,5 &times; 6</span>
+      </div>
+    </div>
+
+    <div class="card col" style="padding:12px 13px;gap:8px;flex:none;">
+      <div class="row" style="justify-content:space-between;">
+        <div style="font-size:14.5px;font-weight:700;">16 Aug 2026</div>
+        <div style="font-size:12px;color:#6E685E;">Push A</div>
+      </div>
+      <div class="row" style="gap:6px;flex-wrap:wrap;">
+        <span style="font-size:13px;color:#C6BFB3;padding:3px 9px;border-radius:7px;background:#1D1C19;">17,5 &times; 9</span>
+        <span style="font-size:13px;color:#C6BFB3;padding:3px 9px;border-radius:7px;background:#1D1C19;">17,5 &times; 8</span>
+        <span style="font-size:13px;color:#C6BFB3;padding:3px 9px;border-radius:7px;background:#1D1C19;">17,5 &times; 8</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>

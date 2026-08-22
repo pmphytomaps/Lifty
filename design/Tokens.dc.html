@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600;700&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; background: #0F0E0D; color: #F4F1EA;
+           font-family: 'Barlow', system-ui, -apple-system, sans-serif;
+           -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums; }
+    a { color: #F2652F; text-decoration: none; }
+    a:hover { color: #FF8355; }
+    .cond { font-family: 'Barlow Condensed', 'Barlow', system-ui, sans-serif; }
+    .row { display: flex; align-items: center; }
+    .col { display: flex; flex-direction: column; }
+    .cap { font-size: 11px; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; color: #6E685E; }
+    .sw { width: 78px; }
+    .sw i { display: block; height: 46px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.07); }
+    .sw b { display: block; font-size: 11px; font-weight: 600; margin-top: 6px; color: #D6D0C6; }
+    .sw s { display: block; font-size: 10px; text-decoration: none; color: #6E685E; font-variant-numeric: tabular-nums; }
+    .panel { background: #171614; border: 1px solid #24221F; border-radius: 16px; padding: 22px 24px; }
+  </style>
+</helmet>
+
+<div style="width:900px;background:#0F0E0D;padding:40px;">
+
+  <div class="row" style="justify-content:space-between;align-items:flex-end;margin-bottom:6px;">
+    <div>
+      <div class="cond" style="font-size:44px;font-weight:700;letter-spacing:-0.01em;line-height:1;">LIFTY</div>
+      <div style="font-size:14px;color:#8A8377;margin-top:6px;">Design tokens &middot; offline gym tracker</div>
+    </div>
+    <div style="font-size:12px;color:#6E685E;text-align:right;line-height:1.7;">
+      Barlow &amp; Barlow Condensed<br>Warm charcoal ground, two accents
+    </div>
+  </div>
+
+  <div style="height:1px;background:#24221F;margin:22px 0 26px;"></div>
+
+  <div class="cap" style="margin-bottom:14px;">Dark ramp &mdash; default theme</div>
+  <div class="row" style="gap:12px;margin-bottom:28px;">
+    <div class="sw"><i style="background:#0F0E0D;"></i><b>ink&#8209;950</b><s>#0F0E0D</s><s>app bg</s></div>
+    <div class="sw"><i style="background:#171614;"></i><b>ink&#8209;900</b><s>#171614</s><s>card</s></div>
+    <div class="sw"><i style="background:#1D1C19;"></i><b>ink&#8209;850</b><s>#1D1C19</s><s>input</s></div>
+    <div class="sw"><i style="background:#24221F;"></i><b>ink&#8209;800</b><s>#24221F</s><s>border</s></div>
+    <div class="sw"><i style="background:#322F2A;"></i><b>ink&#8209;700</b><s>#322F2A</s><s>divider</s></div>
+    <div class="sw"><i style="background:#6E685E;"></i><b>ink&#8209;500</b><s>#6E685E</s><s>muted</s></div>
+    <div class="sw"><i style="background:#A8A196;"></i><b>ink&#8209;300</b><s>#A8A196</s><s>secondary</s></div>
+    <div class="sw"><i style="background:#D6D0C6;"></i><b>ink&#8209;100</b><s>#D6D0C6</s><s>emphasis</s></div>
+    <div class="sw"><i style="background:#F4F1EA;"></i><b>ink&#8209;50</b><s>#F4F1EA</s><s>text</s></div>
+  </div>
+
+  <div class="cap" style="margin-bottom:14px;">Light ramp &mdash; optional theme</div>
+  <div class="row" style="gap:12px;margin-bottom:28px;">
+    <div class="sw"><i style="background:#FFFFFF;"></i><b>paper&#8209;50</b><s>#FFFFFF</s><s>card</s></div>
+    <div class="sw"><i style="background:#FAF8F4;"></i><b>paper&#8209;100</b><s>#FAF8F4</s><s>app bg</s></div>
+    <div class="sw"><i style="background:#F1EDE6;"></i><b>paper&#8209;200</b><s>#F1EDE6</s><s>input</s></div>
+    <div class="sw"><i style="background:#E3DED4;"></i><b>paper&#8209;300</b><s>#E3DED4</s><s>border</s></div>
+    <div class="sw"><i style="background:#CFC8BB;"></i><b>paper&#8209;400</b><s>#CFC8BB</s><s>divider</s></div>
+    <div class="sw"><i style="background:#8A8172;"></i><b>paper&#8209;600</b><s>#8A8172</s><s>muted</s></div>
+    <div class="sw"><i style="background:#4A443B;"></i><b>paper&#8209;800</b><s>#4A443B</s><s>secondary</s></div>
+    <div class="sw"><i style="background:#2A2620;"></i><b>paper&#8209;900</b><s>#2A2620</s><s>text</s></div>
+  </div>
+
+  <div class="row" style="gap:24px;align-items:stretch;margin-bottom:28px;">
+    <div class="panel" style="flex:1;">
+      <div class="cap" style="margin-bottom:14px;">Accents &mdash; equal lightness &amp; chroma, hue apart</div>
+      <div class="row" style="gap:12px;">
+        <div class="sw" style="width:92px;"><i style="background:#F2652F;height:56px;"></i><b>flame</b><s>#F2652F</s><s>primary action</s></div>
+        <div class="sw" style="width:92px;"><i style="background:#35B86A;height:56px;"></i><b>moss</b><s>#35B86A</s><s>set complete</s></div>
+        <div class="sw" style="width:92px;"><i style="background:#E0574B;height:56px;"></i><b>danger</b><s>#E0574B</s><s>discard only</s></div>
+      </div>
+      <div style="font-size:12.5px;color:#8A8377;margin-top:14px;line-height:1.55;">
+        Flame carries every primary action and personal record. Moss means one thing only &mdash; a set is banked. Danger never appears outside destructive confirmation.
+      </div>
+    </div>
+    <div class="panel" style="width:330px;">
+      <div class="cap" style="margin-bottom:14px;">Touch targets</div>
+      <div class="col" style="gap:10px;">
+        <div class="row" style="gap:12px;">
+          <div class="row" style="width:52px;height:44px;border-radius:10px;border:1.5px solid #322F2A;justify-content:center;color:#6E685E;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l5 5 10-11"/></svg>
+          </div>
+          <div style="font-size:12.5px;color:#A8A196;">Set checkbox &mdash; 52&times;44</div>
+        </div>
+        <div class="row" style="gap:12px;">
+          <div class="row" style="width:80px;height:46px;border-radius:10px;background:#1D1C19;border:1.5px solid #322F2A;justify-content:center;font-size:17px;font-weight:600;">17.5</div>
+          <div style="font-size:12.5px;color:#A8A196;">Numeric field &mdash; 80&times;46</div>
+        </div>
+        <div class="row" style="gap:12px;">
+          <div class="row" style="height:52px;padding:0 22px;border-radius:12px;background:#F2652F;color:#150B06;justify-content:center;font-size:16px;font-weight:700;">Primary</div>
+          <div style="font-size:12.5px;color:#A8A196;">Button &mdash; 52 tall</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:#6E685E;margin-top:14px;line-height:1.5;">Nothing tappable falls below 44&thinsp;px. Logged one-handed, mid-set.</div>
+    </div>
+  </div>
+
+  <div class="row" style="gap:24px;align-items:stretch;margin-bottom:28px;">
+    <div class="panel" style="flex:1;">
+      <div class="cap" style="margin-bottom:16px;">Type scale</div>
+      <div class="col" style="gap:14px;">
+        <div class="row" style="gap:18px;align-items:baseline;"><div class="cond" style="font-size:38px;font-weight:700;line-height:1;">2 687,5</div><div style="font-size:11px;color:#6E685E;">stat&nbsp;&middot;&nbsp;Condensed 700&nbsp;&middot;&nbsp;38/40</div></div>
+        <div class="row" style="gap:18px;align-items:baseline;"><div class="cond" style="font-size:26px;font-weight:700;line-height:1;">Push A</div><div style="font-size:11px;color:#6E685E;">title&nbsp;&middot;&nbsp;Condensed 700&nbsp;&middot;&nbsp;26/30</div></div>
+        <div class="row" style="gap:18px;align-items:baseline;"><div style="font-size:17px;font-weight:600;">Incline Bench Press</div><div style="font-size:11px;color:#6E685E;">heading&nbsp;&middot;&nbsp;Barlow 600&nbsp;&middot;&nbsp;17/24</div></div>
+        <div class="row" style="gap:18px;align-items:baseline;"><div style="font-size:15px;">Dumbbell &middot; Chest</div><div style="font-size:11px;color:#6E685E;">body&nbsp;&middot;&nbsp;Barlow 400&nbsp;&middot;&nbsp;15/22</div></div>
+        <div class="row" style="gap:18px;align-items:baseline;"><div style="font-size:13px;font-weight:500;color:#A8A196;">3 sets &middot; 12 reps</div><div style="font-size:11px;color:#6E685E;">label&nbsp;&middot;&nbsp;Barlow 500&nbsp;&middot;&nbsp;13/18</div></div>
+        <div class="row" style="gap:18px;align-items:baseline;"><div class="cap">Previous</div><div style="font-size:11px;color:#6E685E;">caption&nbsp;&middot;&nbsp;600&nbsp;&middot;&nbsp;11 &middot; 0.09em</div></div>
+      </div>
+      <div style="font-size:12px;color:#6E685E;margin-top:16px;line-height:1.5;">Every numeral is tabular &mdash; weights and reps must align down a column or the table stops being scannable.</div>
+    </div>
+    <div class="panel" style="width:330px;">
+      <div class="cap" style="margin-bottom:16px;">Spacing &amp; radii</div>
+      <div class="col" style="gap:7px;">
+        <div class="row" style="gap:12px;"><div style="height:9px;width:4px;background:#F2652F;border-radius:2px;"></div><span style="font-size:12px;color:#8A8377;">4 &mdash; icon gap</span></div>
+        <div class="row" style="gap:12px;"><div style="height:9px;width:8px;background:#F2652F;border-radius:2px;"></div><span style="font-size:12px;color:#8A8377;">8 &mdash; column gap</span></div>
+        <div class="row" style="gap:12px;"><div style="height:9px;width:12px;background:#F2652F;border-radius:2px;"></div><span style="font-size:12px;color:#8A8377;">12 &mdash; row gap</span></div>
+        <div class="row" style="gap:12px;"><div style="height:9px;width:16px;background:#F2652F;border-radius:2px;"></div><span style="font-size:12px;color:#8A8377;">16 &mdash; screen gutter</span></div>
+        <div class="row" style="gap:12px;"><div style="height:9px;width:24px;background:#F2652F;border-radius:2px;"></div><span style="font-size:12px;color:#8A8377;">24 &mdash; section gap</span></div>
+        <div class="row" style="gap:12px;"><div style="height:9px;width:32px;background:#F2652F;border-radius:2px;"></div><span style="font-size:12px;color:#8A8377;">32 &mdash; block gap</span></div>
+      </div>
+      <div class="row" style="gap:10px;margin-top:18px;">
+        <div class="row" style="width:56px;height:40px;border:1.5px solid #322F2A;border-radius:10px;justify-content:center;font-size:11px;color:#8A8377;">10</div>
+        <div class="row" style="width:56px;height:40px;border:1.5px solid #322F2A;border-radius:14px;justify-content:center;font-size:11px;color:#8A8377;">14</div>
+        <div class="row" style="width:76px;height:40px;border:1.5px solid #322F2A;border-radius:999px;justify-content:center;font-size:11px;color:#8A8377;">pill</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="cap" style="margin-bottom:16px;">Muscle chips &mdash; categorical, equal lightness, no exercise artwork</div>
+    <div style="display:flex;flex-wrap:wrap;gap:9px;">
+      <span style="font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;color:#DE8A6E;background:rgba(222,138,110,0.15);">Chest</span>
+      <span style="font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;color:#C79A5A;background:rgba(199,154,90,0.15);">Shoulders</span>
+      <span style="font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;color:#A8A85F;background:rgba(168,168,95,0.15);">Traps</span>
+      <span style="font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;color:#86B472;background:rgba(134,180,114,0.15);">Quads</span>
+      <span style="font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;color:#6BB68F;background:rgba(107,182,143,0.15);">Hamstrings</span>
+      <span style="font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;color:#63B4AB;background:rgba(99,180,171,0.15);">Calves</span>
+      <span style="font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;color:#6FAECB;background:rgba(111,174,203,0.15);">Lats</span>
+      <span style="font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;color:#86A4DA;background:rgba(134,164,218,0.15);">Upper back</span>
+      <span style="font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;color:#A39BD9;background:rgba(163,155,217,0.15);">Biceps</span>
+      <span style="font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;color:#C093CB;background:rgba(192,147,203,0.15);">Triceps</span>
+      <span style="font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;color:#D68CB2;background:rgba(214,140,178,0.15);">Forearms</span>
+      <span style="font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;color:#DF8791;background:rgba(223,135,145,0.15);">Core</span>
+      <span style="font-size:12px;font-weight:600;padding:6px 12px;border-radius:999px;color:#8A8377;background:rgba(138,131,119,0.15);">Glutes</span>
+    </div>
+    <div style="font-size:12.5px;color:#8A8377;margin-top:14px;line-height:1.55;">You chose a text-only catalogue, so the muscle chip does the work an illustration would &mdash; it makes a list of 800 exercises scannable without adding 50&thinsp;MB to the build.</div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
