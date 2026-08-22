@@ -40,3 +40,10 @@ ${'            '}signingConfig(liftyStoreFile ? signingConfigs.release : signing
 
 writeFileSync(path, src);
 console.log('android/app/build.gradle: release signing wired');
+
+// Phones only — drop emulator ABIs (x86) from release binaries: roughly 40% smaller APK.
+const propsPath = 'android/gradle.properties';
+let props = readFileSync(propsPath, 'utf8');
+props = props.replace(/^reactNativeArchitectures=.*$/m, 'reactNativeArchitectures=armeabi-v7a,arm64-v8a');
+writeFileSync(propsPath, props);
+console.log('android/gradle.properties: ARM-only architectures');
