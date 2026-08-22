@@ -1,0 +1,8430 @@
+[
+ {
+  "id": "3_4_Sit-Up",
+  "name": "3/4 Sit-Up",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Ab_Crunch_Machine",
+  "name": "Ab Crunch (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Ab_Roller",
+  "name": "Ab Roller",
+  "equipment": "other",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Ab_Rollout_-_On_Knees",
+  "name": "Ab Rollout - On Knees (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Lower Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Ab_Rollout",
+  "name": "Ab Rollout (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Lower Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Advanced_Kettlebell_Windmill",
+  "name": "Advanced Windmill (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Air_Bike",
+  "name": "Air Bike",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Alternate_Bicep_Curl",
+  "name": "Alternate Bicep Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Alternate_Hammer_Curl",
+  "name": "Alternate Hammer Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Alternate_Heel_Touchers",
+  "name": "Alternate Heel Touchers",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Alternate_Incline_Dumbbell_Curl",
+  "name": "Alternate Incline Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Alternating_Deltoid_Raise",
+  "name": "Alternating Deltoid Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Alternating_Floor_Press",
+  "name": "Alternating Floor Press (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Core",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Alternating_Hang_Clean",
+  "name": "Alternating Hang Clean (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Biceps",
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Lower Back",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Alternating_Kettlebell_Press",
+  "name": "Alternating Press (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Alternating_Renegade_Row",
+  "name": "Alternating Renegade Row (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Core",
+   "Biceps",
+   "Chest",
+   "Lats",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Alternating_Kettlebell_Row",
+  "name": "Alternating Row (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Alternating_Cable_Shoulder_Press",
+  "name": "Alternating Shoulder Press (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Anti-Gravity_Press",
+  "name": "Anti-Gravity Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Upper Back",
+   "Traps",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Arnold_Dumbbell_Press",
+  "name": "Arnold Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kettlebell_Arnold_Press",
+  "name": "Arnold Press (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Around_The_Worlds",
+  "name": "Around The Worlds (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Atlas_Stone_Trainer",
+  "name": "Atlas Stone Trainer",
+  "equipment": "other",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Quads"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Atlas_Stones",
+  "name": "Atlas Stones",
+  "equipment": "other",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Core",
+   "Adductors",
+   "Biceps",
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Upper Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Axle_Deadlift",
+  "name": "Axle Deadlift",
+  "equipment": "other",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Upper Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_back_extension_w",
+  "name": "Back Extension (Weighted)",
+  "equipment": "other",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Back_Flyes_-_With_Bands",
+  "name": "Back Flyes (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Upper Back",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Backward_Drag",
+  "name": "Backward Drag",
+  "equipment": "other",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "c_badminton",
+  "name": "Badminton",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 5.5
+ },
+ {
+  "id": "c_badminton_comp",
+  "name": "Badminton (Competitive)",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 7
+ },
+ {
+  "id": "Balance_Board",
+  "name": "Balance Board",
+  "equipment": "other",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [
+   "Hamstrings",
+   "Quads"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Exercise_Ball_Crunch",
+  "name": "Ball Crunch (Stability Ball)",
+  "equipment": "stability ball",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Ball_Leg_Curl",
+  "name": "Ball Leg Curl (Stability Ball)",
+  "equipment": "stability ball",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Exercise_Ball_Pull-In",
+  "name": "Ball Pull-In (Stability Ball)",
+  "equipment": "stability ball",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Band_Assisted_Pull-Up",
+  "name": "Band Assisted Pull-Up",
+  "equipment": "other",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Core",
+   "Forearms",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "c_basketball",
+  "name": "Basketball",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 6.5
+ },
+ {
+  "id": "Battling_Ropes",
+  "name": "Battling Ropes",
+  "equipment": "other",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Chest",
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "c_beach_volleyball",
+  "name": "Beach Volleyball",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 8
+ },
+ {
+  "id": "Bear_Crawl_Sled_Drags",
+  "name": "Bear Crawl Sled Drags",
+  "equipment": "other",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bench_Dips",
+  "name": "Bench Dips",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bench_Press_-_Powerlifting",
+  "name": "Bench Press - Powerlifting (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Forearms",
+   "Lats",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bench_Press_-_With_Bands",
+  "name": "Bench Press (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_bench_press_bb",
+  "name": "Bench Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Triceps",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_bench_press_db",
+  "name": "Bench Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Triceps",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Machine_Bench_Press",
+  "name": "Bench Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bench_Press_with_Chains",
+  "name": "Bench Press with Chains (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Lats",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Bench_Press_with_Neutral_Grip",
+  "name": "Bench Press with Neutral Grip (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bent_Over_Low-Pulley_Side_Lateral",
+  "name": "Bent Over Low-Pulley Side Lateral (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Lower Back",
+   "Upper Back",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bent_Over_One-Arm_Long_Bar_Row",
+  "name": "Bent Over One-Arm Long Bar Row (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats",
+   "Lower Back",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench",
+  "name": "Bent Over Rear Delt Raise With Head On Bench (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bent_Over_Barbell_Row",
+  "name": "Bent Over Row (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bent_Over_Two-Dumbbell_Row",
+  "name": "Bent Over Two- Row (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bent_Over_Two-Dumbbell_Row_With_Palms_In",
+  "name": "Bent Over Two- Row With Palms In (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bent_Over_Two-Arm_Long_Bar_Row",
+  "name": "Bent Over Two-Arm Long Bar Row (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bent_Press",
+  "name": "Bent Press (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Quads",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bent-Arm_Barbell_Pullover",
+  "name": "Bent-Arm Pullover (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bent-Arm_Dumbbell_Pullover",
+  "name": "Bent-Arm Pullover (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Lats",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bent-Knee_Hip_Raise",
+  "name": "Bent-Knee Hip Raise",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Bicep_Curl",
+  "name": "Bicep Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Machine_Bicep_Curl",
+  "name": "Bicep Curl (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Board_Press",
+  "name": "Board Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Forearms",
+   "Lats",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Body_Tricep_Press",
+  "name": "Body Tricep Press",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Body-Up",
+  "name": "Body-Up",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Core",
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bodyweight_Flyes",
+  "name": "Bodyweight Flyes (EZ Bar)",
+  "equipment": "ez bar",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Core",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bodyweight_Mid_Row",
+  "name": "Bodyweight Mid Row",
+  "equipment": "other",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bodyweight_Squat",
+  "name": "Bodyweight Squat",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bodyweight_Walking_Lunge",
+  "name": "Bodyweight Walking Lunge",
+  "equipment": "other",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bosu_Ball_Cable_Crunch_With_Side_Bends",
+  "name": "Bosu Ball Crunch With Side Bends (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bottoms_Up",
+  "name": "Bottoms Up",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bottoms-Up_Clean_From_The_Hang_Position",
+  "name": "Bottoms-Up Clean From The Hang Position (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [
+   "Biceps",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Box_Squat",
+  "name": "Box Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Adductors",
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Box_Squat_with_Bands",
+  "name": "Box Squat with Bands (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes",
+   "Adductors",
+   "Calves",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Box_Squat_with_Chains",
+  "name": "Box Squat with Chains (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes",
+   "Adductors",
+   "Calves",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Bradford_Rocky_Presses",
+  "name": "Bradford/Rocky Presses (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_bulgarian_split",
+  "name": "Bulgarian Split Squat (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Butt_Lift_Bridge",
+  "name": "Butt Lift (Bridge)",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Butt-Ups",
+  "name": "Butt-Ups",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Butterfly",
+  "name": "Butterfly (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Calf_Press",
+  "name": "Calf Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Calf_Press_On_The_Leg_Press_Machine",
+  "name": "Calf Press On The Leg Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Calf_Raise_On_A_Dumbbell",
+  "name": "Calf Raise On A (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Calf_Raises_-_With_Bands",
+  "name": "Calf Raises (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Calf-Machine_Shoulder_Shrug",
+  "name": "Calf- Shoulder Shrug (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Traps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Car_Deadlift",
+  "name": "Car Deadlift",
+  "equipment": "other",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Car_Drivers",
+  "name": "Car Drivers (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Chain_Handle_Extension",
+  "name": "Chain Handle Extension",
+  "equipment": "other",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Chain_Press",
+  "name": "Chain Press",
+  "equipment": "other",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Chair_Squat",
+  "name": "Chair Squat (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_pec_deck",
+  "name": "Chest Fly (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Chest_Press",
+  "name": "Chest Press (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_chest_press_mc",
+  "name": "Chest Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_chest_supported_row",
+  "name": "Chest Supported Row (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Lats",
+   "Biceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_chin_up",
+  "name": "Chin Up",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Chin-Up",
+  "name": "Chin-Up",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Forearms",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Circus_Bell",
+  "name": "Circus Bell",
+  "equipment": "other",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Traps",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Clean",
+  "name": "Clean (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Lower Back",
+   "Quads",
+   "Shoulders",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Clean",
+  "name": "Clean (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Lower Back",
+   "Quads",
+   "Shoulders",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Clean_and_Jerk",
+  "name": "Clean and Jerk (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Core",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Quads",
+   "Traps",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Clean_and_Press",
+  "name": "Clean and Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Core",
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Upper Back",
+   "Quads",
+   "Traps",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Clean_Deadlift",
+  "name": "Clean Deadlift (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Forearms",
+   "Glutes",
+   "Lower Back",
+   "Upper Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Clean_from_Blocks",
+  "name": "Clean from Blocks (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Shoulders",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Clean_Pull",
+  "name": "Clean Pull (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Clean_Shrug",
+  "name": "Clean Shrug (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Traps",
+  "secondaryMuscles": [
+   "Forearms",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Clock_Push-Up",
+  "name": "Clock Push-Up",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Close-Grip_Barbell_Bench_Press",
+  "name": "Close-Grip Bench Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Close-Grip_EZ-Bar_Curl_with_Band",
+  "name": "Close-Grip Curl with Band (EZ Bar)",
+  "equipment": "ez bar",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Close-Grip_EZ_Bar_Curl",
+  "name": "Close-Grip EZ Bar Curl (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Close-Grip_Front_Lat_Pulldown",
+  "name": "Close-Grip Front Lat Pulldown (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Close-Grip_Dumbbell_Press",
+  "name": "Close-Grip Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Close-Grip_EZ-Bar_Press",
+  "name": "Close-Grip Press (EZ Bar)",
+  "equipment": "ez bar",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Close-Grip_Push-Up_off_of_a_Dumbbell",
+  "name": "Close-Grip Push-Up off of a Dumbbell",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Core",
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Close-Grip_Standing_Barbell_Curl",
+  "name": "Close-Grip Standing Curl (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cocoons",
+  "name": "Cocoons",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Conans_Wheel",
+  "name": "Conan's Wheel",
+  "equipment": "other",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Core",
+   "Biceps",
+   "Calves",
+   "Forearms",
+   "Lower Back",
+   "Shoulders",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Concentration_Curls",
+  "name": "Concentration Curls (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cross_Body_Hammer_Curl",
+  "name": "Cross Body Hammer Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cross_Over_-_With_Bands",
+  "name": "Cross Over (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Biceps",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cross-Body_Crunch",
+  "name": "Cross-Body Crunch",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Crossover",
+  "name": "Crossover (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Crucifix",
+  "name": "Crucifix",
+  "equipment": "other",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Crunch_-_Hands_Overhead",
+  "name": "Crunch - Hands Overhead",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Crunch_-_Legs_On_Exercise_Ball",
+  "name": "Crunch - Legs On Exercise Ball",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Crunch",
+  "name": "Crunch (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Crunches",
+  "name": "Crunches",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cuban_Press",
+  "name": "Cuban Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_curl_bb",
+  "name": "Curl (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_curl_db",
+  "name": "Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "EZ-Bar_Curl",
+  "name": "Curl (EZ Bar)",
+  "equipment": "ez bar",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Curls_Lying_Against_An_Incline",
+  "name": "Curls Lying Against An Incline (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "c_cycling",
+  "name": "Cycling",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 7.5
+ },
+ {
+  "id": "c_cycling_stationary",
+  "name": "Cycling (Stationary)",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 6.8
+ },
+ {
+  "id": "Dead_Bug",
+  "name": "Dead Bug",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kettlebell_Dead_Clean",
+  "name": "Dead Clean (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Lower Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Deadlift",
+  "name": "Deadlift (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Lats",
+   "Upper Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Deadlift_with_Bands",
+  "name": "Deadlift with Bands (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Upper Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Deadlift_with_Chains",
+  "name": "Deadlift with Chains (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Upper Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Deadlifts",
+  "name": "Deadlifts (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Decline_Barbell_Bench_Press",
+  "name": "Decline Bench Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Decline_Dumbbell_Bench_Press",
+  "name": "Decline Bench Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Decline_Close-Grip_Bench_To_Skull_Crusher",
+  "name": "Decline Close-Grip Bench To Skull Crusher (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Decline_Crunch",
+  "name": "Decline Crunch",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Decline_EZ_Bar_Triceps_Extension",
+  "name": "Decline EZ Bar Triceps Extension (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Decline_Dumbbell_Flyes",
+  "name": "Decline Flyes (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Decline_Oblique_Crunch",
+  "name": "Decline Oblique Crunch",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Decline_Push-Up",
+  "name": "Decline Push-Up",
+  "equipment": "other",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Decline_Reverse_Crunch",
+  "name": "Decline Reverse Crunch",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Decline_Smith_Press",
+  "name": "Decline Smith Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Decline_Dumbbell_Triceps_Extension",
+  "name": "Decline Triceps Extension (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Deficit_Deadlift",
+  "name": "Deficit Deadlift (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Upper Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dip_Machine",
+  "name": "Dip (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_dip_weighted",
+  "name": "Dip (Weighted)",
+  "equipment": "other",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Triceps",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dips_-_Chest_Version",
+  "name": "Dips - Chest Version",
+  "equipment": "other",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dips_-_Triceps_Version",
+  "name": "Dips - Triceps Version",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Donkey_Calf_Raises",
+  "name": "Donkey Calf Raises",
+  "equipment": "other",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Double_Kettlebell_Alternating_Hang_Clean",
+  "name": "Double Alternating Hang Clean (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Biceps",
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Lower Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Double_Kettlebell_Jerk",
+  "name": "Double Jerk (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Calves",
+   "Quads",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Double_Kettlebell_Push_Press",
+  "name": "Double Push Press (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Calves",
+   "Quads",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Double_Kettlebell_Snatch",
+  "name": "Double Snatch (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings",
+   "Quads"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Double_Kettlebell_Windmill",
+  "name": "Double Windmill (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Downward_Facing_Balance",
+  "name": "Downward Facing Balance (Stability Ball)",
+  "equipment": "stability ball",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Core",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Drag_Curl",
+  "name": "Drag Curl (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Elbow_to_Knee",
+  "name": "Elbow to Knee",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Elevated_Back_Lunge",
+  "name": "Elevated Back Lunge (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Elevated_Cable_Rows",
+  "name": "Elevated Rows (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Upper Back",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "c_elliptical",
+  "name": "Elliptical",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 5
+ },
+ {
+  "id": "Extended_Range_One-Arm_Kettlebell_Floor_Press",
+  "name": "Extended Range One-Arm Floor Press (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "External_Rotation",
+  "name": "External Rotation (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "External_Rotation_with_Band",
+  "name": "External Rotation with (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "External_Rotation_with_Cable",
+  "name": "External Rotation with (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_face_pull",
+  "name": "Face Pull (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Upper Back",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_farmers_carry",
+  "name": "Farmer's Carry",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [
+   "Traps",
+   "Core"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Farmers_Walk",
+  "name": "Farmer's Walk",
+  "equipment": "other",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [
+   "Core",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kettlebell_Figure_8",
+  "name": "Figure 8 (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Hamstrings",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Finger_Curls",
+  "name": "Finger Curls (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Flat_Bench_Cable_Flyes",
+  "name": "Flat Bench Flyes (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Flat_Bench_Leg_Pull-In",
+  "name": "Flat Bench Leg Pull-In",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Flat_Bench_Lying_Leg_Raise",
+  "name": "Flat Bench Lying Leg Raise",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Flexor_Incline_Dumbbell_Curls",
+  "name": "Flexor Incline Curls (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Floor_Glute-Ham_Raise",
+  "name": "Floor Glute-Ham Raise",
+  "equipment": "other",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Floor_Press",
+  "name": "Floor Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Floor_Press",
+  "name": "Floor Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Floor_Press_with_Chains",
+  "name": "Floor Press with Chains (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Flutter_Kicks",
+  "name": "Flutter Kicks",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Flyes",
+  "name": "Flyes (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "c_football",
+  "name": "Football (Soccer)",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 7
+ },
+ {
+  "id": "Forward_Drag_with_Press",
+  "name": "Forward Drag with Press",
+  "equipment": "other",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Quads",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Frankenstein_Squat",
+  "name": "Frankenstein Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Core",
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Freehand_Jump_Squat",
+  "name": "Freehand Jump Squat",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Frog_Sit-Ups",
+  "name": "Frog Sit-Ups",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Front_Incline_Dumbbell_Raise",
+  "name": "Front Incline Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Front_Plate_Raise",
+  "name": "Front Plate Raise",
+  "equipment": "other",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Front_Cable_Raise",
+  "name": "Front Raise (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Front_Dumbbell_Raise",
+  "name": "Front Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Front_Raise_And_Pullover",
+  "name": "Front Raise And Pullover (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Lats",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Front_Barbell_Squat",
+  "name": "Front Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Front_Squat_Clean_Grip",
+  "name": "Front Squat (Clean Grip) (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Core",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Front_Barbell_Squat_To_A_Bench",
+  "name": "Front Squat To A Bench (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Front_Squats_With_Two_Kettlebells",
+  "name": "Front Squats With Two (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Front_Two-Dumbbell_Raise",
+  "name": "Front Two- Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Full_Range-Of-Motion_Lat_Pulldown",
+  "name": "Full Range-Of-Motion Lat Pulldown (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Full_Squat",
+  "name": "Full Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Gironda_Sternum_Chins",
+  "name": "Gironda Sternum Chins",
+  "equipment": "other",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Glute_Bridge",
+  "name": "Glute Bridge (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Calves",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Glute_Ham_Raise",
+  "name": "Glute Ham Raise (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Glute_Kickback",
+  "name": "Glute Kickback",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_glute_kickback_cb",
+  "name": "Glute Kickback (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Goblet_Squat",
+  "name": "Goblet Squat (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Band_Good_Morning",
+  "name": "Good Morning (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Glutes",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Good_Morning",
+  "name": "Good Morning (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Core",
+   "Glutes",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Band_Good_Morning_Pull_Through",
+  "name": "Good Morning (Pull Through) (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Glutes",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Good_Morning_off_Pins",
+  "name": "Good Morning off Pins (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Core",
+   "Glutes",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Gorilla_Chin_Crunch",
+  "name": "Gorilla Chin/Crunch",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Guillotine_Bench_Press",
+  "name": "Guillotine Bench Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Hack_Squat",
+  "name": "Hack Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Forearms",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_hack_squat_mc",
+  "name": "Hack Squat (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_hammer_curl_db",
+  "name": "Hammer Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Hammer_Curls_-_Rope_Attachment",
+  "name": "Hammer Curls - Rope Attachment (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Hammer_Curls",
+  "name": "Hammer Curls (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Hammer_Grip_Incline_DB_Bench_Press",
+  "name": "Hammer Grip Incline DB Bench Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Handstand_Push-Ups",
+  "name": "Handstand Push-Ups",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Hang_Clean_-_Below_the_Knees",
+  "name": "Hang Clean - Below the Knees (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Shoulders",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Hang_Clean",
+  "name": "Hang Clean (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Shoulders",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kettlebell_Hang_Clean",
+  "name": "Hang Clean (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Lower Back",
+   "Shoulders",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Hang_Snatch_-_Below_Knees",
+  "name": "Hang Snatch - Below Knees (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Core",
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Lower Back",
+   "Quads",
+   "Shoulders",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Hang_Snatch",
+  "name": "Hang Snatch (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Core",
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Lower Back",
+   "Quads",
+   "Shoulders",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Hanging_Bar_Good_Morning",
+  "name": "Hanging Bar Good Morning (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Core",
+   "Glutes",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Hanging_Leg_Raise",
+  "name": "Hanging Leg Raise",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Hanging_Pike",
+  "name": "Hanging Pike",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Heaving_Snatch_Balance",
+  "name": "Heaving Snatch Balance (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Core",
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "High_Cable_Curls",
+  "name": "High Curls (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "c_hiking",
+  "name": "Hiking",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 6
+ },
+ {
+  "id": "Cable_Hip_Adduction",
+  "name": "Hip Adduction (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Band_Hip_Adductions",
+  "name": "Hip Adductions (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Adductors",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Hip_Extension_with_Bands",
+  "name": "Hip Extension with (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Hip_Flexion_with_Band",
+  "name": "Hip Flexion with (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Hip_Lift_with_Band",
+  "name": "Hip Lift with (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Calves",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_hip_thrust",
+  "name": "Hip Thrust (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Hyperextensions_Back_Extensions",
+  "name": "Hyperextensions (Back Extensions)",
+  "equipment": "other",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Hyperextensions_With_No_Hyperextension_Bench",
+  "name": "Hyperextensions With No Hyperextension Bench",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_incline_bench_bb",
+  "name": "Incline Bench Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_incline_bench_db",
+  "name": "Incline Bench Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Bench_Pull",
+  "name": "Incline Bench Pull (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Lats",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Dumbbell_Bench_With_Palms_Facing_In",
+  "name": "Incline Bench With Palms Facing In (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Cable_Chest_Press",
+  "name": "Incline Chest Press (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Dumbbell_Curl",
+  "name": "Incline Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Cable_Flye",
+  "name": "Incline Flye (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Dumbbell_Flyes_-_With_A_Twist",
+  "name": "Incline Flyes - With A Twist (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Dumbbell_Flyes",
+  "name": "Incline Flyes (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Hammer_Curls",
+  "name": "Incline Hammer Curls (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Inner_Biceps_Curl",
+  "name": "Incline Inner Biceps Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Dumbbell_Press",
+  "name": "Incline Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Push-Up",
+  "name": "Incline Push-Up",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Push-Up_Close-Grip",
+  "name": "Incline Push-Up Close-Grip",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Push-Up_Medium",
+  "name": "Incline Push-Up Medium",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Core",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Push-Up_Reverse_Grip",
+  "name": "Incline Push-Up Reverse Grip",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Core",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Push-Up_Wide",
+  "name": "Incline Push-Up Wide",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Core",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Incline_Pushdown",
+  "name": "Incline Pushdown (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Incline_Row",
+  "name": "Incline Row (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Forearms",
+   "Lats",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Incline_Shoulder_Raise",
+  "name": "Incline Shoulder Raise (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Chest"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Incline_Shoulder_Raise",
+  "name": "Incline Shoulder Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Incline_Barbell_Triceps_Extension",
+  "name": "Incline Triceps Extension (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Incline_Triceps_Extension",
+  "name": "Incline Triceps Extension (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Internal_Rotation",
+  "name": "Internal Rotation (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Internal_Rotation_with_Band",
+  "name": "Internal Rotation with (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Inverted_Row",
+  "name": "Inverted Row",
+  "equipment": "other",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Inverted_Row_with_Straps",
+  "name": "Inverted Row with Straps",
+  "equipment": "other",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Iron_Cross",
+  "name": "Iron Cross (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Iron_Cross",
+  "name": "Iron Cross (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Chest",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_iso_lateral_row",
+  "name": "Iso-Lateral Row (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Upper Back",
+   "Biceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Isometric_Neck_Exercise_-_Front_And_Back",
+  "name": "Isometric Neck Exercise - Front And Back",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Neck",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Isometric_Neck_Exercise_-_Sides",
+  "name": "Isometric Neck Exercise - Sides",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Neck",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Isometric_Wipers",
+  "name": "Isometric Wipers",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Core",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Jackknife_Sit-Up",
+  "name": "Jackknife Sit-Up",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Janda_Sit-Up",
+  "name": "Janda Sit-Up",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Jefferson_Squats",
+  "name": "Jefferson Squats (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Jerk_Balance",
+  "name": "Jerk Balance (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings",
+   "Quads",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Jerk_Dip_Squat",
+  "name": "Jerk Dip Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Core",
+   "Calves"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "JM_Press",
+  "name": "JM Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "c_jogging",
+  "name": "Jogging",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 7
+ },
+ {
+  "id": "Cable_Judo_Flip",
+  "name": "Judo Flip (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "c_jump_rope",
+  "name": "Jump Rope",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 11
+ },
+ {
+  "id": "Keg_Load",
+  "name": "Keg Load",
+  "equipment": "other",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Core",
+   "Biceps",
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Upper Back",
+   "Quads",
+   "Shoulders",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kipping_Muscle_Up",
+  "name": "Kipping Muscle Up",
+  "equipment": "other",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Core",
+   "Biceps",
+   "Forearms",
+   "Upper Back",
+   "Shoulders",
+   "Traps",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Knee_Hip_Raise_On_Parallel_Bars",
+  "name": "Knee/Hip Raise On Parallel Bars",
+  "equipment": "other",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kneeling_Cable_Crunch_With_Alternating_Oblique_Twists",
+  "name": "Kneeling Crunch With Alternating Oblique Twists (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kneeling_High_Pulley_Row",
+  "name": "Kneeling High Pulley Row (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kneeling_Jump_Squat",
+  "name": "Kneeling Jump Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Calves",
+   "Hamstrings",
+   "Quads"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kneeling_Single-Arm_High_Pulley_Row",
+  "name": "Kneeling Single-Arm High Pulley Row (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kneeling_Squat",
+  "name": "Kneeling Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Core",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kneeling_Cable_Triceps_Extension",
+  "name": "Kneeling Triceps Extension (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Landmine_180s",
+  "name": "Landmine 180's (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Glutes",
+   "Lower Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Landmine_Linear_Jammer",
+  "name": "Landmine Linear Jammer (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Core",
+   "Calves",
+   "Chest",
+   "Hamstrings",
+   "Quads",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_lat_pulldown_cb",
+  "name": "Lat Pulldown (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lateral_Raise_-_With_Bands",
+  "name": "Lateral Raise (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_lateral_raise_cb",
+  "name": "Lateral Raise (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_lateral_raise_db",
+  "name": "Lateral Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_lateral_raise_mc",
+  "name": "Lateral Raise (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_leg_extension_mc",
+  "name": "Leg Extension (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Leg_Extensions",
+  "name": "Leg Extensions (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Leg_Lift",
+  "name": "Leg Lift",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Leg_Press",
+  "name": "Leg Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_leg_press_horizontal",
+  "name": "Leg Press Horizontal (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Leg_Pull-In",
+  "name": "Leg Pull-In",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Leg-Over_Floor_Press",
+  "name": "Leg-Over Floor Press (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Leverage_Chest_Press",
+  "name": "Leverage Chest Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Leverage_Deadlift",
+  "name": "Leverage Deadlift (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Leverage_Decline_Chest_Press",
+  "name": "Leverage Decline Chest Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Leverage_High_Row",
+  "name": "Leverage High Row (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Leverage_Incline_Chest_Press",
+  "name": "Leverage Incline Chest Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Leverage_Iso_Row",
+  "name": "Leverage Iso Row (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Leverage_Shoulder_Press",
+  "name": "Leverage Shoulder Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Leverage_Shrug",
+  "name": "Leverage Shrug (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Traps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Log_Lift",
+  "name": "Log Lift",
+  "equipment": "other",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Core",
+   "Chest",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Upper Back",
+   "Quads",
+   "Traps",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "London_Bridges",
+  "name": "London Bridges",
+  "equipment": "other",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Forearms",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Low_Cable_Crossover",
+  "name": "Low Crossover (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Low_Pulley_Row_To_Neck",
+  "name": "Low Pulley Row To Neck (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Low_Cable_Triceps_Extension",
+  "name": "Low Triceps Extension (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Lunge",
+  "name": "Lunge (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lunge_Pass_Through",
+  "name": "Lunge Pass Through (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Quads"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lunge_Sprint",
+  "name": "Lunge Sprint (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Lunges",
+  "name": "Lunges (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_Cambered_Barbell_Row",
+  "name": "Lying Cambered Row (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_Close-Grip_Bar_Curl_On_High_Pulley",
+  "name": "Lying Close-Grip Bar Curl On High Pulley (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_Close-Grip_Barbell_Triceps_Press_To_Chin",
+  "name": "Lying Close-Grip Barbell Triceps Press To Chin (EZ Bar)",
+  "equipment": "ez bar",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head",
+  "name": "Lying Close-Grip Triceps Extension Behind The Head (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_Cable_Curl",
+  "name": "Lying Curl (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_Face_Down_Plate_Neck_Resistance",
+  "name": "Lying Face Down Plate Neck Resistance",
+  "equipment": "other",
+  "primaryMuscle": "Neck",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_Face_Up_Plate_Neck_Resistance",
+  "name": "Lying Face Up Plate Neck Resistance",
+  "equipment": "other",
+  "primaryMuscle": "Neck",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_High_Bench_Barbell_Curl",
+  "name": "Lying High Bench Curl (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_lying_leg_curl_mc",
+  "name": "Lying Leg Curl (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_Leg_Curls",
+  "name": "Lying Leg Curls (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_One-Arm_Lateral_Raise",
+  "name": "Lying One-Arm Lateral Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Lying_One-Arm_Rear_Lateral_Raise",
+  "name": "Lying One-Arm Rear Lateral Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Lying_Pronation",
+  "name": "Lying Pronation (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_Rear_Delt_Raise",
+  "name": "Lying Rear Delt Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Lying_Rear_Lateral_Raise",
+  "name": "Lying Rear Lateral Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_Machine_Squat",
+  "name": "Lying Squat (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Lying_Supination",
+  "name": "Lying Supination (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_Supine_Dumbbell_Curl",
+  "name": "Lying Supine Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_T-Bar_Row",
+  "name": "Lying T-Bar Row (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_Dumbbell_Tricep_Extension",
+  "name": "Lying Tricep Extension (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Lying_Triceps_Extension",
+  "name": "Lying Triceps Extension (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Lying_Triceps_Press",
+  "name": "Lying Triceps Press (EZ Bar)",
+  "equipment": "ez bar",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Middle_Back_Shrug",
+  "name": "Middle Back Shrug (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Mixed_Grip_Chin",
+  "name": "Mixed Grip Chin",
+  "equipment": "other",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Monster_Walk",
+  "name": "Monster Walk (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Muscle_Snatch",
+  "name": "Muscle Snatch (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Glutes",
+   "Lower Back",
+   "Quads",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Muscle_Up",
+  "name": "Muscle Up",
+  "equipment": "other",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Core",
+   "Biceps",
+   "Forearms",
+   "Upper Back",
+   "Shoulders",
+   "Traps",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Narrow_Stance_Hack_Squats",
+  "name": "Narrow Stance Hack Squats (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Narrow_Stance_Leg_Press",
+  "name": "Narrow Stance Leg Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Narrow_Stance_Squats",
+  "name": "Narrow Stance Squats (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Natural_Glute_Ham_Raise",
+  "name": "Natural Glute Ham Raise",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Neck_Press",
+  "name": "Neck Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Oblique_Crunches",
+  "name": "Oblique Crunches",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Oblique_Crunches_-_On_The_Floor",
+  "name": "Oblique Crunches - On The Floor",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Olympic_Squat",
+  "name": "Olympic Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One_Arm_Dumbbell_Bench_Press",
+  "name": "One Arm Bench Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One_Arm_Chin-Up",
+  "name": "One Arm Chin-Up",
+  "equipment": "other",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Forearms",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One_Arm_Floor_Press",
+  "name": "One Arm Floor Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One_Arm_Lat_Pulldown",
+  "name": "One Arm Lat Pulldown (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One_Arm_Dumbbell_Preacher_Curl",
+  "name": "One Arm Preacher Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One_Arm_Pronated_Dumbbell_Triceps_Extension",
+  "name": "One Arm Pronated Triceps Extension (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One_Arm_Supinated_Dumbbell_Triceps_Extension",
+  "name": "One Arm Supinated Triceps Extension (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_One_Arm_Tricep_Extension",
+  "name": "One Arm Tricep Extension (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One_Leg_Barbell_Squat",
+  "name": "One Leg Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Medicine_Ball_Slam",
+  "name": "One-Arm Ball Slam (Medicine Ball)",
+  "equipment": "medicine ball",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Lats",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Kettlebell_Clean",
+  "name": "One-Arm Clean (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Glutes",
+   "Lower Back",
+   "Shoulders",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Kettlebell_Clean_and_Jerk",
+  "name": "One-Arm Clean and Jerk (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Flat_Bench_Dumbbell_Flye",
+  "name": "One-Arm Flat Bench Flye (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Kettlebell_Floor_Press",
+  "name": "One-Arm Floor Press (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_High-Pulley_Cable_Side_Bends",
+  "name": "One-Arm High-Pulley Side Bends (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Incline_Lateral_Raise",
+  "name": "One-Arm Incline Lateral Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Kettlebell_Jerk",
+  "name": "One-Arm Jerk (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Calves",
+   "Quads",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Long_Bar_Row",
+  "name": "One-Arm Long Bar Row (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Kettlebell_Military_Press_To_The_Side",
+  "name": "One-Arm Military Press To The Side (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Open_Palm_Kettlebell_Clean",
+  "name": "One-Arm Open Palm Clean (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Forearms",
+   "Glutes",
+   "Lower Back",
+   "Quads",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Overhead_Kettlebell_Squats",
+  "name": "One-Arm Overhead Squats (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Kettlebell_Para_Press",
+  "name": "One-Arm Para Press (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Kettlebell_Push_Press",
+  "name": "One-Arm Push Press (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Calves",
+   "Quads",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Dumbbell_Row",
+  "name": "One-Arm Row (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Kettlebell_Row",
+  "name": "One-Arm Row (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_One-Arm_Shoulder_Press",
+  "name": "One-Arm Shoulder Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Side_Deadlift",
+  "name": "One-Arm Side Deadlift (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Core",
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Side_Laterals",
+  "name": "One-Arm Side Laterals (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Kettlebell_Snatch",
+  "name": "One-Arm Snatch (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Traps",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Kettlebell_Split_Jerk",
+  "name": "One-Arm Split Jerk (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings",
+   "Quads",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Kettlebell_Split_Snatch",
+  "name": "One-Arm Split Snatch (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Hamstrings",
+   "Quads"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Arm_Kettlebell_Swings",
+  "name": "One-Arm Swings (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Lower Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_One-Arm_Triceps_Extension",
+  "name": "One-Arm Triceps Extension (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_One-Arm_Upright_Row",
+  "name": "One-Arm Upright Row (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Biceps",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kettlebell_One-Legged_Deadlift",
+  "name": "One-Legged Deadlift (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Glutes",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "One-Legged_Cable_Kickback",
+  "name": "One-Legged Kickback (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Open_Palm_Kettlebell_Clean",
+  "name": "Open Palm Clean (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Glutes",
+   "Lower Back",
+   "Quads",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Otis-Up",
+  "name": "Otis-Up",
+  "equipment": "other",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Overhead_Cable_Curl",
+  "name": "Overhead Curl (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_overhead_press_bb",
+  "name": "Overhead Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps",
+   "Core"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Overhead_Squat",
+  "name": "Overhead Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Core",
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_overhead_tri_cb",
+  "name": "Overhead Triceps Extension (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Pallof_Press",
+  "name": "Pallof Press (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Pallof_Press_With_Rotation",
+  "name": "Pallof Press With Rotation (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Palms-Down_Wrist_Curl_Over_A_Bench",
+  "name": "Palms-Down Wrist Curl Over A Bench (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Palms-Down_Dumbbell_Wrist_Curl_Over_A_Bench",
+  "name": "Palms-Down Wrist Curl Over A Bench (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Palms-Up_Barbell_Wrist_Curl_Over_A_Bench",
+  "name": "Palms-Up Wrist Curl Over A Bench (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Palms-Up_Dumbbell_Wrist_Curl_Over_A_Bench",
+  "name": "Palms-Up Wrist Curl Over A Bench (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Parallel_Bar_Dip",
+  "name": "Parallel Bar Dip",
+  "equipment": "other",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kettlebell_Pass_Between_The_Legs",
+  "name": "Pass Between The Legs (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Physioball_Hip_Bridge",
+  "name": "Physioball Hip Bridge (Stability Ball)",
+  "equipment": "stability ball",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Pin_Presses",
+  "name": "Pin Presses (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Forearms",
+   "Lats",
+   "Upper Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kettlebell_Pirate_Ships",
+  "name": "Pirate Ships (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Core"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kettlebell_Pistol_Squat",
+  "name": "Pistol Squat (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Plank",
+  "name": "Plank",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Plate_Pinch",
+  "name": "Plate Pinch",
+  "equipment": "other",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Plate_Twist",
+  "name": "Plate Twist",
+  "equipment": "other",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Platform_Hamstring_Slides",
+  "name": "Platform Hamstring Slides",
+  "equipment": "other",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Glutes"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Plie_Dumbbell_Squat",
+  "name": "Plie Squat (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Core",
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Plyo_Kettlebell_Pushups",
+  "name": "Plyo Pushups (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Power_Clean",
+  "name": "Power Clean (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Lower Back",
+   "Upper Back",
+   "Quads",
+   "Shoulders",
+   "Traps",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Power_Clean_from_Blocks",
+  "name": "Power Clean from Blocks (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Quads"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Power_Jerk",
+  "name": "Power Jerk (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Core",
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Power_Partials",
+  "name": "Power Partials (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Power_Snatch",
+  "name": "Power Snatch (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Lower Back",
+   "Quads",
+   "Shoulders",
+   "Traps",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Power_Snatch_from_Blocks",
+  "name": "Power Snatch from Blocks (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Shoulders",
+   "Traps",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Power_Stairs",
+  "name": "Power Stairs",
+  "equipment": "other",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Adductors",
+   "Calves",
+   "Glutes",
+   "Lower Back",
+   "Quads",
+   "Shoulders",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Preacher_Curl",
+  "name": "Preacher Curl (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Preacher_Curl",
+  "name": "Preacher Curl (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_preacher_curl_mc",
+  "name": "Preacher Curl (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Machine_Preacher_Curls",
+  "name": "Preacher Curls (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Preacher_Hammer_Dumbbell_Curl",
+  "name": "Preacher Hammer Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Press_Sit-Up",
+  "name": "Press Sit-Up (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Prone_Incline_Curl",
+  "name": "Prone Incline Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Prone_Manual_Hamstring",
+  "name": "Prone Manual Hamstring",
+  "equipment": "other",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Band_Pull_Apart",
+  "name": "Pull Apart (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Upper Back",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Pull_Through",
+  "name": "Pull Through (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_pull_up",
+  "name": "Pull Up",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_pull_up_weighted",
+  "name": "Pull Up (Weighted)",
+  "equipment": "other",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Pullups",
+  "name": "Pullups",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Push_Press_-_Behind_the_Neck",
+  "name": "Push Press - Behind the Neck (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Calves",
+   "Quads",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Push_Press",
+  "name": "Push Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Quads",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Push_Up_to_Side_Plank",
+  "name": "Push Up to Side Plank",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Core",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Push-Up_Wide",
+  "name": "Push-Up Wide",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Core",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Push-Ups_-_Close_Triceps_Position",
+  "name": "Push-Ups - Close Triceps Position",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Push-Ups_With_Feet_Elevated",
+  "name": "Push-Ups With Feet Elevated",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Push-Ups_With_Feet_On_An_Exercise_Ball",
+  "name": "Push-Ups With Feet On An Ball (Stability Ball)",
+  "equipment": "stability ball",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Pushups",
+  "name": "Pushups",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Pushups_Close_and_Wide_Hand_Positions",
+  "name": "Pushups (Close and Wide Hand Positions)",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Rack_Delivery",
+  "name": "Rack Delivery (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Forearms",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Rack_Pull_with_Bands",
+  "name": "Rack Pull with Bands (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Rack_Pulls",
+  "name": "Rack Pulls (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Raise",
+  "name": "Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Biceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_rear_delt_fly_cb",
+  "name": "Rear Delt Fly (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_rear_delt_fly_mc",
+  "name": "Rear Delt Fly (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Rear_Delt_Row",
+  "name": "Rear Delt Row (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Rear_Lunge",
+  "name": "Rear Lunge (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Band_Bench_Press",
+  "name": "Reverse Band Bench Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Forearms",
+   "Lats",
+   "Upper Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Band_Box_Squat",
+  "name": "Reverse Band Box Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes",
+   "Adductors",
+   "Calves",
+   "Forearms",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Band_Deadlift",
+  "name": "Reverse Band Deadlift (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Glutes",
+   "Adductors",
+   "Calves",
+   "Hamstrings",
+   "Quads"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Band_Power_Squat",
+  "name": "Reverse Band Power Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Adductors",
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Band_Sumo_Deadlift",
+  "name": "Reverse Band Sumo Deadlift (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Glutes",
+   "Adductors",
+   "Calves",
+   "Forearms",
+   "Lower Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Barbell_Preacher_Curls",
+  "name": "Reverse Barbell Preacher Curls (EZ Bar)",
+  "equipment": "ez bar",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Crunch",
+  "name": "Reverse Crunch",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Reverse_Crunch",
+  "name": "Reverse Crunch (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Barbell_Curl",
+  "name": "Reverse Curl (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Cable_Curl",
+  "name": "Reverse Curl (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Flyes",
+  "name": "Reverse Flyes (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Machine_Flyes",
+  "name": "Reverse Flyes (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Flyes_With_External_Rotation",
+  "name": "Reverse Flyes With External Rotation (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Grip_Bent-Over_Rows",
+  "name": "Reverse Grip Bent-Over Rows (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Grip_Triceps_Pushdown",
+  "name": "Reverse Grip Triceps Pushdown (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Hyperextension",
+  "name": "Reverse Hyperextension (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Plate_Curls",
+  "name": "Reverse Plate Curls",
+  "equipment": "other",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Reverse_Triceps_Bench_Press",
+  "name": "Reverse Triceps Bench Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Rickshaw_Carry",
+  "name": "Rickshaw Carry",
+  "equipment": "other",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [
+   "Core",
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Rickshaw_Deadlift",
+  "name": "Rickshaw Deadlift",
+  "equipment": "other",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Ring_Dips",
+  "name": "Ring Dips",
+  "equipment": "other",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Rocking_Standing_Calf_Raise",
+  "name": "Rocking Standing Calf Raise (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Rocky_Pull-Ups_Pulldowns",
+  "name": "Rocky Pull-Ups/Pulldowns",
+  "equipment": "other",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Rollout_from_Bench",
+  "name": "Rollout from Bench (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings",
+   "Lats",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_rdl_bb",
+  "name": "Romanian Deadlift (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Glutes",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_rdl_db",
+  "name": "Romanian Deadlift (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Glutes",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Romanian_Deadlift_from_Deficit",
+  "name": "Romanian Deadlift from Deficit (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Forearms",
+   "Glutes",
+   "Lower Back",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Rope_Climb",
+  "name": "Rope Climb",
+  "equipment": "other",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Forearms",
+   "Upper Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Rope_Crunch",
+  "name": "Rope Crunch (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Rope_Overhead_Triceps_Extension",
+  "name": "Rope Overhead Triceps Extension (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Rope_Rear-Delt_Rows",
+  "name": "Rope Rear-Delt Rows (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Rope_Straight-Arm_Pulldown",
+  "name": "Rope Straight-Arm Pulldown (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "c_rowing_machine",
+  "name": "Rowing (Machine)",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 7
+ },
+ {
+  "id": "c_running",
+  "name": "Running",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 9
+ },
+ {
+  "id": "Russian_Twist",
+  "name": "Russian Twist",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Russian_Twists",
+  "name": "Russian Twists (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Sandbag_Load",
+  "name": "Sandbag Load",
+  "equipment": "other",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Core",
+   "Biceps",
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Upper Back",
+   "Shoulders",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Scaption",
+  "name": "Scaption (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Scapular_Pull-Up",
+  "name": "Scapular Pull-Up",
+  "equipment": "other",
+  "primaryMuscle": "Traps",
+  "secondaryMuscles": [
+   "Lats",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Band_Hamstring_Curl",
+  "name": "Seated Band Hamstring Curl",
+  "equipment": "other",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Bent-Over_One-Arm_Dumbbell_Triceps_Extension",
+  "name": "Seated Bent-Over One-Arm Triceps Extension (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Bent-Over_Rear_Delt_Raise",
+  "name": "Seated Bent-Over Rear Delt Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension",
+  "name": "Seated Bent-Over Two-Arm Triceps Extension (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Seated_Calf_Raise",
+  "name": "Seated Calf Raise (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_seated_calf_mc",
+  "name": "Seated Calf Raise (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_seated_chest_fly",
+  "name": "Seated Chest Fly (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Close-Grip_Concentration_Barbell_Curl",
+  "name": "Seated Close-Grip Concentration Curl (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Seated_Crunch",
+  "name": "Seated Crunch (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Dumbbell_Curl",
+  "name": "Seated Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Flat_Bench_Leg_Pull-In",
+  "name": "Seated Flat Bench Leg Pull-In",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Good_Mornings",
+  "name": "Seated Good Mornings (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Glutes"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Head_Harness_Neck_Resistance",
+  "name": "Seated Head Harness Neck Resistance",
+  "equipment": "other",
+  "primaryMuscle": "Neck",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Dumbbell_Inner_Biceps_Curl",
+  "name": "Seated Inner Biceps Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Seated_Lateral_Raise",
+  "name": "Seated Lateral Raise (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Upper Back",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_seated_leg_curl_mc",
+  "name": "Seated Leg Curl (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Leg_Tucks",
+  "name": "Seated Leg Tucks",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Barbell_Military_Press",
+  "name": "Seated Military Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_One-Arm_Dumbbell_Palms-Down_Wrist_Curl",
+  "name": "Seated One-Arm Palms-Down Wrist Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_One-Arm_Dumbbell_Palms-Up_Wrist_Curl",
+  "name": "Seated One-Arm Palms-Up Wrist Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_One-arm_Cable_Pulley_Rows",
+  "name": "Seated One-arm Pulley Rows (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Seated_One-Leg_Calf_Raise",
+  "name": "Seated One-Leg Calf Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Palm-Up_Barbell_Wrist_Curl",
+  "name": "Seated Palm-Up Wrist Curl (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Palms-Down_Barbell_Wrist_Curl",
+  "name": "Seated Palms-Down Wrist Curl (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Dumbbell_Palms-Down_Wrist_Curl",
+  "name": "Seated Palms-Down Wrist Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Dumbbell_Palms-Up_Wrist_Curl",
+  "name": "Seated Palms-Up Wrist Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Dumbbell_Press",
+  "name": "Seated Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kettlebell_Seated_Press",
+  "name": "Seated Press (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_seated_row_cb",
+  "name": "Seated Row (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Lats",
+   "Biceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Cable_Rows",
+  "name": "Seated Rows (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Cable_Shoulder_Press",
+  "name": "Seated Shoulder Press (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Side_Lateral_Raise",
+  "name": "Seated Side Lateral Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Triceps_Press",
+  "name": "Seated Triceps Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Barbell_Twist",
+  "name": "Seated Twist (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Seated_Two-Arm_Palms-Up_Low-Pulley_Wrist_Curl",
+  "name": "Seated Two-Arm Palms-Up Low-Pulley Wrist Curl (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "See-Saw_Press_Alternating_Side_Press",
+  "name": "See-Saw Press (Alternating Side Press) (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Core",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kettlebell_Seesaw_Press",
+  "name": "Seesaw Press (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Shotgun_Row",
+  "name": "Shotgun Row (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Machine_Shoulder_Military_Press",
+  "name": "Shoulder (Military) Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Shoulder_Press_-_With_Bands",
+  "name": "Shoulder Press (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Shoulder_Press",
+  "name": "Shoulder Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Chest",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Shoulder_Press",
+  "name": "Shoulder Press (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_shoulder_press_db",
+  "name": "Shoulder Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_shoulder_press_mc",
+  "name": "Shoulder Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_shrug_bb",
+  "name": "Shrug (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Traps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_shrug_db",
+  "name": "Shrug (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Traps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Shrug_Behind_The_Back",
+  "name": "Shrug Behind The Back (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Traps",
+  "secondaryMuscles": [
+   "Forearms",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Shrugs",
+  "name": "Shrugs (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Traps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Side_Bend",
+  "name": "Side Bend (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Side_Bend",
+  "name": "Side Bend (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Side_Bridge",
+  "name": "Side Bridge",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Side_Jackknife",
+  "name": "Side Jackknife",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Side_Lateral_Raise",
+  "name": "Side Lateral Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Side_Laterals_to_Front_Raise",
+  "name": "Side Laterals to Front Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Side_Split_Squat",
+  "name": "Side Split Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Side_To_Side_Chins",
+  "name": "Side To Side Chins",
+  "equipment": "other",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Forearms",
+   "Upper Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_single_lateral_raise_cb",
+  "name": "Single Arm Lateral Raise (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_single_arm_row_db",
+  "name": "Single Arm Row (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Upper Back",
+   "Biceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Single_Leg_Glute_Bridge",
+  "name": "Single Leg Glute Bridge",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Single_Dumbbell_Raise",
+  "name": "Single Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Forearms",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Single-Arm_Cable_Crossover",
+  "name": "Single-Arm Crossover (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Single-Arm_Linear_Jammer",
+  "name": "Single-Arm Linear Jammer (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Chest",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Single-Arm_Push-Up",
+  "name": "Single-Arm Push-Up",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Single-Leg_High_Box_Squat",
+  "name": "Single-Leg High Box Squat",
+  "equipment": "other",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Single-Leg_Leg_Extension",
+  "name": "Single-Leg Leg Extension (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Sit-Up",
+  "name": "Sit-Up",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Band_Skull_Crusher",
+  "name": "Skull Crusher (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "EZ-Bar_Skullcrusher",
+  "name": "Skullcrusher (EZ Bar)",
+  "equipment": "ez bar",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Sled_Drag_-_Harness",
+  "name": "Sled Drag - Harness",
+  "equipment": "other",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Sled_Overhead_Backward_Walk",
+  "name": "Sled Overhead Backward Walk",
+  "equipment": "other",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Calves",
+   "Upper Back",
+   "Quads"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Sled_Overhead_Triceps_Extension",
+  "name": "Sled Overhead Triceps Extension",
+  "equipment": "other",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Sled_Push",
+  "name": "Sled Push",
+  "equipment": "other",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Chest",
+   "Glutes",
+   "Hamstrings",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Sled_Reverse_Flye",
+  "name": "Sled Reverse Flye",
+  "equipment": "other",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Sled_Row",
+  "name": "Sled Row",
+  "equipment": "other",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Incline_Shoulder_Raise",
+  "name": "Smith Incline Shoulder Raise (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Chest"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Behind_the_Back_Shrug",
+  "name": "Smith Machine Behind the Back Shrug (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Traps",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Bench_Press",
+  "name": "Smith Machine Bench Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Bent_Over_Row",
+  "name": "Smith Machine Bent Over Row (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Calf_Raise",
+  "name": "Smith Machine Calf Raise (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Close-Grip_Bench_Press",
+  "name": "Smith Machine Close-Grip Bench Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Decline_Press",
+  "name": "Smith Machine Decline Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Hang_Power_Clean",
+  "name": "Smith Machine Hang Power Clean (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Glutes",
+   "Lower Back",
+   "Quads",
+   "Shoulders",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Hip_Raise",
+  "name": "Smith Machine Hip Raise (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Incline_Bench_Press",
+  "name": "Smith Machine Incline Bench Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Leg_Press",
+  "name": "Smith Machine Leg Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_One-Arm_Upright_Row",
+  "name": "Smith Machine One-Arm Upright Row (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Biceps",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Overhead_Shoulder_Press",
+  "name": "Smith Machine Overhead Shoulder Press (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Pistol_Squat",
+  "name": "Smith Machine Pistol Squat (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Reverse_Calf_Raises",
+  "name": "Smith Machine Reverse Calf Raises (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Squat",
+  "name": "Smith Machine Squat (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Stiff-Legged_Deadlift",
+  "name": "Smith Machine Stiff-Legged Deadlift (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Glutes",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Machine_Upright_Row",
+  "name": "Smith Machine Upright Row (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Traps",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Smith_Single-Leg_Split_Squat",
+  "name": "Smith Single-Leg Split Squat (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Snatch",
+  "name": "Snatch (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Biceps",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Shoulders",
+   "Traps",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Snatch_Balance",
+  "name": "Snatch Balance (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Snatch_Deadlift",
+  "name": "Snatch Deadlift (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Forearms",
+   "Glutes",
+   "Lower Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Snatch_from_Blocks",
+  "name": "Snatch from Blocks (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Shoulders",
+   "Traps",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Snatch_Pull",
+  "name": "Snatch Pull (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Lower Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Snatch_Shrug",
+  "name": "Snatch Shrug (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Traps",
+  "secondaryMuscles": [
+   "Forearms",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Speed_Box_Squat",
+  "name": "Speed Box Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Speed_Band_Overhead_Triceps",
+  "name": "Speed Overhead Triceps (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Speed_Squats",
+  "name": "Speed Squats (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Spell_Caster",
+  "name": "Spell Caster (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Glutes",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Spider_Crawl",
+  "name": "Spider Crawl",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Spider_Curl",
+  "name": "Spider Curl (EZ Bar)",
+  "equipment": "ez bar",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Split_Clean",
+  "name": "Split Clean (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Shoulders",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Split_Jerk",
+  "name": "Split Jerk (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Split_Snatch",
+  "name": "Split Snatch (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Calves",
+   "Forearms",
+   "Glutes",
+   "Lower Back",
+   "Quads",
+   "Shoulders",
+   "Traps",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Split_Squat_with_Dumbbells",
+  "name": "Split Squat with (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_squat_bb",
+  "name": "Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes",
+   "Core"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Squat",
+  "name": "Squat (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Squat_Jerk",
+  "name": "Squat Jerk (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Squat_To_A_Bench",
+  "name": "Squat To A Bench (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Squat_To_A_Bench",
+  "name": "Squat To A Bench (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Squat_with_Bands",
+  "name": "Squat with Bands (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Adductors",
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Squat_with_Chains",
+  "name": "Squat with Chains (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Adductors",
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Squat_with_Plate_Movers",
+  "name": "Squat with Plate Movers (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes",
+   "Adductors",
+   "Calves",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Squats_-_With_Bands",
+  "name": "Squats (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "c_stair_climber",
+  "name": "Stair Climber",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 9
+ },
+ {
+  "id": "Standing_Alternating_Dumbbell_Press",
+  "name": "Standing Alternating Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Bent-Over_One-Arm_Dumbbell_Triceps_Extension",
+  "name": "Standing Bent-Over One-Arm Triceps Extension (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension",
+  "name": "Standing Bent-Over Two-Arm Triceps Extension (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Biceps_Cable_Curl",
+  "name": "Standing Biceps Curl (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Bradford_Press",
+  "name": "Standing Bradford Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Barbell_Calf_Raise",
+  "name": "Standing Calf Raise (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Dumbbell_Calf_Raise",
+  "name": "Standing Calf Raise (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_standing_calf_mc",
+  "name": "Standing Calf Raise (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Calf_Raises",
+  "name": "Standing Calf Raises (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Calves",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Cable_Chest_Press",
+  "name": "Standing Chest Press (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Concentration_Curl",
+  "name": "Standing Concentration Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Front_Barbell_Raise_Over_Head",
+  "name": "Standing Front Raise Over Head (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Inner-Biceps_Curl",
+  "name": "Standing Inner-Biceps Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Leg_Curl",
+  "name": "Standing Leg Curl (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Cable_Lift",
+  "name": "Standing Lift (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Low-Pulley_Deltoid_Raise",
+  "name": "Standing Low-Pulley Deltoid Raise (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Low-Pulley_One-Arm_Triceps_Extension",
+  "name": "Standing Low-Pulley One-Arm Triceps Extension (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Military_Press",
+  "name": "Standing Military Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Olympic_Plate_Hand_Squeeze",
+  "name": "Standing Olympic Plate Hand Squeeze",
+  "equipment": "other",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [
+   "Biceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_One-Arm_Cable_Curl",
+  "name": "Standing One-Arm Curl (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_One-Arm_Dumbbell_Curl_Over_Incline_Bench",
+  "name": "Standing One-Arm Curl Over Incline Bench (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_One-Arm_Dumbbell_Triceps_Extension",
+  "name": "Standing One-Arm Triceps Extension (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Overhead_Barbell_Triceps_Extension",
+  "name": "Standing Overhead Triceps Extension (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Palm-In_One-Arm_Dumbbell_Press",
+  "name": "Standing Palm-In One-Arm Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Palms-In_Dumbbell_Press",
+  "name": "Standing Palms-In Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Palms-Up_Barbell_Behind_The_Back_Wrist_Curl",
+  "name": "Standing Palms-Up Behind The Back Wrist Curl (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Dumbbell_Press",
+  "name": "Standing Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Barbell_Press_Behind_Neck",
+  "name": "Standing Press Behind Neck (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Dumbbell_Reverse_Curl",
+  "name": "Standing Reverse Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Rope_Crunch",
+  "name": "Standing Rope Crunch (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Dumbbell_Straight-Arm_Front_Delt_Raise_Above_Head",
+  "name": "Standing Straight-Arm Front Delt Raise Above Head (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Towel_Triceps_Extension",
+  "name": "Standing Towel Triceps Extension",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Dumbbell_Triceps_Extension",
+  "name": "Standing Triceps Extension (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Dumbbell_Upright_Row",
+  "name": "Standing Upright Row (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Traps",
+  "secondaryMuscles": [
+   "Biceps",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Standing_Cable_Wood_Chop",
+  "name": "Standing Wood Chop (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Barbell_Step_Ups",
+  "name": "Step Ups (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Step_Ups",
+  "name": "Step Ups (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Step-up_with_Knee_Raise",
+  "name": "Step-up with Knee Raise",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [
+   "Hamstrings",
+   "Quads"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Stiff_Leg_Barbell_Good_Morning",
+  "name": "Stiff Leg Good Morning (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Stiff-Legged_Barbell_Deadlift",
+  "name": "Stiff-Legged Deadlift (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Glutes",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Stiff-Legged_Dumbbell_Deadlift",
+  "name": "Stiff-Legged Deadlift (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Glutes",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Straight_Bar_Bench_Mid_Rows",
+  "name": "Straight Bar Bench Mid Rows (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Straight_Raises_on_Incline_Bench",
+  "name": "Straight Raises on Incline Bench (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Straight-Arm_Pulldown",
+  "name": "Straight-Arm Pulldown (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Straight-Arm_Dumbbell_Pullover",
+  "name": "Straight-Arm Pullover (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Lats",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Sumo_Deadlift",
+  "name": "Sumo Deadlift (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Adductors",
+   "Forearms",
+   "Glutes",
+   "Lower Back",
+   "Upper Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Sumo_Deadlift_with_Bands",
+  "name": "Sumo Deadlift with Bands (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Adductors",
+   "Forearms",
+   "Glutes",
+   "Lower Back",
+   "Upper Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Sumo_Deadlift_with_Chains",
+  "name": "Sumo Deadlift with Chains (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Glutes",
+   "Adductors",
+   "Forearms",
+   "Lower Back",
+   "Upper Back",
+   "Quads",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kettlebell_Sumo_High_Pull",
+  "name": "Sumo High Pull (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Traps",
+  "secondaryMuscles": [
+   "Adductors",
+   "Glutes",
+   "Hamstrings",
+   "Quads",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Suspended_Fallout",
+  "name": "Suspended Fallout",
+  "equipment": "other",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Chest",
+   "Lower Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Suspended_Push-Up",
+  "name": "Suspended Push-Up",
+  "equipment": "other",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Suspended_Reverse_Crunch",
+  "name": "Suspended Reverse Crunch",
+  "equipment": "other",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Suspended_Row",
+  "name": "Suspended Row",
+  "equipment": "other",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Suspended_Split_Squat",
+  "name": "Suspended Split Squat",
+  "equipment": "other",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes",
+   "Adductors",
+   "Calves",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Svend_Press",
+  "name": "Svend Press",
+  "equipment": "other",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Forearms",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "c_swimming",
+  "name": "Swimming",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 7
+ },
+ {
+  "id": "T-Bar_Row_with_Handle",
+  "name": "T-Bar Row with Handle (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "c_table_tennis",
+  "name": "Table Tennis",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 4
+ },
+ {
+  "id": "Tate_Press",
+  "name": "Tate Press (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "c_tennis",
+  "name": "Tennis",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 7.3
+ },
+ {
+  "id": "Thigh_Abductor",
+  "name": "Thigh Abductor (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Glutes",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Thigh_Adductor",
+  "name": "Thigh Adductor (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Adductors",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kettlebell_Thruster",
+  "name": "Thruster (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Quads",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Tire_Flip",
+  "name": "Tire Flip",
+  "equipment": "other",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Chest",
+   "Forearms",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Shoulders",
+   "Traps",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Trap_Bar_Deadlift",
+  "name": "Trap Bar Deadlift",
+  "equipment": "other",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Dumbbell_Tricep_Extension_-Pronated_Grip",
+  "name": "Tricep Extension -Pronated Grip (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Tricep_Dumbbell_Kickback",
+  "name": "Tricep Kickback (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_triceps_ext_db",
+  "name": "Triceps Extension (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Machine_Triceps_Extension",
+  "name": "Triceps Extension (Machine)",
+  "equipment": "machine",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Triceps_Overhead_Extension_with_Rope",
+  "name": "Triceps Overhead Extension with Rope (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Triceps_Pushdown_-_Rope_Attachment",
+  "name": "Triceps Pushdown - Rope Attachment (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Triceps_Pushdown_-_V-Bar_Attachment",
+  "name": "Triceps Pushdown - V-Bar Attachment (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "x_triceps_pushdown_cb",
+  "name": "Triceps Pushdown (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Tuck_Crunch",
+  "name": "Tuck Crunch",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kettlebell_Turkish_Get-Up_Lunge_style",
+  "name": "Turkish Get-Up (Lunge style) (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Core",
+   "Hamstrings",
+   "Quads",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kettlebell_Turkish_Get-Up_Squat_style",
+  "name": "Turkish Get-Up (Squat style) (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Core",
+   "Calves",
+   "Hamstrings",
+   "Quads",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Two-Arm_Kettlebell_Clean",
+  "name": "Two-Arm Clean (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back",
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Two-Arm_Kettlebell_Jerk",
+  "name": "Two-Arm Jerk (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Calves",
+   "Quads",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Two-Arm_Kettlebell_Military_Press",
+  "name": "Two-Arm Military Press (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Two-Arm_Dumbbell_Preacher_Curl",
+  "name": "Two-Arm Preacher Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Two-Arm_Kettlebell_Row",
+  "name": "Two-Arm Row (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Upper Back",
+  "secondaryMuscles": [
+   "Biceps",
+   "Lats"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Underhand_Cable_Pulldowns",
+  "name": "Underhand Pulldowns (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Upright_Row_-_With_Bands",
+  "name": "Upright Row (Band)",
+  "equipment": "band",
+  "primaryMuscle": "Traps",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Upright_Barbell_Row",
+  "name": "Upright Row (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Shoulders",
+  "secondaryMuscles": [
+   "Traps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Upright_Cable_Row",
+  "name": "Upright Row (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Traps",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "V-Bar_Pulldown",
+  "name": "V-Bar Pulldown (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "V-Bar_Pullup",
+  "name": "V-Bar Pullup",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "c_volleyball",
+  "name": "Volleyball",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 4
+ },
+ {
+  "id": "c_volleyball_comp",
+  "name": "Volleyball (Competitive)",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 6
+ },
+ {
+  "id": "c_walking",
+  "name": "Walking (Brisk)",
+  "equipment": "other",
+  "primaryMuscle": "Cardio",
+  "secondaryMuscles": [],
+  "category": "cardio",
+  "met": 4.3
+ },
+ {
+  "id": "Barbell_Walking_Lunge",
+  "name": "Walking Lunge (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Weighted_Ball_Hyperextension",
+  "name": "Weighted Ball Hyperextension (Stability Ball)",
+  "equipment": "stability ball",
+  "primaryMuscle": "Lower Back",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Weighted_Ball_Side_Bend",
+  "name": "Weighted Ball Side Bend (Stability Ball)",
+  "equipment": "stability ball",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Weighted_Bench_Dip",
+  "name": "Weighted Bench Dip",
+  "equipment": "other",
+  "primaryMuscle": "Triceps",
+  "secondaryMuscles": [
+   "Chest",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Weighted_Crunches",
+  "name": "Weighted Crunches (Medicine Ball)",
+  "equipment": "medicine ball",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Weighted_Jump_Squat",
+  "name": "Weighted Jump Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Weighted_Pull_Ups",
+  "name": "Weighted Pull Ups",
+  "equipment": "other",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Weighted_Sissy_Squat",
+  "name": "Weighted Sissy Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Weighted_Sit-Ups_-_With_Bands",
+  "name": "Weighted Sit-Ups",
+  "equipment": "other",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Weighted_Squat",
+  "name": "Weighted Squat",
+  "equipment": "other",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Wide_Stance_Barbell_Squat",
+  "name": "Wide Stance Squat (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Wide_Stance_Stiff_Legs",
+  "name": "Wide Stance Stiff Legs (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Hamstrings",
+  "secondaryMuscles": [
+   "Adductors",
+   "Glutes",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Wide-Grip_Barbell_Bench_Press",
+  "name": "Wide-Grip Bench Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Wide-Grip_Decline_Barbell_Bench_Press",
+  "name": "Wide-Grip Decline Bench Press (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Wide-Grip_Decline_Barbell_Pullover",
+  "name": "Wide-Grip Decline Pullover (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Chest",
+  "secondaryMuscles": [
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Wide-Grip_Lat_Pulldown",
+  "name": "Wide-Grip Lat Pulldown (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Wide-Grip_Pulldown_Behind_The_Neck",
+  "name": "Wide-Grip Pulldown Behind The Neck (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Wide-Grip_Rear_Pull-Up",
+  "name": "Wide-Grip Rear Pull-Up",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Lats",
+  "secondaryMuscles": [
+   "Biceps",
+   "Upper Back",
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Wide-Grip_Standing_Barbell_Curl",
+  "name": "Wide-Grip Standing Curl (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Wind_Sprints",
+  "name": "Wind Sprints",
+  "equipment": "bodyweight",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Kettlebell_Windmill",
+  "name": "Windmill (Kettlebell)",
+  "equipment": "kettlebell",
+  "primaryMuscle": "Core",
+  "secondaryMuscles": [
+   "Glutes",
+   "Hamstrings",
+   "Shoulders",
+   "Triceps"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Cable_Wrist_Curl",
+  "name": "Wrist Curl (Cable)",
+  "equipment": "cable",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Wrist_Roller",
+  "name": "Wrist Roller",
+  "equipment": "other",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [
+   "Shoulders"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Wrist_Rotations_with_Straight_Bar",
+  "name": "Wrist Rotations with Straight Bar (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Forearms",
+  "secondaryMuscles": [],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Yoke_Walk",
+  "name": "Yoke Walk",
+  "equipment": "other",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Core",
+   "Glutes",
+   "Adductors",
+   "Calves",
+   "Hamstrings",
+   "Lower Back"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Zercher_Squats",
+  "name": "Zercher Squats (Barbell)",
+  "equipment": "barbell",
+  "primaryMuscle": "Quads",
+  "secondaryMuscles": [
+   "Calves",
+   "Glutes",
+   "Hamstrings"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Zottman_Curl",
+  "name": "Zottman Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ },
+ {
+  "id": "Zottman_Preacher_Curl",
+  "name": "Zottman Preacher Curl (Dumbbell)",
+  "equipment": "dumbbell",
+  "primaryMuscle": "Biceps",
+  "secondaryMuscles": [
+   "Forearms"
+  ],
+  "category": "strength",
+  "met": null
+ }
+]

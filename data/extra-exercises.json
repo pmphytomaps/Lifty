@@ -1,0 +1,440 @@
+[
+  {
+    "id": "x_bench_press_bb",
+    "name": "Bench Press (Barbell)",
+    "equipment": "barbell",
+    "primary": "Chest",
+    "secondary": [
+      "Triceps",
+      "Shoulders"
+    ]
+  },
+  {
+    "id": "x_bench_press_db",
+    "name": "Bench Press (Dumbbell)",
+    "equipment": "dumbbell",
+    "primary": "Chest",
+    "secondary": [
+      "Triceps",
+      "Shoulders"
+    ]
+  },
+  {
+    "id": "x_incline_bench_bb",
+    "name": "Incline Bench Press (Barbell)",
+    "equipment": "barbell",
+    "primary": "Chest",
+    "secondary": [
+      "Shoulders",
+      "Triceps"
+    ]
+  },
+  {
+    "id": "x_incline_bench_db",
+    "name": "Incline Bench Press (Dumbbell)",
+    "equipment": "dumbbell",
+    "primary": "Chest",
+    "secondary": [
+      "Shoulders",
+      "Triceps"
+    ]
+  },
+  {
+    "id": "x_overhead_press_bb",
+    "name": "Overhead Press (Barbell)",
+    "equipment": "barbell",
+    "primary": "Shoulders",
+    "secondary": [
+      "Triceps",
+      "Core"
+    ]
+  },
+  {
+    "id": "x_shoulder_press_db",
+    "name": "Shoulder Press (Dumbbell)",
+    "equipment": "dumbbell",
+    "primary": "Shoulders",
+    "secondary": [
+      "Triceps"
+    ]
+  },
+  {
+    "id": "x_shoulder_press_mc",
+    "name": "Shoulder Press (Machine)",
+    "equipment": "machine",
+    "primary": "Shoulders",
+    "secondary": [
+      "Triceps"
+    ]
+  },
+  {
+    "id": "x_seated_chest_fly",
+    "name": "Seated Chest Fly (Cable)",
+    "equipment": "cable",
+    "primary": "Chest",
+    "secondary": [
+      "Shoulders"
+    ]
+  },
+  {
+    "id": "x_pec_deck",
+    "name": "Chest Fly (Machine)",
+    "equipment": "machine",
+    "primary": "Chest",
+    "secondary": []
+  },
+  {
+    "id": "x_chest_press_mc",
+    "name": "Chest Press (Machine)",
+    "equipment": "machine",
+    "primary": "Chest",
+    "secondary": [
+      "Triceps"
+    ]
+  },
+  {
+    "id": "x_lateral_raise_cb",
+    "name": "Lateral Raise (Cable)",
+    "equipment": "cable",
+    "primary": "Shoulders",
+    "secondary": []
+  },
+  {
+    "id": "x_single_lateral_raise_cb",
+    "name": "Single Arm Lateral Raise (Cable)",
+    "equipment": "cable",
+    "primary": "Shoulders",
+    "secondary": []
+  },
+  {
+    "id": "x_lateral_raise_mc",
+    "name": "Lateral Raise (Machine)",
+    "equipment": "machine",
+    "primary": "Shoulders",
+    "secondary": []
+  },
+  {
+    "id": "x_overhead_tri_cb",
+    "name": "Overhead Triceps Extension (Cable)",
+    "equipment": "cable",
+    "primary": "Triceps",
+    "secondary": []
+  },
+  {
+    "id": "x_chest_supported_row",
+    "name": "Chest Supported Row (Machine)",
+    "equipment": "machine",
+    "primary": "Upper Back",
+    "secondary": [
+      "Lats",
+      "Biceps"
+    ]
+  },
+  {
+    "id": "x_iso_lateral_row",
+    "name": "Iso-Lateral Row (Machine)",
+    "equipment": "machine",
+    "primary": "Lats",
+    "secondary": [
+      "Upper Back",
+      "Biceps"
+    ]
+  },
+  {
+    "id": "x_seated_row_cb",
+    "name": "Seated Row (Cable)",
+    "equipment": "cable",
+    "primary": "Upper Back",
+    "secondary": [
+      "Lats",
+      "Biceps"
+    ]
+  },
+  {
+    "id": "x_rear_delt_fly_cb",
+    "name": "Rear Delt Fly (Cable)",
+    "equipment": "cable",
+    "primary": "Shoulders",
+    "secondary": [
+      "Upper Back"
+    ]
+  },
+  {
+    "id": "x_rear_delt_fly_mc",
+    "name": "Rear Delt Fly (Machine)",
+    "equipment": "machine",
+    "primary": "Shoulders",
+    "secondary": [
+      "Upper Back"
+    ]
+  },
+  {
+    "id": "x_face_pull",
+    "name": "Face Pull (Cable)",
+    "equipment": "cable",
+    "primary": "Shoulders",
+    "secondary": [
+      "Upper Back",
+      "Traps"
+    ]
+  },
+  {
+    "id": "x_squat_bb",
+    "name": "Squat (Barbell)",
+    "equipment": "barbell",
+    "primary": "Quads",
+    "secondary": [
+      "Glutes",
+      "Core"
+    ]
+  },
+  {
+    "id": "x_hack_squat_mc",
+    "name": "Hack Squat (Machine)",
+    "equipment": "machine",
+    "primary": "Quads",
+    "secondary": [
+      "Glutes"
+    ]
+  },
+  {
+    "id": "x_leg_press_horizontal",
+    "name": "Leg Press Horizontal (Machine)",
+    "equipment": "machine",
+    "primary": "Quads",
+    "secondary": [
+      "Glutes",
+      "Hamstrings"
+    ]
+  },
+  {
+    "id": "x_rdl_bb",
+    "name": "Romanian Deadlift (Barbell)",
+    "equipment": "barbell",
+    "primary": "Hamstrings",
+    "secondary": [
+      "Glutes",
+      "Lower Back"
+    ]
+  },
+  {
+    "id": "x_rdl_db",
+    "name": "Romanian Deadlift (Dumbbell)",
+    "equipment": "dumbbell",
+    "primary": "Hamstrings",
+    "secondary": [
+      "Glutes",
+      "Lower Back"
+    ]
+  },
+  {
+    "id": "x_hip_thrust",
+    "name": "Hip Thrust (Barbell)",
+    "equipment": "barbell",
+    "primary": "Glutes",
+    "secondary": [
+      "Hamstrings"
+    ]
+  },
+  {
+    "id": "x_bulgarian_split",
+    "name": "Bulgarian Split Squat (Dumbbell)",
+    "equipment": "dumbbell",
+    "primary": "Quads",
+    "secondary": [
+      "Glutes"
+    ]
+  },
+  {
+    "id": "x_seated_calf_mc",
+    "name": "Seated Calf Raise (Machine)",
+    "equipment": "machine",
+    "primary": "Calves",
+    "secondary": []
+  },
+  {
+    "id": "x_standing_calf_mc",
+    "name": "Standing Calf Raise (Machine)",
+    "equipment": "machine",
+    "primary": "Calves",
+    "secondary": []
+  },
+  {
+    "id": "x_back_extension_w",
+    "name": "Back Extension (Weighted)",
+    "equipment": "other",
+    "primary": "Lower Back",
+    "secondary": [
+      "Glutes",
+      "Hamstrings"
+    ]
+  },
+  {
+    "id": "x_farmers_carry",
+    "name": "Farmer's Carry",
+    "equipment": "dumbbell",
+    "primary": "Forearms",
+    "secondary": [
+      "Traps",
+      "Core"
+    ]
+  },
+  {
+    "id": "x_pull_up_weighted",
+    "name": "Pull Up (Weighted)",
+    "equipment": "other",
+    "primary": "Lats",
+    "secondary": [
+      "Biceps",
+      "Upper Back"
+    ]
+  },
+  {
+    "id": "x_pull_up",
+    "name": "Pull Up",
+    "equipment": "bodyweight",
+    "primary": "Lats",
+    "secondary": [
+      "Biceps",
+      "Upper Back"
+    ]
+  },
+  {
+    "id": "x_chin_up",
+    "name": "Chin Up",
+    "equipment": "bodyweight",
+    "primary": "Lats",
+    "secondary": [
+      "Biceps"
+    ]
+  },
+  {
+    "id": "x_dip_weighted",
+    "name": "Dip (Weighted)",
+    "equipment": "other",
+    "primary": "Chest",
+    "secondary": [
+      "Triceps",
+      "Shoulders"
+    ]
+  },
+  {
+    "id": "x_lat_pulldown_cb",
+    "name": "Lat Pulldown (Cable)",
+    "equipment": "cable",
+    "primary": "Lats",
+    "secondary": [
+      "Biceps",
+      "Upper Back"
+    ]
+  },
+  {
+    "id": "x_single_arm_row_db",
+    "name": "Single Arm Row (Dumbbell)",
+    "equipment": "dumbbell",
+    "primary": "Lats",
+    "secondary": [
+      "Upper Back",
+      "Biceps"
+    ]
+  },
+  {
+    "id": "x_shrug_db",
+    "name": "Shrug (Dumbbell)",
+    "equipment": "dumbbell",
+    "primary": "Traps",
+    "secondary": []
+  },
+  {
+    "id": "x_shrug_bb",
+    "name": "Shrug (Barbell)",
+    "equipment": "barbell",
+    "primary": "Traps",
+    "secondary": []
+  },
+  {
+    "id": "x_preacher_curl_mc",
+    "name": "Preacher Curl (Machine)",
+    "equipment": "machine",
+    "primary": "Biceps",
+    "secondary": []
+  },
+  {
+    "id": "x_seated_leg_curl_mc",
+    "name": "Seated Leg Curl (Machine)",
+    "equipment": "machine",
+    "primary": "Hamstrings",
+    "secondary": []
+  },
+  {
+    "id": "x_lying_leg_curl_mc",
+    "name": "Lying Leg Curl (Machine)",
+    "equipment": "machine",
+    "primary": "Hamstrings",
+    "secondary": []
+  },
+  {
+    "id": "x_leg_extension_mc",
+    "name": "Leg Extension (Machine)",
+    "equipment": "machine",
+    "primary": "Quads",
+    "secondary": []
+  },
+  {
+    "id": "x_glute_kickback_cb",
+    "name": "Glute Kickback (Cable)",
+    "equipment": "cable",
+    "primary": "Glutes",
+    "secondary": [
+      "Hamstrings"
+    ]
+  },
+  {
+    "id": "x_triceps_pushdown_cb",
+    "name": "Triceps Pushdown (Cable)",
+    "equipment": "cable",
+    "primary": "Triceps",
+    "secondary": []
+  },
+  {
+    "id": "x_curl_bb",
+    "name": "Curl (Barbell)",
+    "equipment": "barbell",
+    "primary": "Biceps",
+    "secondary": [
+      "Forearms"
+    ]
+  },
+  {
+    "id": "x_curl_db",
+    "name": "Curl (Dumbbell)",
+    "equipment": "dumbbell",
+    "primary": "Biceps",
+    "secondary": [
+      "Forearms"
+    ]
+  },
+  {
+    "id": "x_hammer_curl_db",
+    "name": "Hammer Curl (Dumbbell)",
+    "equipment": "dumbbell",
+    "primary": "Biceps",
+    "secondary": [
+      "Forearms"
+    ]
+  },
+  {
+    "id": "x_triceps_ext_db",
+    "name": "Triceps Extension (Dumbbell)",
+    "equipment": "dumbbell",
+    "primary": "Triceps",
+    "secondary": []
+  },
+  {
+    "id": "x_lateral_raise_db",
+    "name": "Lateral Raise (Dumbbell)",
+    "equipment": "dumbbell",
+    "primary": "Shoulders",
+    "secondary": []
+  }
+]
