@@ -33,7 +33,8 @@ src = src.replace(
   /release \{\n(\s*)\/\/ Caution![\s\S]*?signingConfig signingConfigs\.debug/,
   (m, indent) => m.replace(
     'signingConfig signingConfigs.debug',
-    `signingConfig (System.getenv('LIFTY_UPLOAD_STORE_FILE') ?: findProperty('LIFTY_UPLOAD_STORE_FILE')) ? signingConfigs.release : signingConfigs.debug`,
+    `def liftyStoreFile = System.getenv('LIFTY_UPLOAD_STORE_FILE') ?: findProperty('LIFTY_UPLOAD_STORE_FILE')
+${'            '}signingConfig(liftyStoreFile ? signingConfigs.release : signingConfigs.debug)`,
   ),
 );
 
