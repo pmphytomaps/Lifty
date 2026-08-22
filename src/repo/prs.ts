@@ -31,11 +31,10 @@ export async function currentBest(exerciseId: string, kind: PrKind, db: SqlDrive
   return row?.v ?? 0;
 }
 
-/**
- * Detect and store PRs for a finished workout. Returns the number of PR rows created.
- * First-ever lifts count as records (there was nothing before them).
- */
-export async function detectPrsForWorkout(workoutId: number, db: SqlDriver = getDb()): Promise<number> {
+export interface PrCandidate { exerciseId: string; kind: PrKind; value: number; setId: number; prior: number }
+
+/** Best candidate per (exercise, kind) in a workout that beats stored history. */
+export async function collectPrCandidates(workoutId: number, db: SqlDriver = getDb()): Promise<PrCandidate[]> {
   const sets = await db.all<{
     id: number; weight_kg: number | null; reps: number | null; duration_s: number | null;
     exercise_id: string; category: 'strength' | 'cardio'; completed_at: number | null;
@@ -48,12 +47,6 @@ export async function detectPrsForWorkout(workoutId: number, db: SqlDriver = get
      ORDER BY ws.id`,
     [workoutId],
   );
-  const w = await db.get<{ started_at: number; finished_at: number | null }>(
-    `SELECT started_at, finished_at FROM workout WHERE id = ?`, [workoutId],
-  );
-  const achievedAt = w?.finished_at ?? w?.started_at ?? Date.now();
-
-  // Best candidate per (exercise, kind) within this workout, then compare to history.
   const best = new Map<string, SetMetric & { exerciseId: string }>();
   for (const s of sets) {
     for (const m of metricsForSet(s, s.category)) {
@@ -62,19 +55,49 @@ export async function detectPrsForWorkout(workoutId: number, db: SqlDriver = get
       if (!cur || m.value > cur.value) best.set(key, { ...m, exerciseId: s.exercise_id });
     }
   }
-  let created = 0;
+  const out: PrCandidate[] = [];
   for (const m of best.values()) {
     const prior = await currentBest(m.exerciseId, m.kind, db);
-    if (m.value > prior) {
-      await db.run(
-        `INSERT INTO personal_record (exercise_id, workout_set_id, workout_id, kind, value, achieved_at)
-         VALUES (?, ?, ?, ?, ?, ?)`,
-        [m.exerciseId, m.setId, workoutId, m.kind, m.value, achievedAt],
-      );
-      created++;
+    // Exclude PR rows this same workout wrote earlier (re-finish after editing).
+    const own = await db.get<{ v: number | null }>(
+      `SELECT MAX(value) AS v FROM personal_record WHERE exercise_id = ? AND kind = ? AND workout_id = ?`,
+      [m.exerciseId, m.kind, workoutId],
+    );
+    const priorOutside = own?.v != null && own.v >= prior ? await priorExcluding(m.exerciseId, m.kind, workoutId, db) : prior;
+    if (m.value > priorOutside) {
+      out.push({ exerciseId: m.exerciseId, kind: m.kind, value: m.value, setId: m.setId, prior: priorOutside });
     }
   }
-  return created;
+  return out;
+}
+
+async function priorExcluding(exerciseId: string, kind: PrKind, workoutId: number, db: SqlDriver): Promise<number> {
+  const row = await db.get<{ v: number | null }>(
+    `SELECT MAX(value) AS v FROM personal_record WHERE exercise_id = ? AND kind = ? AND workout_id != ?`,
+    [exerciseId, kind, workoutId],
+  );
+  return row?.v ?? 0;
+}
+
+/**
+ * Detect and store PRs for a finished workout. Returns the number of PR rows created.
+ * First-ever lifts count as records (there was nothing before them).
+ */
+export async function detectPrsForWorkout(workoutId: number, db: SqlDriver = getDb()): Promise<number> {
+  const candidates = await collectPrCandidates(workoutId, db);
+  const w = await db.get<{ started_at: number; finished_at: number | null }>(
+    `SELECT started_at, finished_at FROM workout WHERE id = ?`, [workoutId],
+  );
+  const achievedAt = w?.finished_at ?? w?.started_at ?? Date.now();
+  await db.run(`DELETE FROM personal_record WHERE workout_id = ?`, [workoutId]);
+  for (const m of candidates) {
+    await db.run(
+      `INSERT INTO personal_record (exercise_id, workout_set_id, workout_id, kind, value, achieved_at)
+       VALUES (?, ?, ?, ?, ?, ?)`,
+      [m.exerciseId, m.setId, workoutId, m.kind, m.value, achievedAt],
+    );
+  }
+  return candidates.length;
 }
 
 /** Full rebuild after editing or deleting history: replays finished workouts in order. */
