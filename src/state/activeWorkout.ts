@@ -1,7 +1,8 @@
 import { create } from 'zustand';
+import { reportError } from '../lib/reportError';
 import type { Exercise, WorkoutSet } from '../repo/types';
 import {
-  addExerciseToWorkout, addSet, createWorkout, discardWorkout, finishWorkout,
+  addExerciseToWorkout, addSet, createWorkout, discardWorkout, finishWorkout, setExerciseRestSeconds,
   getWorkoutDetail, previousSets, removeSet, removeWorkoutExercise,
   startFromRoutine, updateSet, type FinishResult,
 } from '../repo/workouts';
@@ -104,13 +105,27 @@ export const useActiveWorkout = create<ActiveWorkoutState>((set, get) => ({
   },
 
   async setField(weId, setId, field, value) {
+    const before = get().exercises
+      .find((e) => e.weId === weId)?.sets.find((s) => s.id === setId)?.[field] ?? null;
     set((st) => ({
       exercises: st.exercises.map((e) => e.weId !== weId ? e : {
         ...e,
         sets: e.sets.map((s) => (s.id === setId ? { ...s, [field]: value } : s)),
       }),
     }));
-    await updateSet(setId, { [field]: value } as never);
+    try {
+      await updateSet(setId, { [field]: value } as never);
+    } catch (e) {
+      // Roll the optimistic edit back so the screen cannot claim a value the
+      // database never accepted.
+      set((st) => ({
+        exercises: st.exercises.map((ex) => ex.weId !== weId ? ex : {
+          ...ex,
+          sets: ex.sets.map((s) => (s.id === setId ? { ...s, [field]: before } : s)),
+        }),
+      }));
+      reportError('That set could not be saved.', e);
+    }
   },
 
   async toggleSet(weId, setId, defaultRestS) {
@@ -125,7 +140,18 @@ export const useActiveWorkout = create<ActiveWorkoutState>((set, get) => ({
         sets: e.sets.map((s) => (s.id === setId ? { ...s, isCompleted: completing } : s)),
       }),
     }));
-    await updateSet(setId, { isCompleted: completing });
+    try {
+      await updateSet(setId, { isCompleted: completing });
+    } catch (e) {
+      set((cur) => ({
+        exercises: cur.exercises.map((ex) => ex.weId !== weId ? ex : {
+          ...ex,
+          sets: ex.sets.map((s) => (s.id === setId ? { ...s, isCompleted: !completing } : s)),
+        }),
+      }));
+      reportError('That set could not be saved.', e);
+      return;
+    }
     if (completing && ex.exercise.category === 'strength') {
       const rest = ex.restSeconds ?? defaultRestS;
       if (rest > 0) set({ restEndsAt: Date.now() + rest * 1000, restTotalS: rest });
@@ -134,7 +160,13 @@ export const useActiveWorkout = create<ActiveWorkoutState>((set, get) => ({
   },
 
   async addSetTo(weId) {
-    const newId = await addSet(weId);
+    let newId: number;
+    try {
+      newId = await addSet(weId);
+    } catch (e) {
+      reportError('Could not add a set.', e);
+      return;
+    }
     set((st) => ({
       exercises: st.exercises.map((e) => {
         if (e.weId !== weId) return e;
@@ -157,7 +189,12 @@ export const useActiveWorkout = create<ActiveWorkoutState>((set, get) => ({
   },
 
   async removeSetFrom(weId, setId) {
-    await removeSet(setId);
+    try {
+      await removeSet(setId);
+    } catch (e) {
+      reportError('Could not remove that set.', e);
+      return;
+    }
     set((st) => ({
       exercises: st.exercises.map((e) => e.weId !== weId ? e : {
         ...e,
@@ -183,8 +220,11 @@ export const useActiveWorkout = create<ActiveWorkoutState>((set, get) => ({
     set((st) => ({
       exercises: st.exercises.map((e) => (e.weId === weId ? { ...e, restSeconds } : e)),
     }));
-    const { getDb } = await import('../db/database');
-    await getDb().run(`UPDATE workout_exercise SET rest_seconds = ? WHERE id = ?`, [restSeconds, weId]);
+    try {
+      await setExerciseRestSeconds(weId, restSeconds);
+    } catch (e) {
+      reportError('Could not change the rest timer.', e);
+    }
   },
 
   async finish(opts) {

@@ -1,60 +1,103 @@
 import { router, useFocusEffect } from 'expo-router';
 import React, { useCallback, useState } from 'react';
-import { Alert, Pressable, ScrollView, View } from 'react-native';
+import { Pressable, ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { showActionSheet } from '../../components/ActionSheet';
+import { confirm } from '../../components/Dialog';
 import { DotsIcon, GearIcon, PlusIcon, FolderIcon } from '../../components/icons';
 import { Body, Button, Cap, Card, Row, Title } from '../../components/ui';
 import { daysAgoLabel } from '../../lib/dates';
 import { deleteRoutine, duplicateRoutine, listRoutines, type RoutineSummary } from '../../repo/routines';
-import { findUnfinishedWorkout } from '../../repo/workouts';
+import { discardWorkout, findUnfinishedWorkout } from '../../repo/workouts';
 import type { Workout } from '../../repo/types';
 import { useActiveWorkout } from '../../state/activeWorkout';
 import { useTheme } from '../../theme/ThemeContext';
 import { fonts } from '../../theme/tokens';
+import { reportError, surface } from '../../lib/reportError';
 
 export default function WorkoutTab() {
   const c = useTheme();
   const insets = useSafeAreaInsets();
   const [routines, setRoutines] = useState<RoutineSummary[]>([]);
   const [draft, setDraft] = useState<Workout | null>(null);
+  const [busy, setBusy] = useState(false);
   const active = useActiveWorkout();
 
   const reload = useCallback(() => {
-    listRoutines().then(setRoutines).catch(() => {});
-    findUnfinishedWorkout().then(setDraft).catch(() => {});
+    listRoutines().then(setRoutines).catch(surface('Could not load your routines.'));
+    findUnfinishedWorkout().then(setDraft).catch(surface('Could not load your routines.'));
   }, []);
   useFocusEffect(useCallback(() => { reload(); }, [reload]));
 
+  // A busy flag stops a double tap starting two workouts, and every failure is
+  // shown rather than leaving a button that appears to do nothing.
   const startEmpty = async () => {
-    if (await guardDraft()) return;
-    await active.startEmpty();
-    router.push('/workout/active');
+    if (busy) return;
+    setBusy(true);
+    try {
+      if (await guardDraft()) return;
+      await active.startEmpty();
+      router.push('/workout/active');
+    } catch (e) {
+      reportError('Could not start a workout.', e);
+    } finally {
+      setBusy(false);
+    }
   };
 
   const startRoutine = async (id: number) => {
-    if (await guardDraft()) return;
-    if (await active.startRoutine(id)) router.push('/workout/active');
+    if (busy) return;
+    setBusy(true);
+    try {
+      if (await guardDraft()) return;
+      if (await active.startRoutine(id)) router.push('/workout/active');
+      else reportError('Could not start that routine.', new Error('The routine could not be loaded.'));
+    } catch (e) {
+      reportError('Could not start that routine.', e);
+    } finally {
+      setBusy(false);
+    }
   };
 
+  /** True when the caller should stop because an existing session took over. */
   const guardDraft = async (): Promise<boolean> => {
     const existing = await findUnfinishedWorkout();
     if (!existing) return false;
-    return new Promise((resolve) => {
-      Alert.alert(
-        'Workout in progress',
-        `"${existing.name}" is still open. Resume it instead?`,
-        [
-          { text: 'Resume it', onPress: async () => { if (await active.resume(existing.id)) router.push('/workout/active'); resolve(true); } },
-          { text: 'Discard it', style: 'destructive', onPress: async () => { const { discardWorkout } = await import('../../repo/workouts'); await discardWorkout(existing.id); resolve(false); } },
-          { text: 'Cancel', style: 'cancel', onPress: () => resolve(true) },
+    const choice = await new Promise<'resume' | 'discard' | 'cancel'>((resolve) => {
+      showActionSheet({
+        title: 'Workout in progress',
+        message: `"${existing.name}" is still open.`,
+        options: [
+          { label: 'Resume it', onPress: () => resolve('resume') },
+          { label: 'Discard it and start fresh', destructive: true, onPress: () => resolve('discard') },
         ],
-      );
+        onDismiss: () => resolve('cancel'),
+      });
     });
+    if (choice === 'resume') {
+      if (await active.resume(existing.id)) router.push('/workout/active');
+      return true;
+    }
+    if (choice === 'discard') {
+      await discardWorkout(existing.id);
+      setDraft(null);
+      return false;
+    }
+    return true;
   };
 
   const resumeDraft = async () => {
-    if (draft && (await active.resume(draft.id))) router.push('/workout/active');
+    if (!draft) return;
+    try {
+      if (draft.id === active.workoutId) {
+        router.push('/workout/active');
+        return;
+      }
+      if (await active.resume(draft.id)) router.push('/workout/active');
+      else reportError('Could not reopen that workout.', new Error('It may already have been finished.'));
+    } catch (e) {
+      reportError('Could not reopen that workout.', e);
+    }
   };
 
   const routineMenu = (r: RoutineSummary) => {
@@ -66,10 +109,15 @@ export default function WorkoutTab() {
         { label: 'Duplicate', onPress: async () => { await duplicateRoutine(r.id); reload(); } },
         {
           label: 'Delete', destructive: true, hint: 'Logged workouts are kept',
-          onPress: () => Alert.alert('Delete routine?', `"${r.name}" will be removed. Logged workouts stay.`, [
-            { text: 'Cancel', style: 'cancel' },
-            { text: 'Delete', style: 'destructive', onPress: async () => { await deleteRoutine(r.id); reload(); } },
-          ]),
+          onPress: async () => {
+            const yes = await confirm({
+              title: 'Delete routine?',
+              message: `"${r.name}" will be removed. Workouts you already logged from it are kept.`,
+              confirmLabel: 'Delete',
+              destructive: true,
+            });
+            if (yes) { await deleteRoutine(r.id); reload(); }
+          },
         },
       ],
     });
@@ -91,7 +139,7 @@ export default function WorkoutTab() {
         </Pressable>
       </Row>
 
-      {draft && draft.id !== active.workoutId && (
+      {draft && (
         <Pressable onPress={resumeDraft} style={{ marginHorizontal: 16, marginBottom: 12 }}>
           <Row style={{
             minHeight: 56, borderRadius: 12, backgroundColor: c.accentSoft,

@@ -18,6 +18,8 @@ interface SheetConfig {
   title?: string;
   message?: string;
   options: SheetOption[];
+  /** Called when the sheet closes without a choice, so awaiting callers settle. */
+  onDismiss?: () => void;
 }
 
 interface SheetState {
@@ -25,15 +27,30 @@ interface SheetState {
   title?: string;
   message?: string;
   options: SheetOption[];
+  onDismiss?: () => void;
+  chosen: boolean;
   open(cfg: SheetConfig): void;
   close(): void;
+  choose(o: SheetOption): void;
 }
 
-const useSheet = create<SheetState>((set) => ({
+export const useActionSheetStore = create<SheetState>((set, get) => ({
   visible: false,
   options: [],
-  open: (cfg) => set({ ...cfg, visible: true }),
-  close: () => set({ visible: false }),
+  chosen: false,
+  open: (cfg) => {
+    get().onDismiss?.(); // never strand a previous caller
+    set({ ...cfg, visible: true, chosen: false });
+  },
+  close: () => {
+    const { chosen, onDismiss } = get();
+    set({ visible: false, onDismiss: undefined });
+    if (!chosen) onDismiss?.();
+  },
+  choose: (o) => {
+    set({ visible: false, chosen: true, onDismiss: undefined });
+    o.onPress?.();
+  },
 }));
 
 /**
@@ -41,22 +58,18 @@ const useSheet = create<SheetState>((set) => ({
  * so any menu longer than that must go through here.
  */
 export function showActionSheet(cfg: SheetConfig): void {
-  useSheet.getState().open(cfg);
+  useActionSheetStore.getState().open(cfg);
 }
 
 export function ActionSheetHost() {
   const c = useTheme();
   const insets = useSafeAreaInsets();
-  const visible = useSheet((s) => s.visible);
-  const title = useSheet((s) => s.title);
-  const message = useSheet((s) => s.message);
-  const options = useSheet((s) => s.options);
-  const close = useSheet((s) => s.close);
-
-  const pick = (o: SheetOption) => {
-    close();
-    o.onPress?.();
-  };
+  const visible = useActionSheetStore((s) => s.visible);
+  const title = useActionSheetStore((s) => s.title);
+  const message = useActionSheetStore((s) => s.message);
+  const options = useActionSheetStore((s) => s.options);
+  const close = useActionSheetStore((s) => s.close);
+  const pick = useActionSheetStore((s) => s.choose);
 
   return (
     <Modal visible={visible} transparent animationType="fade" onRequestClose={close} statusBarTranslucent>

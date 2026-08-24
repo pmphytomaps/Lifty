@@ -220,7 +220,10 @@ export async function finishWorkout(workoutId: number, opts: FinishOptions): Pro
 }
 
 export async function discardWorkout(workoutId: number): Promise<void> {
-  await getDb().run(`DELETE FROM workout WHERE id = ?`, [workoutId]);
+  // Verify the row actually went: a silent no-op here is what left an orphaned
+  // in-progress workout behind after the user tapped Discard.
+  const { changes } = await getDb().run(`DELETE FROM workout WHERE id = ?`, [workoutId]);
+  if (changes === 0) throw new Error('That workout was no longer in the database.');
 }
 
 export async function deleteWorkout(workoutId: number): Promise<void> {
@@ -279,6 +282,10 @@ export async function addSet(workoutExerciseId: number): Promise<number> {
 
 export async function removeSet(setId: number): Promise<void> {
   await getDb().run(`DELETE FROM workout_set WHERE id = ?`, [setId]);
+}
+
+export async function setExerciseRestSeconds(workoutExerciseId: number, restSeconds: number | null): Promise<void> {
+  await getDb().run(`UPDATE workout_exercise SET rest_seconds = ? WHERE id = ?`, [restSeconds, workoutExerciseId]);
 }
 
 export async function removeWorkoutExercise(workoutExerciseId: number): Promise<void> {

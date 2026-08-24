@@ -10,8 +10,17 @@ export interface SqlDriver {
 }
 
 export async function migrate(db: SqlDriver): Promise<void> {
-  await db.exec('PRAGMA journal_mode = WAL');
+  // Read these back: a PRAGMA that fails to apply is silent, and losing
+  // foreign_keys means cascade deletes stop firing and orphan rows.
+  await db.get('PRAGMA journal_mode = WAL');
   await db.exec('PRAGMA foreign_keys = ON');
+  await db.exec('PRAGMA busy_timeout = 5000');
+
+  const fk = await db.get<{ foreign_keys: number }>('PRAGMA foreign_keys');
+  if (fk && fk.foreign_keys !== 1) {
+    throw new Error('SQLite refused to enable foreign keys; refusing to continue');
+  }
+
   const row = await db.get<{ user_version: number }>('PRAGMA user_version');
   const current = row?.user_version ?? 0;
   if (current >= SCHEMA_VERSION) return;

@@ -1,7 +1,8 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import React, { useState } from 'react';
-import { Alert, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { notify } from '../../components/Dialog';
 import { BackIcon } from '../../components/icons';
 import { NumInput } from '../../components/NumInput';
 import { Body, Button, Cap, Card, Row, Title } from '../../components/ui';
@@ -24,7 +25,7 @@ export default function CreateExerciseScreen() {
   const save = async () => {
     const trimmed = name.trim();
     if (!trimmed) {
-      Alert.alert('Name it first', 'Give the exercise a name so you can find it later.');
+      notify('Name it first', 'Give the exercise a name so you can find it later.');
       return;
     }
     if (saving) return;
@@ -42,7 +43,7 @@ export default function CreateExerciseScreen() {
     } catch (e) {
       setSaving(false);
       const msg = e instanceof Error ? e.message : String(e);
-      Alert.alert(
+      await notify(
         'Could not create it',
         /UNIQUE|constraint/i.test(msg)
           ? 'An exercise with that name already exists — search for it instead.'

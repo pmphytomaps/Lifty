@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
 import { ActionSheetHost } from '../components/ActionSheet';
+import { DialogHost } from '../components/Dialog';
 import { migrate, setDb } from '../db/database';
 import { openExpoDriver } from '../db/expoDriver';
 import { seedExercises, seedRoutines } from '../db/seed';
@@ -30,6 +31,7 @@ function RootStack() {
         <Stack.Screen name="exercise/create" options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
       </Stack>
       <ActionSheetHost />
+      <DialogHost />
     </View>
   );
 }

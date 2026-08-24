@@ -13,6 +13,7 @@ import { allTimeTotals, kcalToday, mostTrained, sessionsPerWeek, type Totals } f
 import { useSettings } from '../../state/settings';
 import { useTheme } from '../../theme/ThemeContext';
 import { fonts } from '../../theme/tokens';
+import { surface } from '../../lib/reportError';
 
 const KIND_SHORT: Record<string, string> = {
   weight: 'Heaviest set', e1rm: 'Best est. 1RM', set_volume: 'Best set volume',
@@ -33,14 +34,14 @@ export default function StatsTab() {
   const [burnedToday, setBurnedToday] = useState(0);
 
   useFocusEffect(useCallback(() => {
-    allTimeTotals().then(setTotals).catch(() => {});
-    sessionsPerWeek(12).then(setWeeks).catch(() => {});
-    recentPrs(8).then(setPrs).catch(() => {});
-    mostTrained(5).then(setTrained).catch(() => {});
+    allTimeTotals().then(setTotals).catch(surface('Could not load your stats.'));
+    sessionsPerWeek(12).then(setWeeks).catch(surface('Could not load your stats.'));
+    recentPrs(8).then(setPrs).catch(surface('Could not load your stats.'));
+    mostTrained(5).then(setTrained).catch(surface('Could not load your stats.'));
     kcalToday().then((kcal) => {
       setBurnedToday(kcal);
       setBudget(dailyBudget(profile, kcal));
-    }).catch(() => {});
+    }).catch(surface('Could not load your stats.'));
   }, [profile]));
 
   const fmtPrVal = (p: PrRow): string => {

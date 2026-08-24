@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Pressable, Text, View } from 'react-native';
+import { Pressable, Text, View } from 'react-native';
 import { fmtWeight, stepFor, toDisplayWeight, fromDisplayWeight, type Unit } from '../lib/units';
 import type { ActiveExercise, ActiveSet } from '../state/activeWorkout';
 import { useActiveWorkout } from '../state/activeWorkout';
@@ -7,6 +7,7 @@ import { useSettings } from '../state/settings';
 import { useTheme } from '../theme/ThemeContext';
 import { fonts } from '../theme/tokens';
 import { showActionSheet } from './ActionSheet';
+import { confirm } from './Dialog';
 import { CheckIcon, DotsIcon, PlusIcon } from './icons';
 import { MuscleChip, Row, Body, Card } from './ui';
 import { NumInput } from './NumInput';
@@ -41,11 +42,14 @@ function SetRowView({ ex, s, unit, focusedField, setFocusedField }: {
     }
   };
 
-  const removeRow = () => {
-    Alert.alert('Remove set?', undefined, [
-      { text: 'Cancel', style: 'cancel' },
-      { text: 'Remove', style: 'destructive', onPress: () => store.removeSetFrom(ex.weId, s.id) },
-    ]);
+  const removeRow = async () => {
+    const yes = await confirm({
+      title: 'Remove this set?',
+      message: `Set ${s.position + 1} of ${ex.exercise.name}.`,
+      confirmLabel: 'Remove',
+      destructive: true,
+    });
+    if (yes) store.removeSetFrom(ex.weId, s.id);
   };
 
   const weightKey = `${s.id}:w`;
@@ -195,10 +199,15 @@ export function ExerciseLogCard({ ex }: { ex: ActiveExercise }) {
           label: 'Remove exercise',
           hint: 'Its sets in this workout go too',
           destructive: true,
-          onPress: () => Alert.alert('Remove exercise?', 'Its sets in this workout are removed too.', [
-            { text: 'Cancel', style: 'cancel' },
-            { text: 'Remove', style: 'destructive', onPress: () => store.removeExercise(ex.weId) },
-          ]),
+          onPress: async () => {
+            const yes = await confirm({
+              title: 'Remove exercise?',
+              message: 'Its sets in this workout are removed too.',
+              confirmLabel: 'Remove',
+              destructive: true,
+            });
+            if (yes) store.removeExercise(ex.weId);
+          },
         },
       ],
     });

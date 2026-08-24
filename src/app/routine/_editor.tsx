@@ -1,8 +1,10 @@
 import { router } from 'expo-router';
 import React, { useEffect, useState } from 'react';
-import { Alert, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { showActionSheet } from '../../components/ActionSheet';
+import { notify } from '../../components/Dialog';
+import { reportError } from '../../lib/reportError';
 import { DotsIcon, PlusIcon } from '../../components/icons';
 import { NumInput } from '../../components/NumInput';
 import { Body, Button, Cap, Card, MuscleChip, Row } from '../../components/ui';
@@ -25,6 +27,7 @@ export function RoutineEditor({ routineId }: { routineId: number | null }) {
   const [notes, setNotes] = useState('');
   const [exercises, setExercises] = useState<DraftEx[]>([]);
   const [loaded, setLoaded] = useState(routineId == null);
+  const [loadError, setLoadError] = useState<string | null>(null);
 
   useEffect(() => {
     if (routineId == null) return;
@@ -45,7 +48,11 @@ export function RoutineEditor({ routineId }: { routineId: number | null }) {
         })),
       })));
       setLoaded(true);
-    })().catch(() => setLoaded(true));
+    })().catch((e) => {
+      // Never treat a load failure as "loaded and empty": saving from that state
+      // would overwrite a real routine with nothing.
+      setLoadError(e instanceof Error ? e.message : String(e));
+    });
   }, [routineId]);
 
   const addExercises = () => {
@@ -109,22 +116,39 @@ export function RoutineEditor({ routineId }: { routineId: number | null }) {
 
   const save = async () => {
     if (!name.trim()) {
-      Alert.alert('Give the routine a name');
+      notify('Give the routine a name', 'Routines need a name so you can pick them from the Workout tab.');
       return;
     }
     if (!exercises.length) {
-      Alert.alert('Add at least one exercise');
+      notify('Add at least one exercise', 'A routine needs at least one movement in it.');
       return;
     }
     const draft: RoutineDraft = {
       name: name.trim(), notes: notes.trim(), folderId,
       exercises: exercises.map(({ exercise: _ex, ...rest }) => rest),
     };
-    if (routineId == null) await createRoutine(draft);
-    else await updateRoutine(routineId, draft);
-    router.back();
+    try {
+      if (routineId == null) await createRoutine(draft);
+      else await updateRoutine(routineId, draft);
+      router.back();
+    } catch (e) {
+      reportError('Could not save the routine.', e);
+    }
   };
 
+  if (loadError) {
+    return (
+      <View style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top, alignItems: 'center', justifyContent: 'center', padding: 32, gap: 16 }}>
+        <Body style={{ color: c.danger, textAlign: 'center', lineHeight: 21 }}>
+          Could not load this routine.{'\n'}{loadError}
+        </Body>
+        <Body style={{ color: c.secondary, fontSize: 13, textAlign: 'center' }}>
+          Nothing has been changed.
+        </Body>
+        <Button label="Back" kind="outline" onPress={() => router.back()} style={{ paddingHorizontal: 28 }} />
+      </View>
+    );
+  }
   if (!loaded) return <View style={{ flex: 1, backgroundColor: c.bg }} />;
 
   return (

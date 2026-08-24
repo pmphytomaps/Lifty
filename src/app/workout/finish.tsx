@@ -1,7 +1,8 @@
 import { router } from 'expo-router';
 import React, { useEffect, useState } from 'react';
-import { Alert, ScrollView, TextInput, View } from 'react-native';
+import { ScrollView, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { confirm, notify } from '../../components/Dialog';
 import { BackIcon, TrophyIcon } from '../../components/icons';
 import { Body, Button, Cap, Card, Row, Title } from '../../components/ui';
 import { fmtDate, fmtTime } from '../../lib/dates';
@@ -14,6 +15,7 @@ import { useSettings } from '../../state/settings';
 import { useTheme } from '../../theme/ThemeContext';
 import { fonts } from '../../theme/tokens';
 import { Pressable } from 'react-native';
+import { surface } from '../../lib/reportError';
 
 const KIND_LABEL: Record<string, string> = {
   weight: 'Heaviest set',
@@ -52,7 +54,7 @@ export default function FinishScreen() {
         withNames.push({ ...cand, exerciseName: ex?.name ?? cand.exerciseId });
       }
       setPrs(withNames.filter((p) => ['weight', 'e1rm', 'duration'].includes(p.kind)));
-    })().catch(() => {});
+    })().catch(surface('Could not work out your records.'));
   }, [store.workoutId]);
 
   if (!store.workoutId) return <View style={{ flex: 1, backgroundColor: c.bg }} />;
@@ -76,15 +78,25 @@ export default function FinishScreen() {
       leaveToHome();
     } catch (e) {
       setSaving(false);
-      Alert.alert('Could not save', e instanceof Error ? e.message : String(e));
+      await notify('Could not save', e instanceof Error ? e.message : String(e));
     }
   };
 
-  const discard = () => {
-    Alert.alert('Discard workout?', 'All sets logged in this session will be lost.', [
-      { text: 'Keep it', style: 'cancel' },
-      { text: 'Discard', style: 'destructive', onPress: async () => { await store.discard(); leaveToHome(); } },
-    ]);
+  const discard = async () => {
+    const yes = await confirm({
+      title: 'Discard workout?',
+      message: 'Every set logged in this session will be lost.',
+      confirmLabel: 'Discard',
+      cancelLabel: 'Keep it',
+      destructive: true,
+    });
+    if (!yes) return;
+    try {
+      await store.discard();
+      leaveToHome();
+    } catch (e) {
+      await notify('Could not discard', e instanceof Error ? e.message : String(e));
+    }
   };
 
   const fmtPr = (p: PrCandidate): string => {

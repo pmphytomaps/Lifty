@@ -1,7 +1,8 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import React, { useCallback, useEffect, useState } from 'react';
-import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
+import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { confirm, notify } from '../../components/Dialog';
 import { BackIcon, TrophyIcon } from '../../components/icons';
 import { NumInput } from '../../components/NumInput';
 import { Body, Button, Cap, Card, MuscleChip, Row, Title } from '../../components/ui';
@@ -12,6 +13,7 @@ import { deleteWorkout, getWorkoutDetail, recomputeFinishedWorkout, updateSet, t
 import { useSettings } from '../../state/settings';
 import { useTheme } from '../../theme/ThemeContext';
 import { fonts } from '../../theme/tokens';
+import { surface } from '../../lib/reportError';
 
 export default function WorkoutDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -25,25 +27,42 @@ export default function WorkoutDetailScreen() {
   const [dirty, setDirty] = useState(false);
 
   const reload = useCallback(() => {
-    getWorkoutDetail(workoutId).then(setDetail).catch(() => {});
+    getWorkoutDetail(workoutId).then(setDetail).catch(surface('Could not load this workout.'));
   }, [workoutId]);
   useEffect(() => { reload(); }, [reload]);
 
-  if (!detail) return <View style={{ flex: 1, backgroundColor: c.bg }} />;
+  if (!detail) {
+    return (
+      <View style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top }}>
+        <Row style={{ paddingHorizontal: 16, height: 52, gap: 10 }}>
+          <Pressable onPress={() => router.back()} hitSlop={10} style={{ marginLeft: -6, padding: 4 }}>
+            <BackIcon color={c.emphasisLow} />
+          </Pressable>
+          <Title style={{ fontSize: 22 }}>Workout</Title>
+        </Row>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 32 }}>
+          <Body style={{ color: c.secondary, textAlign: 'center' }}>Loading…</Body>
+        </View>
+      </View>
+    );
+  }
   const w = detail.workout;
 
-  const remove = () => {
-    Alert.alert('Delete workout?', 'This session and any records set in it are removed.', [
-      { text: 'Cancel', style: 'cancel' },
-      {
-        text: 'Delete', style: 'destructive',
-        onPress: async () => {
-          await deleteWorkout(workoutId);
-          await rebuildAllPrs();
-          router.back();
-        },
-      },
-    ]);
+  const remove = async () => {
+    const yes = await confirm({
+      title: 'Delete workout?',
+      message: 'This session and any personal records it set are removed.',
+      confirmLabel: 'Delete',
+      destructive: true,
+    });
+    if (!yes) return;
+    try {
+      await deleteWorkout(workoutId);
+      await rebuildAllPrs();
+      router.back();
+    } catch (e) {
+      await notify('Could not delete', e instanceof Error ? e.message : String(e));
+    }
   };
 
   const stopEditing = async () => {

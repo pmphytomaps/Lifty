@@ -13,6 +13,7 @@ import type { Workout } from '../../repo/types';
 import { useSettings } from '../../state/settings';
 import { useTheme } from '../../theme/ThemeContext';
 import { fonts } from '../../theme/tokens';
+import { surface } from '../../lib/reportError';
 
 const PAGE = 30;
 
@@ -30,9 +31,9 @@ export default function HistoryTab() {
   const [monthCount, setMonthCount] = useState(0);
 
   const reload = useCallback(() => {
-    listFinishedWorkouts(PAGE, 0).then((r) => { setRows(r); setHasMore(r.length === PAGE); }).catch(() => {});
-    weekStreak().then(setStreak).catch(() => {});
-    restDaysThisWeek().then(setRestDays).catch(() => {});
+    listFinishedWorkouts(PAGE, 0).then((r) => { setRows(r); setHasMore(r.length === PAGE); }).catch(surface('Could not load your history.'));
+    weekStreak().then(setStreak).catch(surface('Could not load your history.'));
+    restDaysThisWeek().then(setRestDays).catch(surface('Could not load your history.'));
   }, []);
   useFocusEffect(useCallback(() => { reload(); }, [reload]));
 
@@ -42,7 +43,7 @@ export default function HistoryTab() {
       for (const w of ws) m.set(dayKey(w.started_at), { label: w.name, workoutId: w.id });
       setMonthDays(m);
       setMonthCount(ws.length);
-    }).catch(() => {});
+    }).catch(surface('Could not load your history.'));
   }, []);
   useFocusEffect(useCallback(() => { loadMonth(monthStart); }, [loadMonth, monthStart]));
 
@@ -51,7 +52,7 @@ export default function HistoryTab() {
     listFinishedWorkouts(PAGE, rows.length).then((r) => {
       setRows((prev) => [...prev, ...r]);
       setHasMore(r.length === PAGE);
-    }).catch(() => {});
+    }).catch(surface('Could not load your history.'));
   };
 
   // Scrolls with the list; the tab switcher above stays fixed so it is always tappable.

@@ -3,17 +3,21 @@ import * as Notifications from 'expo-notifications';
 const BACKUP_REMINDER_ID = 'lifty-backup-reminder';
 
 /** Keep exactly one weekly backup-reminder notification scheduled (or none). */
-export async function ensureBackupReminder(enabled: boolean): Promise<boolean> {
+export type ReminderResult =
+  | { ok: true }
+  | { ok: false; reason: 'denied' | 'error'; message?: string };
+
+export async function ensureBackupReminder(enabled: boolean): Promise<ReminderResult> {
   try {
     await Notifications.cancelScheduledNotificationAsync(BACKUP_REMINDER_ID).catch(() => {});
-    if (!enabled) return true;
+    if (!enabled) return { ok: true };
     const perm = await Notifications.getPermissionsAsync();
     let granted = perm.granted;
     if (!granted) {
       const req = await Notifications.requestPermissionsAsync();
       granted = req.granted;
     }
-    if (!granted) return false;
+    if (!granted) return { ok: false, reason: 'denied' };
     await Notifications.scheduleNotificationAsync({
       identifier: BACKUP_REMINDER_ID,
       content: {
@@ -26,8 +30,8 @@ export async function ensureBackupReminder(enabled: boolean): Promise<boolean> {
         repeats: true,
       },
     });
-    return true;
-  } catch {
-    return false;
+    return { ok: true };
+  } catch (e) {
+    return { ok: false, reason: 'error', message: e instanceof Error ? e.message : String(e) };
   }
 }
