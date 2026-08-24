@@ -33,9 +33,14 @@ export default function SettingsScreen() {
 
   const toggleReminder = async (on: boolean) => {
     await s.setBackupReminder(on);
-    const ok = await ensureBackupReminder(on);
-    if (on && !ok) {
-      await notify('Notifications blocked', 'Allow notifications for Lifty in Android settings to get backup reminders.');
+    const res = await ensureBackupReminder(on);
+    if (on && !res.ok) {
+      await notify(
+        res.reason === 'denied' ? 'Notifications blocked' : 'Could not set the reminder',
+        res.reason === 'denied'
+          ? 'Allow notifications for Lifty in Android settings to get backup reminders.'
+          : res.message ?? 'The reminder could not be scheduled.',
+      );
     }
   };
 

@@ -47,7 +47,21 @@ export default function ExerciseDetailScreen() {
     exerciseTrend(id, ex.category === 'cardio' ? 'duration' : 'e1rm', since).then(setTrend).catch(surface('Could not load this exercise.'));
   }, [id, ex, range]);
 
-  if (!ex) return <View style={{ flex: 1, backgroundColor: c.bg }} />;
+  if (!ex) {
+    return (
+      <View style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top }}>
+        <Row style={{ paddingHorizontal: 16, height: 52, gap: 10 }}>
+          <Pressable onPress={() => router.back()} hitSlop={10} style={{ marginLeft: -6, padding: 4 }}>
+            <BackIcon color={c.emphasisLow} />
+          </Pressable>
+          <Body style={{ fontFamily: fonts.bold, fontSize: 16.5 }}>Exercise</Body>
+        </Row>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 32 }}>
+          <Body style={{ color: c.secondary, textAlign: 'center' }}>Loading…</Body>
+        </View>
+      </View>
+    );
+  }
   const isCardio = ex.category === 'cardio';
   const secondary: string[] = (() => { try { return JSON.parse(ex.secondary_muscles); } catch { return []; } })();
   const last = trend[trend.length - 1];

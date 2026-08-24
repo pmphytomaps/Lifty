@@ -31,7 +31,21 @@ export default function WorkoutDetailScreen() {
   }, [workoutId]);
   useEffect(() => { reload(); }, [reload]);
 
-  if (!detail) return <View style={{ flex: 1, backgroundColor: c.bg }} />;
+  if (!detail) {
+    return (
+      <View style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top }}>
+        <Row style={{ paddingHorizontal: 16, height: 52, gap: 10 }}>
+          <Pressable onPress={() => router.back()} hitSlop={10} style={{ marginLeft: -6, padding: 4 }}>
+            <BackIcon color={c.emphasisLow} />
+          </Pressable>
+          <Title style={{ fontSize: 22 }}>Workout</Title>
+        </Row>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 32 }}>
+          <Body style={{ color: c.secondary, textAlign: 'center' }}>Loading…</Body>
+        </View>
+      </View>
+    );
+  }
   const w = detail.workout;
 
   const remove = async () => {
