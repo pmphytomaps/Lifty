@@ -43,3 +43,19 @@ console.error = (...args: unknown[]) => {
   if (typeof args[0] === 'string' && args[0].includes('not wrapped in act(')) return;
   realError(...args);
 };
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// The native date picker cannot mount in a test renderer; expose its callback
+// through props so a test can pick or dismiss a date directly.
+jest.mock('@react-native-community/datetimepicker', () => {
+  const React = require('react');
+  const { View } = require('react-native');
+  function MockPicker(props: any) {
+    return React.createElement(View, {
+      testID: props.testID || 'datetimepicker-' + props.mode,
+      onPick: function (at: number) { props.onChange({ type: 'set' }, new Date(at)); },
+      onDismiss: function () { props.onChange({ type: 'dismissed' }); },
+    });
+  }
+  return { __esModule: true, default: MockPicker };
+});

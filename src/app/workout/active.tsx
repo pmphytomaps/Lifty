@@ -9,7 +9,7 @@ import { ExerciseLogCard } from '../../components/ExerciseLogCard';
 import { ChevronDownIcon } from '../../components/icons';
 import { RestBar } from '../../components/RestBar';
 import { Body, Button, Cap, Row, Title } from '../../components/ui';
-import { fmtClock } from '../../lib/dates';
+import { fmtClock, fmtDateShort, startOfDay } from '../../lib/dates';
 import { fmtVolume } from '../../lib/units';
 import { setPickerHandler } from '../../lib/pickerBridge';
 import { useActiveWorkout } from '../../state/activeWorkout';
@@ -43,6 +43,9 @@ export default function ActiveWorkoutScreen() {
   }
 
   const totals = store.totals();
+  // A session logged after the fact has no meaningful elapsed time; show when it
+  // happened instead of a clock counting up from a date in the past.
+  const isBackdated = startOfDay(store.startedAt) < startOfDay(now);
   const durationS = Math.max(0, (now - store.startedAt) / 1000);
 
   const addExercise = () => {
@@ -100,8 +103,10 @@ export default function ActiveWorkoutScreen() {
 
       <Row style={{ paddingHorizontal: 16, height: 60, borderBottomWidth: 1, borderBottomColor: c.border }}>
         <View style={{ flex: 1 }}>
-          <Cap style={{ fontSize: 10 }}>Duration</Cap>
-          <Text style={{ fontFamily: fonts.condBold, fontSize: 23, color: c.accent }}>{fmtClock(durationS)}</Text>
+          <Cap style={{ fontSize: 10 }}>{isBackdated ? 'Logging for' : 'Duration'}</Cap>
+          <Text style={{ fontFamily: fonts.condBold, fontSize: 23, color: c.accent }}>
+            {isBackdated ? fmtDateShort(store.startedAt) : fmtClock(durationS)}
+          </Text>
         </View>
         <View style={{ flex: 1.3 }}>
           <Cap style={{ fontSize: 10 }}>Volume</Cap>

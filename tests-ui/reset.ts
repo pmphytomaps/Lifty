@@ -1,4 +1,5 @@
 /// <reference types="jest" />
+import { router } from 'expo-router';
 import { useActionSheetStore } from '../src/components/ActionSheet';
 import { useDialogStore } from '../src/components/Dialog';
 import { takeCreatedExercises, setPickerHandler } from '../src/lib/pickerBridge';
@@ -22,5 +23,8 @@ export async function resetApp(): Promise<void> {
   useActionSheetStore.setState({ visible: false, options: [], chosen: false, onDismiss: undefined });
   takeCreatedExercises();
   setPickerHandler(() => {});
-  jest.clearAllMocks();
+  // Clear recorded calls only on the router spies; a blanket clearAllMocks()
+  // disturbs the module mocks the screens depend on.
+  const r = router as unknown as Record<string, { mockClear?: () => void }>;
+  for (const k of ['push', 'back', 'replace', 'dismissAll']) r[k]?.mockClear?.();
 }

@@ -3,8 +3,9 @@ import React, { useCallback, useState } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { showActionSheet } from '../../components/ActionSheet';
+import { DateTimePrompt } from '../../components/DateTimeField';
 import { confirm } from '../../components/Dialog';
-import { DotsIcon, GearIcon, PlusIcon, FolderIcon } from '../../components/icons';
+import { CalendarIcon, DotsIcon, GearIcon, PlusIcon, FolderIcon } from '../../components/icons';
 import { Body, Button, Cap, Card, Row, Title } from '../../components/ui';
 import { daysAgoLabel } from '../../lib/dates';
 import { deleteRoutine, duplicateRoutine, listRoutines, type RoutineSummary } from '../../repo/routines';
@@ -20,6 +21,7 @@ export default function WorkoutTab() {
   const insets = useSafeAreaInsets();
   const [routines, setRoutines] = useState<RoutineSummary[]>([]);
   const [draft, setDraft] = useState<Workout | null>(null);
+  const [pendingPast, setPendingPast] = useState<number | null | undefined>(undefined);
   const [busy, setBusy] = useState(false);
   const active = useActiveWorkout();
 
@@ -31,6 +33,31 @@ export default function WorkoutTab() {
 
   // A busy flag stops a double tap starting two workouts, and every failure is
   // shown rather than leaving a button that appears to do nothing.
+  /**
+   * Backdated logging: pick the routine, then a date. The session opens dated in
+   * the past, so the header shows that date instead of a running clock.
+   */
+  const logPast = async () => {
+    const routines = await listRoutines().catch(() => [] as RoutineSummary[]);
+    const chosen = await new Promise<{ id: number | null } | null>((resolve) => {
+      showActionSheet({
+        title: 'Log a past workout',
+        message: 'Which session was it?',
+        options: [
+          { label: 'Empty workout', hint: 'Add exercises as you go', onPress: () => resolve({ id: null }) },
+          ...routines.map((r) => ({
+            label: r.name,
+            hint: `${r.exercise_count} exercises`,
+            onPress: () => resolve({ id: r.id }),
+          })),
+        ],
+        onDismiss: () => resolve(null),
+      });
+    });
+    if (!chosen) return;
+    setPendingPast(chosen.id);
+  };
+
   const startEmpty = async () => {
     if (busy) return;
     setBusy(true);
@@ -130,6 +157,23 @@ export default function WorkoutTab() {
     grouped.get(key)!.push(r);
   }
 
+  const beginPast = async (at: number) => {
+    const routineId = pendingPast;
+    setPendingPast(undefined);
+    if (routineId === undefined) return;
+    try {
+      if (await guardDraft()) return;
+      if (routineId === null) {
+        await active.startEmpty(at);
+      } else if (!(await active.startRoutine(routineId, at))) {
+        return;
+      }
+      router.push('/workout/active');
+    } catch (e) {
+      reportError('Could not start that workout.', e);
+    }
+  };
+
   return (
     <ScrollView style={{ flex: 1, backgroundColor: c.bg }} contentContainerStyle={{ paddingTop: insets.top + 8, paddingBottom: 28 }}>
       <Row style={{ paddingHorizontal: 16, height: 52, justifyContent: 'space-between' }}>
@@ -138,6 +182,14 @@ export default function WorkoutTab() {
           <GearIcon color={c.emphasisLow} />
         </Pressable>
       </Row>
+
+      {pendingPast !== undefined && (
+        <DateTimePrompt
+          initial={Date.now() - 86400000}
+          onPicked={beginPast}
+          onCancel={() => setPendingPast(undefined)}
+        />
+      )}
 
       {draft && (
         <Pressable onPress={resumeDraft} style={{ marginHorizontal: 16, marginBottom: 12 }}>
@@ -154,15 +206,25 @@ export default function WorkoutTab() {
         </Pressable>
       )}
 
-      <Pressable onPress={startEmpty} style={{ marginHorizontal: 16, marginBottom: 18 }}>
-        <Row style={{
-          height: 50, borderRadius: 12, borderWidth: 1.5, borderStyle: 'dashed',
-          borderColor: c.borderStrong, justifyContent: 'center', gap: 9,
-        }}>
-          <PlusIcon color={c.emphasisLow} />
-          <Body style={{ fontFamily: fonts.semibold, color: c.emphasisLow }}>Start empty workout</Body>
-        </Row>
-      </Pressable>
+      <View style={{ marginHorizontal: 16, marginBottom: 18, gap: 9 }}>
+        <Pressable onPress={startEmpty}>
+          <Row style={{
+            height: 50, borderRadius: 12, borderWidth: 1.5, borderStyle: 'dashed',
+            borderColor: c.borderStrong, justifyContent: 'center', gap: 9,
+          }}>
+            <PlusIcon color={c.emphasisLow} />
+            <Body style={{ fontFamily: fonts.semibold, color: c.emphasisLow }}>Start empty workout</Body>
+          </Row>
+        </Pressable>
+        <Pressable onPress={logPast} testID="log-past-workout">
+          <Row style={{ height: 42, justifyContent: 'center', gap: 8 }}>
+            <CalendarIcon size={17} color={c.secondary} strokeWidth={1.9} />
+            <Body style={{ fontFamily: fonts.semibold, fontSize: 14, color: c.secondary }}>
+              Log a workout you already did
+            </Body>
+          </Row>
+        </Pressable>
+      </View>
 
       {[...grouped.entries()].map(([folder, list]) => (
         <View key={folder}>

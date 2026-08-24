@@ -88,7 +88,9 @@ export async function detectPrsForWorkout(workoutId: number, db: SqlDriver = get
   const w = await db.get<{ started_at: number; finished_at: number | null }>(
     `SELECT started_at, finished_at FROM workout WHERE id = ?`, [workoutId],
   );
-  const achievedAt = w?.finished_at ?? w?.started_at ?? Date.now();
+  // Stamp records with when the session HAPPENED, not when it was closed. This is
+  // what a re-date writes too, so moving a workout keeps its records aligned.
+  const achievedAt = w?.started_at ?? w?.finished_at ?? Date.now();
   await db.run(`DELETE FROM personal_record WHERE workout_id = ?`, [workoutId]);
   for (const m of candidates) {
     await db.run(

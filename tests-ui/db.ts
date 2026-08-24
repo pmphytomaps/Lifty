@@ -1,23 +1,29 @@
+/// <reference types="jest" />
 import Database from 'better-sqlite3';
 import { migrate, setDb, type SqlDriver } from '../src/db/database';
 import { seedExercises, seedRoutines } from '../src/db/seed';
 
+let openHandle: Database.Database | null = null;
+
 /**
- * better-sqlite3 behind the async SqlDriver interface, with a real await between
- * every statement so callers interleave the way they do on device.
+ * better-sqlite3 behind the async SqlDriver interface.
+ *
+ * The gap between statements is a MACROTASK: a microtask gap never yields to the
+ * timer queue, so a long chain of queries starves the timers RTL's findBy* polling
+ * depends on and screens appear never to render. Seeding bypasses the gap — it is
+ * a one-shot bulk load, and 729 macrotasks per test compounds across a file.
  */
-export function asyncDriver(opts: { slow?: boolean } = {}): SqlDriver {
+export function asyncDriver(): SqlDriver & { setBulk(on: boolean): void; close(): void } {
   const db = new Database(':memory:');
-  // A real await between statements so callers interleave as they do on device.
-  // Microtask by default (fast enough to seed 729 rows inside a test); the
-  // macrotask variant mimics expo-sqlite's bridge hop for concurrency tests.
-  const gap = opts.slow
-    ? () => new Promise((r) => setImmediate(r))
-    : () => Promise.resolve();
+  openHandle?.close();
+  openHandle = db;
+
+  let bulk = false;
+  const gap = () => (bulk ? Promise.resolve() : new Promise((r) => setImmediate(r)));
   let depth = 0;
   let tail: Promise<unknown> = Promise.resolve();
 
-  const serialize = <T>(op: () => Promise<T>): Promise<T> => {
+  const lane = <T>(op: () => Promise<T>): Promise<T> => {
     if (depth > 0) return op();
     const run = tail.then(op, op);
     tail = run.then(() => undefined, () => undefined);
@@ -25,50 +31,52 @@ export function asyncDriver(opts: { slow?: boolean } = {}): SqlDriver {
   };
 
   return {
-    exec: (sql) => serialize(async () => { await gap(); db.exec(sql); }),
-    run: (sql, params = []) => serialize(async () => {
+    setBulk: (on: boolean) => { bulk = on; },
+    close: () => db.close(),
+    exec: (sql) => lane(async () => { await gap(); db.exec(sql); }),
+    run: (sql, params = []) => lane(async () => {
       await gap();
       const r = db.prepare(sql).run(...params);
       return { lastInsertRowId: Number(r.lastInsertRowid), changes: r.changes };
     }),
-    all: ((sql: string, params: unknown[] = []) => serialize(async () => {
+    all: ((sql: string, p: unknown[] = []) => lane(async () => {
       await gap();
       const st = db.prepare(sql);
-      return st.reader ? st.all(...(params as never[])) : (st.run(...(params as never[])), []);
+      return st.reader ? st.all(...(p as never[])) : (st.run(...(p as never[])), []);
     })) as never,
-    get: ((sql: string, params: unknown[] = []) => serialize(async () => {
+    get: ((sql: string, p: unknown[] = []) => lane(async () => {
       await gap();
       const st = db.prepare(sql);
-      if (!st.reader) { st.run(...(params as never[])); return null; }
-      return st.get(...(params as never[])) ?? null;
+      if (!st.reader) { st.run(...(p as never[])); return null; }
+      return st.get(...(p as never[])) ?? null;
     })) as never,
-    transaction: (fn) => serialize(async () => {
+    transaction: (fn) => lane(async () => {
       if (depth > 0) return (await fn()) as never;
       depth++;
       try {
-        db.exec('SAVEPOINT sp');
+        db.exec('SAVEPOINT tx');
         await gap();
         const out = await fn();
         await gap();
-        db.exec('RELEASE sp');
+        db.exec('RELEASE tx');
         return out as never;
       } catch (e) {
-        db.exec('ROLLBACK TO sp'); db.exec('RELEASE sp');
+        db.exec('ROLLBACK TO tx'); db.exec('RELEASE tx');
         throw e;
-      } finally {
-        depth--;
-      }
+      } finally { depth--; }
     }),
   };
 }
 
-export async function prepareDb(opts: { seed?: boolean; slow?: boolean } = {}): Promise<SqlDriver> {
-  const db = asyncDriver({ slow: opts.slow });
+export async function prepareDb(opts: { seed?: boolean } = {}): Promise<SqlDriver> {
+  const db = asyncDriver();
   await migrate(db);
   setDb(db);
   if (opts.seed !== false) {
+    db.setBulk(true);
     await seedExercises(db);
     await seedRoutines(db);
+    db.setBulk(false);
   }
   return db;
 }

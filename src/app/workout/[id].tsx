@@ -2,6 +2,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { DateTimePrompt } from '../../components/DateTimeField';
 import { confirm, notify } from '../../components/Dialog';
 import { BackIcon, TrophyIcon } from '../../components/icons';
 import { NumInput } from '../../components/NumInput';
@@ -9,7 +10,7 @@ import { Body, Button, Cap, Card, MuscleChip, Row, Title } from '../../component
 import { fmtDate, fmtDuration, fmtTime } from '../../lib/dates';
 import { fmtVolume, fromDisplayWeight, toDisplayWeight } from '../../lib/units';
 import { rebuildAllPrs } from '../../repo/prs';
-import { deleteWorkout, getWorkoutDetail, recomputeFinishedWorkout, updateSet, type WorkoutDetail } from '../../repo/workouts';
+import { deleteWorkout, getWorkoutDetail, recomputeFinishedWorkout, setWorkoutDate, updateSet, type WorkoutDetail } from '../../repo/workouts';
 import { useSettings } from '../../state/settings';
 import { useTheme } from '../../theme/ThemeContext';
 import { fonts } from '../../theme/tokens';
@@ -25,6 +26,7 @@ export default function WorkoutDetailScreen() {
   const [detail, setDetail] = useState<WorkoutDetail | null>(null);
   const [editing, setEditing] = useState(false);
   const [dirty, setDirty] = useState(false);
+  const [picking, setPicking] = useState(false);
 
   const reload = useCallback(() => {
     getWorkoutDetail(workoutId).then(setDetail).catch(surface('Could not load this workout.'));
@@ -95,10 +97,32 @@ export default function WorkoutDetailScreen() {
       </Row>
 
       <ScrollView contentContainerStyle={{ padding: 16, gap: 14, paddingBottom: 30 }}>
-        <Body style={{ color: c.secondary, fontSize: 13.5 }}>
-          {fmtDate(w.started_at)} · {fmtTime(w.started_at)}
-          {w.pr_count > 0 ? ` · ${w.pr_count} record${w.pr_count > 1 ? 's' : ''}` : ''}
-        </Body>
+        <Pressable onPress={() => setPicking(true)} testID="edit-workout-date">
+          <Row style={{ gap: 8 }}>
+            <Body style={{ color: c.secondary, fontSize: 13.5 }}>
+              {fmtDate(w.started_at)} · {fmtTime(w.started_at)}
+              {w.pr_count > 0 ? ` · ${w.pr_count} record${w.pr_count > 1 ? 's' : ''}` : ''}
+            </Body>
+            <Body style={{ color: c.accent, fontSize: 13, fontFamily: fonts.semibold }}>Change</Body>
+          </Row>
+        </Pressable>
+
+        {picking && (
+          <DateTimePrompt
+            initial={w.started_at}
+            onCancel={() => setPicking(false)}
+            onPicked={async (at) => {
+              setPicking(false);
+              try {
+                await setWorkoutDate(workoutId, at, w.duration_s ?? 0);
+                await rebuildAllPrs(); // record dates and ordering follow the workout
+                reload();
+              } catch (e) {
+                await notify('Could not change the date', e instanceof Error ? e.message : String(e));
+              }
+            }}
+          />
+        )}
 
         <Row style={{ gap: 10 }}>
           <Card style={{ flex: 1, padding: 12, gap: 2 }}>

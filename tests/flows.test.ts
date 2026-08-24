@@ -14,7 +14,7 @@ import { exerciseSessions, exerciseTrend, mostTrained } from '../src/repo/stats'
 import {
   addExerciseToWorkout, addSet, createWorkout, deleteWorkout, discardWorkout, finishWorkout,
   findUnfinishedWorkout, getWorkoutDetail, previousSets, recomputeFinishedWorkout, removeSet,
-  removeWorkoutExercise, startFromRoutine, updateSet, workoutsBetween,
+  removeWorkoutExercise, setWorkoutDate, startFromRoutine, updateSet, workoutsBetween,
 } from '../src/repo/workouts';
 import { fromDisplayWeight, toDisplayWeight, fmtVolume, stepFor } from '../src/lib/units';
 import { freshDb } from './helpers';
@@ -470,5 +470,86 @@ describe('search tolerates what a keyboard actually sends', () => {
   it('a whitespace-only search is treated as no search', async () => {
     const blank = await listExercises({ search: '   ' });
     expect(blank.length).toBe((await listExercises({})).length);
+  });
+});
+
+describe('logging a workout you already did', () => {
+  it('a backdated session lands on the chosen day with an explicit duration', async () => {
+    const when = Date.parse('2026-08-18T19:30:00');
+    const routines = await listRoutines();
+    const wId = await startFromRoutine(routines[0].id, when);
+    const detail = await getWorkoutDetail(wId!);
+    expect(detail!.workout.started_at).toBe(when);
+
+    const first = detail!.exercises[0].sets[0];
+    await updateSet(first.id, { weightKg: 70, reps: 6, isCompleted: true });
+    const res = await finishWorkout(wId!, {
+      name: 'Push A', notes: 'logged later', finishedAt: when + 45 * 60000,
+      bodyWeightKg: 70, durationS: 45 * 60, startedAt: when,
+    });
+    expect(res.durationS).toBe(2700);
+
+    const saved = await db.get<{ started_at: number; duration_s: number; finished_at: number }>(
+      `SELECT started_at, duration_s, finished_at FROM workout WHERE id = ?`, [wId!]);
+    expect(saved!.started_at).toBe(when);
+    expect(saved!.duration_s).toBe(2700);
+    expect(saved!.finished_at).toBe(when + 2700_000);
+
+    // It must appear in that week's history, not today's.
+    const inThatWeek = await workoutsBetween(Date.parse('2026-08-17'), Date.parse('2026-08-24'));
+    expect(inThatWeek.map((w) => w.id)).toContain(wId);
+  });
+
+  it('a backdated session does not steal a newer record', async () => {
+    const bench = (await db.get<{ id: string }>(`SELECT id FROM exercise WHERE name = 'Bench Press (Barbell)'`))!.id;
+    const log = async (at: number, kg: number) => {
+      const wId = await createWorkout('S', null, at);
+      const weId = await addExerciseToWorkout(wId, bench, null);
+      const s = await db.get<{ id: number }>(`SELECT id FROM workout_set WHERE workout_exercise_id = ?`, [weId]);
+      await updateSet(s!.id, { weightKg: kg, reps: 5, isCompleted: true });
+      await finishWorkout(wId, { name: 'S', notes: '', finishedAt: at + 3600_000, bodyWeightKg: 70, durationS: 3600, startedAt: at });
+      return wId;
+    };
+    await log(Date.parse('2026-08-20T10:00:00'), 100);
+    await log(Date.parse('2026-08-10T10:00:00'), 80); // logged later, happened earlier
+    await rebuildAllPrs(db);
+    const bests = await bestsForExercise(bench);
+    expect(bests.weight!.value).toBe(100);
+    expect(bests.weight!.achieved_at).toBe(Date.parse('2026-08-20T10:00:00'));
+  });
+
+  it('moving a saved workout re-dates its sets and records', async () => {
+    const bench = (await db.get<{ id: string }>(`SELECT id FROM exercise WHERE name = 'Bench Press (Barbell)'`))!.id;
+    const wrong = Date.parse('2026-08-24T10:00:00');
+    const right = Date.parse('2026-08-21T18:00:00');
+    const wId = await createWorkout('Legs B', null, wrong);
+    const weId = await addExerciseToWorkout(wId, bench, null);
+    const s = await db.get<{ id: number }>(`SELECT id FROM workout_set WHERE workout_exercise_id = ?`, [weId]);
+    await updateSet(s!.id, { weightKg: 90, reps: 4, isCompleted: true });
+    await finishWorkout(wId, { name: 'Legs B', notes: '', finishedAt: wrong + 3600_000, bodyWeightKg: 70 });
+
+    await setWorkoutDate(wId, right, 3180);
+    const saved = await db.get<{ started_at: number; duration_s: number }>(
+      `SELECT started_at, duration_s FROM workout WHERE id = ?`, [wId]);
+    expect(saved!.started_at).toBe(right);
+    expect(saved!.duration_s).toBe(3180);
+
+    const pr = await db.get<{ achieved_at: number }>(`SELECT achieved_at FROM personal_record WHERE workout_id = ?`, [wId]);
+    expect(pr!.achieved_at).toBe(right);
+    const set = await db.get<{ completed_at: number }>(`SELECT completed_at FROM workout_set WHERE id = ?`, [s!.id]);
+    expect(set!.completed_at).toBe(right);
+  });
+
+  it('an ordinary workout still derives its duration from the clock', async () => {
+    const bench = (await db.get<{ id: string }>(`SELECT id FROM exercise WHERE name = 'Bench Press (Barbell)'`))!.id;
+    const start = Date.now() - 40 * 60000;
+    const wId = await createWorkout('Push A', null, start);
+    const weId = await addExerciseToWorkout(wId, bench, null);
+    const s = await db.get<{ id: number }>(`SELECT id FROM workout_set WHERE workout_exercise_id = ?`, [weId]);
+    await updateSet(s!.id, { weightKg: 60, reps: 8, isCompleted: true });
+    const res = await finishWorkout(wId, {
+      name: 'Push A', notes: '', finishedAt: start + 40 * 60000, bodyWeightKg: 70,
+    });
+    expect(res.durationS).toBe(2400);
   });
 });
