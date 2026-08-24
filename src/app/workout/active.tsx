@@ -1,8 +1,9 @@
 import { router } from 'expo-router';
 import { useKeepAwake } from 'expo-keep-awake';
 import React, { useEffect, useState } from 'react';
-import { Alert, KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, View } from 'react-native';
+import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { confirm, notify } from '../../components/Dialog';
 import { ExerciseLogCard } from '../../components/ExerciseLogCard';
 import { ChevronDownIcon } from '../../components/icons';
 import { RestBar } from '../../components/RestBar';
@@ -52,16 +53,26 @@ export default function ActiveWorkoutScreen() {
     router.push('/exercise/picker');
   };
 
-  const discard = () => {
-    Alert.alert('Discard workout?', 'All sets logged in this session will be lost.', [
-      { text: 'Keep training', style: 'cancel' },
-      { text: 'Discard', style: 'destructive', onPress: async () => { await store.discard(); router.back(); } },
-    ]);
+  const discard = async () => {
+    const yes = await confirm({
+      title: 'Discard workout?',
+      message: 'Every set logged in this session will be lost.',
+      confirmLabel: 'Discard',
+      cancelLabel: 'Keep training',
+      destructive: true,
+    });
+    if (!yes) return;
+    try {
+      await store.discard();
+      router.replace('/');
+    } catch (e) {
+      await notify('Could not discard', e instanceof Error ? e.message : String(e));
+    }
   };
 
   const finish = () => {
     if (totals.sets === 0) {
-      Alert.alert('Nothing logged yet', 'Complete at least one set, or discard the workout.');
+      notify('Nothing logged yet', 'Tick at least one set before finishing, or discard the workout.');
       return;
     }
     router.push('/workout/finish');

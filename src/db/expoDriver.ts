@@ -1,28 +1,76 @@
 import * as SQLite from 'expo-sqlite';
 import type { SqlDriver } from './database';
 
+/**
+ * expo-sqlite's withTransactionAsync is a bare BEGIN/COMMIT with no locking —
+ * its own docs say it "is not exclusive and can be interrupted by other async
+ * queries". Two overlapping operations therefore produce "cannot start a
+ * transaction within a transaction", and the failing branch's ROLLBACK discards
+ * the other transaction's work, leaving the connection with a lost COMMIT and a
+ * write lock nothing releases. Every later query then fails or hangs, which is
+ * indistinguishable from dead buttons.
+ *
+ * So every operation enters through a single-lane queue. Because only one queued
+ * operation ever runs at a time, any call that observes `inTransaction` must be a
+ * re-entrant call from inside the running transaction body, and is let straight
+ * through rather than deadlocking behind the transaction that spawned it.
+ */
 export async function openExpoDriver(name = 'lifty.db'): Promise<SqlDriver> {
   const db = await SQLite.openDatabaseAsync(name);
+
+  let tail: Promise<unknown> = Promise.resolve();
+  let inTransaction = false;
+
+  const serialize = <T>(op: () => Promise<T>): Promise<T> => {
+    if (inTransaction) return op();
+    const run = tail.then(op, op);
+    tail = run.then(
+      () => undefined,
+      () => undefined,
+    );
+    return run;
+  };
+
   return {
-    async exec(sql) {
-      await db.execAsync(sql);
-    },
-    async run(sql, params = []) {
-      const r = await db.runAsync(sql, params);
-      return { lastInsertRowId: r.lastInsertRowId, changes: r.changes };
-    },
-    async all(sql, params = []) {
-      return db.getAllAsync(sql, params);
-    },
-    async get(sql, params = []) {
-      return db.getFirstAsync(sql, params);
-    },
-    async transaction(fn) {
-      let out: unknown;
-      await db.withTransactionAsync(async () => {
-        out = await fn();
+    exec(sql) {
+      return serialize(async () => {
+        await db.execAsync(sql);
       });
-      return out as never;
+    },
+
+    run(sql, params = []) {
+      return serialize(async () => {
+        const r = await db.runAsync(sql, params);
+        return { lastInsertRowId: r.lastInsertRowId, changes: r.changes };
+      });
+    },
+
+    all(sql, params = []) {
+      return serialize(() => db.getAllAsync(sql, params)) as never;
+    },
+
+    get(sql, params = []) {
+      return serialize(async () => (await db.getFirstAsync(sql, params)) ?? null) as never;
+    },
+
+    transaction(fn) {
+      return serialize(async () => {
+        inTransaction = true;
+        try {
+          let out: unknown;
+          // Deliberately NOT withExclusiveTransactionAsync: it opens a second
+          // connection (useNewConnection: true), and PRAGMA foreign_keys is
+          // per-connection, so cascade deletes would silently stop firing and
+          // orphan rows. The queue above already guarantees exclusivity on this
+          // one connection, which is what was actually missing.
+          await db.withTransactionAsync(async () => {
+            out = await fn();
+          });
+          return out as never;
+        } finally {
+          inTransaction = false;
+        }
+      });
     },
   };
 }

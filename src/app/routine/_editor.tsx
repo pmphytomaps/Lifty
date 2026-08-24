@@ -1,8 +1,9 @@
 import { router } from 'expo-router';
 import React, { useEffect, useState } from 'react';
-import { Alert, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { showActionSheet } from '../../components/ActionSheet';
+import { notify } from '../../components/Dialog';
 import { DotsIcon, PlusIcon } from '../../components/icons';
 import { NumInput } from '../../components/NumInput';
 import { Body, Button, Cap, Card, MuscleChip, Row } from '../../components/ui';
@@ -109,11 +110,11 @@ export function RoutineEditor({ routineId }: { routineId: number | null }) {
 
   const save = async () => {
     if (!name.trim()) {
-      Alert.alert('Give the routine a name');
+      notify('Give the routine a name', 'Routines need a name so you can pick them from the Workout tab.');
       return;
     }
     if (!exercises.length) {
-      Alert.alert('Add at least one exercise');
+      notify('Add at least one exercise', 'A routine needs at least one movement in it.');
       return;
     }
     const draft: RoutineDraft = {

@@ -1,8 +1,9 @@
 import { router } from 'expo-router';
 import React, { useEffect, useState } from 'react';
-import { Alert, Pressable, ScrollView, Text, View } from 'react-native';
+import { Pressable, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Sharing from 'expo-sharing';
+import { notify } from '../../components/Dialog';
 import { BackIcon } from '../../components/icons';
 import { Body, Button, Cap, Card, Row, Title } from '../../components/ui';
 import { countInRange, exportCsv } from '../../export/csv';
@@ -11,6 +12,7 @@ import { FolderSaveUnsupported, saveToFolder, writeCacheFile } from '../../lib/f
 import { useSettings } from '../../state/settings';
 import { useTheme } from '../../theme/ThemeContext';
 import { fonts } from '../../theme/tokens';
+import { surface } from '../../lib/reportError';
 
 const DAY = 86400000;
 const PRESETS = [
@@ -43,7 +45,7 @@ export default function ExportScreen() {
 
   useEffect(() => {
     const { from, to } = rangeFor(preset);
-    countInRange(from, to).then(setCounts).catch(() => {});
+    countInRange(from, to).then(setCounts).catch(surface('Could not read your workout counts.'));
   }, [preset]);
 
   const buildFile = async (): Promise<{ filename: string; contents: string; mime: string }> => {
@@ -74,7 +76,7 @@ export default function ExportScreen() {
       }
       if (format === 'json') await markBackupDone(Date.now());
     } catch (e) {
-      Alert.alert('Export failed', e instanceof Error ? e.message : String(e));
+      await notify('Export failed', e instanceof Error ? e.message : String(e));
     } finally {
       setBusy(false);
     }
@@ -88,13 +90,13 @@ export default function ExportScreen() {
       const ok = await saveToFolder(f.filename, f.contents, f.mime);
       if (ok) {
         if (format === 'json') await markBackupDone(Date.now());
-        Alert.alert('Saved', `${f.filename} was written to the folder you picked.`);
+        await notify('Saved', `${f.filename} was written to the folder you picked.`);
       }
     } catch (e) {
       if (e instanceof FolderSaveUnsupported) {
-        Alert.alert('Not available here', 'Use "Share / send" instead — it can save to Drive, Files or anywhere else.');
+        await notify('Not available here', 'Use "Share / send" instead — it can save to Drive, Files or anywhere else.');
       } else {
-        Alert.alert('Save failed', e instanceof Error ? e.message : String(e));
+        await notify('Save failed', e instanceof Error ? e.message : String(e));
       }
     } finally {
       setBusy(false);

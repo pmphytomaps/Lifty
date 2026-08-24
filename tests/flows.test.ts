@@ -371,3 +371,89 @@ describe('resume after a crash', () => {
     expect((await previousSets(bench))[0].weight_kg).toBe(72.5);
   });
 });
+
+describe('cascade integrity (guards the PRAGMA foreign_keys requirement)', () => {
+  it('editing a routine inside a transaction cascades to its sets', async () => {
+    const bench = await idOf('Bench Press (Barbell)');
+    const id = await createRoutine({
+      name: 'Cascade', notes: '', folderId: null,
+      exercises: [{
+        exerciseId: bench, notes: '', restSeconds: null,
+        sets: [
+          { repsMin: 5, repsMax: 5, weightKg: null, durationS: null },
+          { repsMin: 5, repsMax: 5, weightKg: null, durationS: null },
+          { repsMin: 5, repsMax: 5, weightKg: null, durationS: null },
+        ],
+      }],
+    });
+    const countSets = async () => (await db.get<{ n: number }>(
+      `SELECT COUNT(*) AS n FROM routine_set WHERE routine_exercise_id IN
+         (SELECT id FROM routine_exercise WHERE routine_id = ?)`, [id]))!.n;
+    expect(await countSets()).toBe(3);
+
+    await updateRoutine(id, {
+      name: 'Cascade', notes: '', folderId: null,
+      exercises: [{
+        exerciseId: bench, notes: '', restSeconds: null,
+        sets: [{ repsMin: 8, repsMax: 8, weightKg: null, durationS: null }],
+      }],
+    });
+    expect(await countSets()).toBe(1); // old rows cascaded away, not orphaned
+
+    // And nothing was left dangling anywhere in the table.
+    const orphans = await db.get<{ n: number }>(
+      `SELECT COUNT(*) AS n FROM routine_set WHERE routine_exercise_id NOT IN (SELECT id FROM routine_exercise)`);
+    expect(orphans!.n).toBe(0);
+  });
+
+  it('deleting a workout cascades to its exercises and sets', async () => {
+    const wId = await createWorkout('S', null);
+    const weId = await addExerciseToWorkout(wId, await idOf('Squat (Barbell)'), null);
+    const s = await db.get<{ id: number }>(`SELECT id FROM workout_set WHERE workout_exercise_id = ?`, [weId]);
+    await updateSet(s!.id, { weightKg: 60, reps: 5, isCompleted: true });
+    await finishWorkout(wId, { name: 'S', notes: '', finishedAt: Date.now(), bodyWeightKg: 70 });
+    await deleteWorkout(wId);
+    for (const t of ['workout_exercise', 'workout_set', 'personal_record'] as const) {
+      const n = await db.get<{ n: number }>(`SELECT COUNT(*) AS n FROM ${t}`);
+      expect(`${t}=${n!.n}`).toBe(`${t}=0`);
+    }
+  });
+});
+
+describe('exercise catalogue is fully reachable', () => {
+  it('browsing without a search returns every exercise, including late letters', async () => {
+    const all = await listExercises({});
+    expect(all.length).toBeGreaterThan(700);
+    const names = all.map((e) => e.name);
+    for (const late of ['Volleyball', 'Running', 'Swimming', 'Tennis', 'Walking (Brisk)']) {
+      expect(names).toContain(late);
+    }
+  });
+
+  it('search finds late-alphabet cardio', async () => {
+    expect((await listExercises({ search: 'Volleyball' })).map((e) => e.name)).toContain('Volleyball');
+    expect((await listExercises({ search: 'badminton' })).map((e) => e.name)).toContain('Badminton');
+  });
+
+  it('the placeholder count matches what browsing returns', async () => {
+    const { countExercises } = await import('../src/repo/exercises');
+    expect(await countExercises()).toBe((await listExercises({})).length);
+  });
+
+  it('archiving a custom exercise hides it but keeps logged history', async () => {
+    const { archiveCustomExercise } = await import('../src/repo/exercises');
+    const id = await createCustomExercise({
+      name: 'Sit', equipment: 'other', primaryMuscle: 'Core', category: 'strength',
+    });
+    const wId = await createWorkout('S', null);
+    const weId = await addExerciseToWorkout(wId, id, null);
+    const s = await db.get<{ id: number }>(`SELECT id FROM workout_set WHERE workout_exercise_id = ?`, [weId]);
+    await updateSet(s!.id, { weightKg: 0, reps: 20, isCompleted: true });
+    await finishWorkout(wId, { name: 'S', notes: '', finishedAt: Date.now(), bodyWeightKg: 70 });
+
+    await archiveCustomExercise(id);
+    expect((await listExercises({ search: 'Sit' })).map((e) => e.id)).not.toContain(id);
+    const detail = await getWorkoutDetail(wId);
+    expect(detail!.exercises[0].exercise.name).toBe('Sit'); // history intact
+  });
+});

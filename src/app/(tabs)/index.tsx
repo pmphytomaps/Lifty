@@ -1,8 +1,9 @@
 import { router, useFocusEffect } from 'expo-router';
 import React, { useCallback, useState } from 'react';
-import { Alert, Pressable, ScrollView, View } from 'react-native';
+import { Pressable, ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { showActionSheet } from '../../components/ActionSheet';
+import { confirm } from '../../components/Dialog';
 import { DotsIcon, GearIcon, PlusIcon, FolderIcon } from '../../components/icons';
 import { Body, Button, Cap, Card, Row, Title } from '../../components/ui';
 import { daysAgoLabel } from '../../lib/dates';
@@ -12,6 +13,7 @@ import type { Workout } from '../../repo/types';
 import { useActiveWorkout } from '../../state/activeWorkout';
 import { useTheme } from '../../theme/ThemeContext';
 import { fonts } from '../../theme/tokens';
+import { surface } from '../../lib/reportError';
 
 export default function WorkoutTab() {
   const c = useTheme();
@@ -21,8 +23,8 @@ export default function WorkoutTab() {
   const active = useActiveWorkout();
 
   const reload = useCallback(() => {
-    listRoutines().then(setRoutines).catch(() => {});
-    findUnfinishedWorkout().then(setDraft).catch(() => {});
+    listRoutines().then(setRoutines).catch(surface('Could not load your routines.'));
+    findUnfinishedWorkout().then(setDraft).catch(surface('Could not load your routines.'));
   }, []);
   useFocusEffect(useCallback(() => { reload(); }, [reload]));
 
@@ -37,20 +39,32 @@ export default function WorkoutTab() {
     if (await active.startRoutine(id)) router.push('/workout/active');
   };
 
+  /** True when the caller should stop because an existing session took over. */
   const guardDraft = async (): Promise<boolean> => {
     const existing = await findUnfinishedWorkout();
     if (!existing) return false;
-    return new Promise((resolve) => {
-      Alert.alert(
-        'Workout in progress',
-        `"${existing.name}" is still open. Resume it instead?`,
-        [
-          { text: 'Resume it', onPress: async () => { if (await active.resume(existing.id)) router.push('/workout/active'); resolve(true); } },
-          { text: 'Discard it', style: 'destructive', onPress: async () => { const { discardWorkout } = await import('../../repo/workouts'); await discardWorkout(existing.id); resolve(false); } },
-          { text: 'Cancel', style: 'cancel', onPress: () => resolve(true) },
+    const choice = await new Promise<'resume' | 'discard' | 'cancel'>((resolve) => {
+      showActionSheet({
+        title: 'Workout in progress',
+        message: `"${existing.name}" is still open.`,
+        options: [
+          { label: 'Resume it', onPress: () => resolve('resume') },
+          { label: 'Discard it and start fresh', destructive: true, onPress: () => resolve('discard') },
         ],
-      );
+        onDismiss: () => resolve('cancel'),
+      });
     });
+    if (choice === 'resume') {
+      if (await active.resume(existing.id)) router.push('/workout/active');
+      return true;
+    }
+    if (choice === 'discard') {
+      const { discardWorkout } = await import('../../repo/workouts');
+      await discardWorkout(existing.id);
+      setDraft(null);
+      return false;
+    }
+    return true;
   };
 
   const resumeDraft = async () => {
@@ -66,10 +80,15 @@ export default function WorkoutTab() {
         { label: 'Duplicate', onPress: async () => { await duplicateRoutine(r.id); reload(); } },
         {
           label: 'Delete', destructive: true, hint: 'Logged workouts are kept',
-          onPress: () => Alert.alert('Delete routine?', `"${r.name}" will be removed. Logged workouts stay.`, [
-            { text: 'Cancel', style: 'cancel' },
-            { text: 'Delete', style: 'destructive', onPress: async () => { await deleteRoutine(r.id); reload(); } },
-          ]),
+          onPress: async () => {
+            const yes = await confirm({
+              title: 'Delete routine?',
+              message: `"${r.name}" will be removed. Workouts you already logged from it are kept.`,
+              confirmLabel: 'Delete',
+              destructive: true,
+            });
+            if (yes) { await deleteRoutine(r.id); reload(); }
+          },
         },
       ],
     });

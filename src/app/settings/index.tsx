@@ -1,8 +1,9 @@
 import { router, useFocusEffect } from 'expo-router';
 import React, { useCallback, useState } from 'react';
-import { Alert, Pressable, ScrollView, Switch, Text, TextInput, View } from 'react-native';
+import { Pressable, ScrollView, Switch, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as DocumentPicker from 'expo-document-picker';
+import { confirm, notify } from '../../components/Dialog';
 import { BackIcon, ChevronRightIcon, ExportIcon } from '../../components/icons';
 import { Body, Cap, Card, Divider, Row, Title } from '../../components/ui';
 import { readTextFile } from '../../lib/fileio';
@@ -34,34 +35,29 @@ export default function SettingsScreen() {
     await s.setBackupReminder(on);
     const ok = await ensureBackupReminder(on);
     if (on && !ok) {
-      Alert.alert('Notifications blocked', 'Allow notifications for Lifty in Android settings to get backup reminders.');
+      await notify('Notifications blocked', 'Allow notifications for Lifty in Android settings to get backup reminders.');
     }
   };
 
   const restore = async () => {
-    Alert.alert(
-      'Restore from backup?',
-      'This REPLACES everything on this phone with the backup file — workouts, routines, records, settings.',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        {
-          text: 'Choose file', style: 'destructive',
-          onPress: async () => {
-            try {
-              const res = await DocumentPicker.getDocumentAsync({ type: ['application/json', 'application/octet-stream', '*/*'] });
-              if (res.canceled || !res.assets?.[0]) return;
-              const text = await readTextFile(res.assets[0].uri);
-              const backup = validateBackup(JSON.parse(text));
-              await restoreBackup(backup);
-              await s.reload();
-              Alert.alert('Restored', 'Your data was replaced with the backup.');
-            } catch (e) {
-              Alert.alert('Restore failed', e instanceof Error ? e.message : String(e));
-            }
-          },
-        },
-      ],
-    );
+    const yes = await confirm({
+      title: 'Restore from backup?',
+      message: 'This REPLACES everything on this phone — workouts, routines, records and settings — with the contents of the backup file.',
+      confirmLabel: 'Choose file',
+      destructive: true,
+    });
+    if (!yes) return;
+    try {
+      const res = await DocumentPicker.getDocumentAsync({ type: ['application/json', 'application/octet-stream', '*/*'] });
+      if (res.canceled || !res.assets?.[0]) return;
+      const text = await readTextFile(res.assets[0].uri);
+      const backup = validateBackup(JSON.parse(text));
+      await restoreBackup(backup);
+      await s.reload();
+      await notify('Restored', 'Your data was replaced with the backup.');
+    } catch (e) {
+      await notify('Restore failed', e instanceof Error ? e.message : String(e));
+    }
   };
 
   return (

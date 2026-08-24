@@ -3,13 +3,15 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { FlatList, Pressable, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { showActionSheet } from '../../components/ActionSheet';
+import { confirm } from '../../components/Dialog';
 import { CheckIcon, ChevronDownIcon, CloseIcon, PlusIcon, SearchIcon } from '../../components/icons';
 import { Body, Cap, MuscleChip, Row } from '../../components/ui';
 import { firePickerHandler, takeCreatedExercises } from '../../lib/pickerBridge';
-import { listExercises, recentExerciseIds } from '../../repo/exercises';
+import { archiveCustomExercise, countExercises, listExercises, recentExerciseIds } from '../../repo/exercises';
 import type { Exercise } from '../../repo/types';
 import { useTheme } from '../../theme/ThemeContext';
 import { EQUIPMENT_TYPES, MUSCLE_GROUPS, equipmentLabel, fonts } from '../../theme/tokens';
+import { reportError, surface } from '../../lib/reportError';
 
 export default function ExercisePicker() {
   const c = useTheme();
@@ -24,12 +26,12 @@ export default function ExercisePicker() {
   const [reloadKey, setReloadKey] = useState(0);
 
   useEffect(() => {
-    listExercises({ search: search || undefined, equipment, muscle }).then(setAll).catch(() => {});
+    listExercises({ search: search || undefined, equipment, muscle }).then(setAll).catch(surface('Could not load the exercise list.'));
   }, [search, equipment, muscle, reloadKey]);
 
   useEffect(() => {
-    listExercises({}).then((e) => setTotal(e.length)).catch(() => {});
-    recentExerciseIds(8).then(setRecents).catch(() => {});
+    countExercises().then(setTotal).catch(surface('Could not load the exercise list.'));
+    recentExerciseIds(8).then(setRecents).catch(surface('Could not load the exercise list.'));
   }, [reloadKey]);
 
   // Exercises created on the New-exercise screen come back selected and ready to add.
@@ -64,9 +66,43 @@ export default function ExercisePicker() {
     });
   };
 
-  const confirm = () => {
+  const confirmSelection = () => {
     firePickerHandler([...selected]);
     router.back();
+  };
+
+  const customMenu = (item: Exercise) => {
+    showActionSheet({
+      title: item.name,
+      message: 'You created this exercise.',
+      options: [
+        {
+          label: 'Remove from my exercises',
+          hint: 'Workouts that already used it are kept',
+          destructive: true,
+          onPress: async () => {
+            const yes = await confirm({
+              title: 'Remove this exercise?',
+              message: `"${item.name}" will stop appearing in the list. Sets you already logged with it stay in your history.`,
+              confirmLabel: 'Remove',
+              destructive: true,
+            });
+            if (!yes) return;
+            try {
+              await archiveCustomExercise(item.id);
+              setSelected((prev) => {
+                const next = new Set(prev);
+                next.delete(item.id);
+                return next;
+              });
+              setReloadKey((k) => k + 1);
+            } catch (e) {
+              reportError('Could not remove that exercise.', e);
+            }
+          },
+        },
+      ],
+    });
   };
 
   const pickFilter = (kind: 'equipment' | 'muscle') => {
@@ -178,8 +214,9 @@ export default function ExercisePicker() {
         }
         renderItem={({ item }) => {
           const on = selected.has(item.id);
+          const onLongPress = item.is_custom === 1 ? () => customMenu(item) : undefined;
           return (
-            <Pressable onPress={() => toggle(item.id)}>
+            <Pressable onPress={() => toggle(item.id)} onLongPress={onLongPress} delayLongPress={400}>
               <Row style={{
                 minHeight: 62, paddingHorizontal: 16, gap: 12,
                 backgroundColor: on ? c.accentSoft : 'transparent',
@@ -218,7 +255,7 @@ export default function ExercisePicker() {
           paddingHorizontal: 16, paddingTop: 10, paddingBottom: insets.bottom + 12,
           borderTopWidth: 1, borderTopColor: c.border, backgroundColor: c.tabBg,
         }}>
-          <Pressable onPress={confirm} style={{
+          <Pressable onPress={confirmSelection} style={{
             height: 52, borderRadius: 12, backgroundColor: c.accent,
             alignItems: 'center', justifyContent: 'center',
           }}>
