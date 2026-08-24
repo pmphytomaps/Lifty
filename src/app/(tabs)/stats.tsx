@@ -3,7 +3,7 @@ import React, { useCallback, useState } from 'react';
 import { Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BarChart } from '../../components/charts';
-import { ChevronRightIcon, FlameIcon, TrophyIcon } from '../../components/icons';
+import { ChevronRightIcon, FlameIcon, GearIcon, TrophyIcon } from '../../components/icons';
 import { Body, Cap, Card, Row, Title } from '../../components/ui';
 import { dailyBudget, type DailyBudget } from '../../lib/calories';
 import { fmtDateShort } from '../../lib/dates';
@@ -56,8 +56,11 @@ export default function StatsTab() {
       style={{ flex: 1, backgroundColor: c.bg }}
       contentContainerStyle={{ paddingTop: insets.top + 8, paddingBottom: 28 }}
     >
-      <Row style={{ paddingHorizontal: 16, height: 52 }}>
+      <Row style={{ paddingHorizontal: 16, height: 52, justifyContent: 'space-between' }}>
         <Title style={{ fontSize: 30 }}>Stats</Title>
+        <Pressable onPress={() => router.push('/settings')} hitSlop={12} style={{ padding: 6 }}>
+          <GearIcon color={c.emphasisLow} />
+        </Pressable>
       </Row>
 
       <View style={{ paddingHorizontal: 16, gap: 14 }}>

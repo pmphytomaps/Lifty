@@ -2,7 +2,7 @@ import { router, useFocusEffect } from 'expo-router';
 import React, { useCallback, useState } from 'react';
 import { FlatList, Pressable, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { BackIcon, ChevronRightIcon, FlameIcon, TrophyIcon } from '../../components/icons';
+import { BackIcon, ChevronRightIcon, FlameIcon, GearIcon, TrophyIcon } from '../../components/icons';
 import { MonthCalendar, type CalendarDayInfo } from '../../components/MonthCalendar';
 import { Body, Cap, Card, Row, Title } from '../../components/ui';
 import { addMonths, dayKey, fmtDuration, fmtMonthYear, startOfMonth } from '../../lib/dates';
@@ -47,33 +47,16 @@ export default function HistoryTab() {
   useFocusEffect(useCallback(() => { loadMonth(monthStart); }, [loadMonth, monthStart]));
 
   const more = () => {
-    if (!hasMore) return;
+    if (!hasMore || view !== 'list') return;
     listFinishedWorkouts(PAGE, rows.length).then((r) => {
       setRows((prev) => [...prev, ...r]);
       setHasMore(r.length === PAGE);
     }).catch(() => {});
   };
 
-  const header = (
+  // Scrolls with the list; the tab switcher above stays fixed so it is always tappable.
+  const listHeader = (
     <View>
-      <Row style={{ paddingHorizontal: 16, height: 52, justifyContent: 'space-between' }}>
-        <Title style={{ fontSize: 30 }}>History</Title>
-      </Row>
-      <View style={{ paddingHorizontal: 16, marginBottom: 14 }}>
-        <Row style={{ height: 40, borderRadius: 11, backgroundColor: c.input, padding: 3, gap: 3 }}>
-          {(['list', 'calendar'] as const).map((v) => (
-            <Pressable key={v} onPress={() => setView(v)} style={{
-              flex: 1, borderRadius: 9, alignItems: 'center', justifyContent: 'center',
-              backgroundColor: view === v ? c.borderStrong : 'transparent',
-            }}>
-              <Text style={{
-                fontFamily: view === v ? fonts.bold : fonts.semibold, fontSize: 14,
-                color: view === v ? c.text : c.secondary,
-              }}>{v === 'list' ? 'List' : 'Calendar'}</Text>
-            </Pressable>
-          ))}
-        </Row>
-      </View>
       <Row style={{ paddingHorizontal: 16, gap: 10, marginBottom: 16 }}>
         <Card style={{ flex: 1, padding: 11, gap: 1 }}>
           <Cap style={{ fontSize: 10 }}>Streak</Cap>
@@ -84,21 +67,24 @@ export default function HistoryTab() {
         </Card>
         <Card style={{ flex: 1, padding: 11, gap: 1 }}>
           <Cap style={{ fontSize: 10 }}>{view === 'calendar' ? 'This month' : 'Sessions'}</Cap>
-          <Title style={{ fontSize: 21 }}>{view === 'calendar' ? monthCount : rows.length}{hasMore && view === 'list' ? '+' : ''}</Title>
+          <Title style={{ fontSize: 21 }}>
+            {view === 'calendar' ? monthCount : rows.length}{hasMore && view === 'list' ? '+' : ''}
+          </Title>
         </Card>
         <Card style={{ flex: 1, padding: 11, gap: 1 }}>
           <Cap style={{ fontSize: 10 }}>Rest days</Cap>
           <Title style={{ fontSize: 21 }}>{restDays}<Body style={{ fontSize: 12, color: c.secondary }}> this wk</Body></Title>
         </Card>
       </Row>
+
       {view === 'calendar' && (
         <View style={{ marginBottom: 12 }}>
-          <Row style={{ paddingHorizontal: 16, height: 42, justifyContent: 'space-between' }}>
-            <Pressable onPress={() => setMonthStart((m) => addMonths(m, -1))} hitSlop={12}>
+          <Row style={{ paddingHorizontal: 16, height: 44, justifyContent: 'space-between' }}>
+            <Pressable onPress={() => setMonthStart((m) => addMonths(m, -1))} hitSlop={16} style={{ padding: 6 }}>
               <BackIcon size={20} color={c.secondary} />
             </Pressable>
             <Title style={{ fontSize: 21 }}>{fmtMonthYear(monthStart)}</Title>
-            <Pressable onPress={() => setMonthStart((m) => addMonths(m, 1))} hitSlop={12}>
+            <Pressable onPress={() => setMonthStart((m) => addMonths(m, 1))} hitSlop={16} style={{ padding: 6 }}>
               <ChevronRightIcon size={20} color={c.secondary} />
             </Pressable>
           </Row>
@@ -108,10 +94,18 @@ export default function HistoryTab() {
             today={Date.now()}
             onDayPress={(info) => router.push(`/workout/${info.workoutId}`)}
           />
+          {monthCount === 0 && (
+            <Body style={{ color: c.secondary, textAlign: 'center', paddingTop: 12, fontSize: 13 }}>
+              Nothing logged in {fmtMonthYear(monthStart)}.
+            </Body>
+          )}
         </View>
       )}
-      {view === 'calendar' && rows.length > 0 && (
-        <Cap style={{ paddingHorizontal: 16, marginBottom: 8 }}>Latest</Cap>
+
+      {rows.length > 0 && (
+        <Cap style={{ paddingHorizontal: 16, marginBottom: 8 }}>
+          {view === 'calendar' ? 'Latest sessions' : 'All sessions'}
+        </Cap>
       )}
     </View>
   );
@@ -119,54 +113,90 @@ export default function HistoryTab() {
   const listRows = view === 'list' ? rows : rows.slice(0, 3);
 
   return (
-    <FlatList
-      style={{ flex: 1, backgroundColor: c.bg }}
-      contentContainerStyle={{ paddingTop: insets.top + 8, paddingBottom: 28 }}
-      data={listRows}
-      keyExtractor={(w) => String(w.id)}
-      ListHeaderComponent={header}
-      onEndReached={view === 'list' ? more : undefined}
-      onEndReachedThreshold={0.4}
-      ListEmptyComponent={
-        <View style={{ padding: 40, alignItems: 'center', gap: 8 }}>
-          <Body style={{ color: c.secondary, textAlign: 'center' }}>
-            No workouts yet.{'\n'}Your first session will show up here.
-          </Body>
-        </View>
-      }
-      renderItem={({ item: w }) => {
-        const d = new Date(w.started_at);
-        return (
-          <Pressable onPress={() => router.push(`/workout/${w.id}`)} style={{ paddingHorizontal: 16, marginBottom: 10 }}>
-            <Card style={{ padding: 12, flexDirection: 'row', alignItems: 'center', gap: 12 }}>
-              <View style={{ width: 44, alignItems: 'center' }}>
-                <Text style={{ fontFamily: fonts.condBold, fontSize: 20, color: c.text }}>{d.getDate()}</Text>
-                <Cap style={{ fontSize: 9 }}>{d.toLocaleDateString(undefined, { weekday: 'short' })}</Cap>
-              </View>
-              <View style={{ width: 1, alignSelf: 'stretch', backgroundColor: c.border }} />
-              <View style={{ flex: 1, gap: 3 }}>
-                <Row style={{ gap: 7 }}>
-                  <Title numberOfLines={1} style={{ fontSize: 19, flexShrink: 1 }}>{w.name}</Title>
-                  {w.pr_count > 0 && (
-                    <Row style={{
-                      gap: 3, paddingHorizontal: 7, paddingVertical: 1, borderRadius: 999,
-                      backgroundColor: c.accentSoft,
-                    }}>
-                      <TrophyIcon size={11} color={c.accent} strokeWidth={2.4} />
-                      <Text style={{ fontFamily: fonts.bold, fontSize: 10.5, color: c.accent }}>{w.pr_count}</Text>
-                    </Row>
-                  )}
-                </Row>
-                <Body style={{ fontSize: 12.5, color: c.secondary }}>
-                  {fmtDuration(w.duration_s ?? 0)} · {fmtVolume(w.total_volume_kg, unit)} {unit} · {w.total_sets} sets
-                  {w.calories_kcal > 0 ? ` · ${Math.round(w.calories_kcal)} kcal` : ''}
-                </Body>
-              </View>
-              <ChevronRightIcon color={c.dim} />
-            </Card>
-          </Pressable>
-        );
-      }}
-    />
+    <View style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top + 8 }}>
+      <Row style={{ paddingHorizontal: 16, height: 52, justifyContent: 'space-between' }}>
+        <Title style={{ fontSize: 30 }}>History</Title>
+        <Pressable onPress={() => router.push('/settings')} hitSlop={12} style={{ padding: 6 }}>
+          <GearIcon color={c.emphasisLow} />
+        </Pressable>
+      </Row>
+
+      <View style={{ paddingHorizontal: 16, marginBottom: 14 }}>
+        <Row style={{ height: 44, borderRadius: 11, backgroundColor: c.input, padding: 3, gap: 3 }}>
+          {(['list', 'calendar'] as const).map((v) => (
+            <Pressable
+              key={v}
+              onPress={() => setView(v)}
+              style={{
+                flex: 1,
+                alignSelf: 'stretch',
+                borderRadius: 9,
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: view === v ? c.borderStrong : 'transparent',
+              }}
+            >
+              <Text style={{
+                fontFamily: view === v ? fonts.bold : fonts.semibold,
+                fontSize: 14.5,
+                color: view === v ? c.text : c.secondary,
+              }}>
+                {v === 'list' ? 'List' : 'Calendar'}
+              </Text>
+            </Pressable>
+          ))}
+        </Row>
+      </View>
+
+      <FlatList
+        style={{ flex: 1 }}
+        contentContainerStyle={{ paddingBottom: 28 }}
+        data={listRows}
+        keyExtractor={(w) => String(w.id)}
+        ListHeaderComponent={listHeader}
+        onEndReached={more}
+        onEndReachedThreshold={0.4}
+        ListEmptyComponent={
+          <View style={{ paddingHorizontal: 32, paddingVertical: 30, alignItems: 'center' }}>
+            <Body style={{ color: c.secondary, textAlign: 'center', lineHeight: 21 }}>
+              No workouts yet.{'\n'}Your first saved session shows up here.
+            </Body>
+          </View>
+        }
+        renderItem={({ item: w }) => {
+          const d = new Date(w.started_at);
+          return (
+            <Pressable onPress={() => router.push(`/workout/${w.id}`)} style={{ paddingHorizontal: 16, marginBottom: 10 }}>
+              <Card style={{ padding: 12, flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+                <View style={{ width: 44, alignItems: 'center' }}>
+                  <Text style={{ fontFamily: fonts.condBold, fontSize: 20, color: c.text }}>{d.getDate()}</Text>
+                  <Cap style={{ fontSize: 9 }}>{d.toLocaleDateString(undefined, { weekday: 'short' })}</Cap>
+                </View>
+                <View style={{ width: 1, alignSelf: 'stretch', backgroundColor: c.border }} />
+                <View style={{ flex: 1, gap: 3 }}>
+                  <Row style={{ gap: 7 }}>
+                    <Title numberOfLines={1} style={{ fontSize: 19, flexShrink: 1 }}>{w.name}</Title>
+                    {w.pr_count > 0 && (
+                      <Row style={{
+                        gap: 3, paddingHorizontal: 7, paddingVertical: 1, borderRadius: 999,
+                        backgroundColor: c.accentSoft,
+                      }}>
+                        <TrophyIcon size={11} color={c.accent} strokeWidth={2.4} />
+                        <Text style={{ fontFamily: fonts.bold, fontSize: 10.5, color: c.accent }}>{w.pr_count}</Text>
+                      </Row>
+                    )}
+                  </Row>
+                  <Body style={{ fontSize: 12.5, color: c.secondary }}>
+                    {fmtDuration(w.duration_s ?? 0)} · {fmtVolume(w.total_volume_kg, unit)} {unit} · {w.total_sets} sets
+                    {w.calories_kcal > 0 ? ` · ${Math.round(w.calories_kcal)} kcal` : ''}
+                  </Body>
+                </View>
+                <ChevronRightIcon color={c.dim} />
+              </Card>
+            </Pressable>
+          );
+        }}
+      />
+    </View>
   );
 }

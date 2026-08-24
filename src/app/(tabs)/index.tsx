@@ -2,6 +2,7 @@ import { router, useFocusEffect } from 'expo-router';
 import React, { useCallback, useState } from 'react';
 import { Alert, Pressable, ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { showActionSheet } from '../../components/ActionSheet';
 import { GearIcon, PlusIcon, FolderIcon } from '../../components/icons';
 import { Body, Button, Cap, Card, Row, Title } from '../../components/ui';
 import { daysAgoLabel } from '../../lib/dates';
@@ -57,18 +58,21 @@ export default function WorkoutTab() {
   };
 
   const routineMenu = (r: RoutineSummary) => {
-    Alert.alert(r.name, undefined, [
-      { text: 'Edit', onPress: () => router.push(`/routine/${r.id}`) },
-      { text: 'Duplicate', onPress: async () => { await duplicateRoutine(r.id); reload(); } },
-      {
-        text: 'Delete', style: 'destructive',
-        onPress: () => Alert.alert('Delete routine?', `"${r.name}" will be removed. Logged workouts stay.`, [
-          { text: 'Cancel', style: 'cancel' },
-          { text: 'Delete', style: 'destructive', onPress: async () => { await deleteRoutine(r.id); reload(); } },
-        ]),
-      },
-      { text: 'Cancel', style: 'cancel' },
-    ]);
+    showActionSheet({
+      title: r.name,
+      options: [
+        { label: 'Start routine', onPress: () => startRoutine(r.id) },
+        { label: 'Edit', onPress: () => router.push(`/routine/${r.id}`) },
+        { label: 'Duplicate', onPress: async () => { await duplicateRoutine(r.id); reload(); } },
+        {
+          label: 'Delete', destructive: true, hint: 'Logged workouts are kept',
+          onPress: () => Alert.alert('Delete routine?', `"${r.name}" will be removed. Logged workouts stay.`, [
+            { text: 'Cancel', style: 'cancel' },
+            { text: 'Delete', style: 'destructive', onPress: async () => { await deleteRoutine(r.id); reload(); } },
+          ]),
+        },
+      ],
+    });
   };
 
   const grouped = new Map<string, RoutineSummary[]>();

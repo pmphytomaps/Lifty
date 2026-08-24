@@ -31,15 +31,26 @@ export function NumInput({ value, onCommit, onFocus, onBlur, integer = false, wi
     if (!focused) setText(fmt(value, integer));
   }, [value, focused, integer]);
 
+  const parse = (raw: string): number | null | undefined => {
+    const cleaned = raw.replace(',', '.').trim();
+    if (cleaned === '') return null;
+    const n = Number(cleaned);
+    if (!Number.isFinite(n) || n < 0) return undefined; // partial or invalid input
+    return integer ? Math.round(n) : Math.round(n * 100) / 100;
+  };
+
+  // Commit as the user types so a value is never lost by navigating away
+  // without blurring; keep the raw text so partial input like "7." still works.
+  const change = (raw: string) => {
+    setText(raw);
+    const parsed = parse(raw);
+    if (parsed !== undefined) onCommit(parsed);
+  };
+
   const commit = () => {
-    const cleaned = text.replace(',', '.').trim();
-    if (cleaned === '') {
-      onCommit(null);
-    } else {
-      const n = Number(cleaned);
-      if (Number.isFinite(n) && n >= 0) onCommit(integer ? Math.round(n) : Math.round(n * 100) / 100);
-      else setText(fmt(latest.current, integer));
-    }
+    const parsed = parse(text);
+    if (parsed === undefined) setText(fmt(latest.current, integer));
+    else onCommit(parsed);
   };
 
   const style: StyleProp<TextStyle> = {
@@ -59,7 +70,7 @@ export function NumInput({ value, onCommit, onFocus, onBlur, integer = false, wi
   return (
     <TextInput
       value={text}
-      onChangeText={setText}
+      onChangeText={change}
       keyboardType={integer ? 'number-pad' : 'decimal-pad'}
       style={style}
       placeholder={placeholder}

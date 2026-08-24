@@ -284,3 +284,33 @@ describe('crash recovery', () => {
     expect(found!.id).toBe(wId);
   });
 });
+
+describe('settings persistence', () => {
+  it('profile survives a save and reload', async () => {
+    const { loadSettings, saveProfile, setSetting } = await import('../src/repo/settings');
+    await saveProfile({
+      sex: 'male', birthYear: 1998, heightCm: 177.8, weightKg: 70.8,
+      bmrOverride: 1637, activityFactor: 1.375, goalWeightKg: 75, goalRateKgPerWeek: 0.25,
+    });
+    await setSetting('unit', 'lb');
+    const s = await loadSettings();
+    expect(s.profile.weightKg).toBe(70.8);
+    expect(s.profile.goalWeightKg).toBe(75);
+    expect(s.profile.bmrOverride).toBe(1637);
+    expect(s.profile.sex).toBe('male');
+    expect(s.unit).toBe('lb');
+  });
+
+  it('clearing a profile field persists as empty, not as a stale value', async () => {
+    const { loadSettings, saveProfile } = await import('../src/repo/settings');
+    const base = {
+      sex: 'male' as const, birthYear: 1998, heightCm: 177.8, weightKg: 70.8,
+      bmrOverride: 1637, activityFactor: 1.375, goalWeightKg: 75, goalRateKgPerWeek: 0.25,
+    };
+    await saveProfile(base);
+    await saveProfile({ ...base, goalWeightKg: null });
+    const s = await loadSettings();
+    expect(s.profile.goalWeightKg).toBeNull();
+    expect(s.profile.weightKg).toBe(70.8);
+  });
+});

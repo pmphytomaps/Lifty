@@ -6,6 +6,7 @@ import { useActiveWorkout } from '../state/activeWorkout';
 import { useSettings } from '../state/settings';
 import { useTheme } from '../theme/ThemeContext';
 import { fonts } from '../theme/tokens';
+import { showActionSheet } from './ActionSheet';
 import { CheckIcon, PlusIcon } from './icons';
 import { MuscleChip, Row, Body, Card } from './ui';
 import { NumInput } from './NumInput';
@@ -171,22 +172,36 @@ export function ExerciseLogCard({ ex }: { ex: ActiveExercise }) {
   const isCardio = ex.exercise.category === 'cardio';
 
   const menu = () => {
-    const restLabel = (s: number | null) => (s == null ? 'App default' : s === 0 ? 'Off' : `${s} s`);
-    Alert.alert(ex.exercise.name, `Rest timer: ${restLabel(ex.restSeconds)}`, [
-      { text: 'Rest: app default', onPress: () => store.setExerciseRest(ex.weId, null) },
-      { text: 'Rest: 90 s', onPress: () => store.setExerciseRest(ex.weId, 90) },
-      { text: 'Rest: 150 s', onPress: () => store.setExerciseRest(ex.weId, 150) },
-      { text: 'Rest: 180 s', onPress: () => store.setExerciseRest(ex.weId, 180) },
-      { text: 'Rest: off', onPress: () => store.setExerciseRest(ex.weId, 0) },
-      {
-        text: 'Remove exercise', style: 'destructive',
-        onPress: () => Alert.alert('Remove exercise?', 'Its sets in this workout are removed too.', [
-          { text: 'Cancel', style: 'cancel' },
-          { text: 'Remove', style: 'destructive', onPress: () => store.removeExercise(ex.weId) },
-        ]),
-      },
-      { text: 'Cancel', style: 'cancel' },
-    ]);
+    const rests: { label: string; value: number | null }[] = [
+      { label: 'App default', value: null },
+      { label: 'Off', value: 0 },
+      { label: '60 seconds', value: 60 },
+      { label: '90 seconds', value: 90 },
+      { label: '2 minutes', value: 120 },
+      { label: '2.5 minutes', value: 150 },
+      { label: '3 minutes', value: 180 },
+      { label: '4 minutes', value: 240 },
+    ];
+    showActionSheet({
+      title: ex.exercise.name,
+      message: 'Rest timer for this exercise',
+      options: [
+        ...rests.map((r) => ({
+          label: r.label,
+          selected: ex.restSeconds === r.value,
+          onPress: () => store.setExerciseRest(ex.weId, r.value),
+        })),
+        {
+          label: 'Remove exercise',
+          hint: 'Its sets in this workout go too',
+          destructive: true,
+          onPress: () => Alert.alert('Remove exercise?', 'Its sets in this workout are removed too.', [
+            { text: 'Cancel', style: 'cancel' },
+            { text: 'Remove', style: 'destructive', onPress: () => store.removeExercise(ex.weId) },
+          ]),
+        },
+      ],
+    });
   };
 
   return (

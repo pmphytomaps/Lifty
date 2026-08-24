@@ -2,7 +2,7 @@
   "expo": {
     "name": "Lifty",
     "slug": "lifty",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "lifty",
@@ -10,7 +10,7 @@
     "backgroundColor": "#0F0E0D",
     "android": {
       "package": "com.lifty.app",
-      "versionCode": 1,
+      "versionCode": 2,
       "adaptiveIcon": {
         "backgroundColor": "#0F0E0D",
         "foregroundImage": "./assets/images/adaptive-icon.png"

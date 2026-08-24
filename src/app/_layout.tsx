@@ -4,6 +4,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
+import { ActionSheetHost } from '../components/ActionSheet';
 import { migrate, setDb } from '../db/database';
 import { openExpoDriver } from '../db/expoDriver';
 import { seedExercises, seedRoutines } from '../db/seed';
@@ -26,7 +27,9 @@ function RootStack() {
       >
         <Stack.Screen name="(tabs)" />
         <Stack.Screen name="exercise/picker" options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
+        <Stack.Screen name="exercise/create" options={{ presentation: 'modal', animation: 'slide_from_bottom' }} />
       </Stack>
+      <ActionSheetHost />
     </View>
   );
 }
