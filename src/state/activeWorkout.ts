@@ -2,7 +2,7 @@ import { create } from 'zustand';
 import { reportError } from '../lib/reportError';
 import type { Exercise, WorkoutSet } from '../repo/types';
 import {
-  addExerciseToWorkout, addSet, createWorkout, discardWorkout, finishWorkout,
+  addExerciseToWorkout, addSet, createWorkout, discardWorkout, finishWorkout, setExerciseRestSeconds,
   getWorkoutDetail, previousSets, removeSet, removeWorkoutExercise,
   startFromRoutine, updateSet, type FinishResult,
 } from '../repo/workouts';
@@ -220,8 +220,11 @@ export const useActiveWorkout = create<ActiveWorkoutState>((set, get) => ({
     set((st) => ({
       exercises: st.exercises.map((e) => (e.weId === weId ? { ...e, restSeconds } : e)),
     }));
-    const { getDb } = await import('../db/database');
-    await getDb().run(`UPDATE workout_exercise SET rest_seconds = ? WHERE id = ?`, [restSeconds, weId]);
+    try {
+      await setExerciseRestSeconds(weId, restSeconds);
+    } catch (e) {
+      reportError('Could not change the rest timer.', e);
+    }
   },
 
   async finish(opts) {

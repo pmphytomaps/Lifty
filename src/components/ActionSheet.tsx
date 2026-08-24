@@ -34,7 +34,7 @@ interface SheetState {
   choose(o: SheetOption): void;
 }
 
-const useSheet = create<SheetState>((set, get) => ({
+export const useActionSheetStore = create<SheetState>((set, get) => ({
   visible: false,
   options: [],
   chosen: false,
@@ -58,18 +58,18 @@ const useSheet = create<SheetState>((set, get) => ({
  * so any menu longer than that must go through here.
  */
 export function showActionSheet(cfg: SheetConfig): void {
-  useSheet.getState().open(cfg);
+  useActionSheetStore.getState().open(cfg);
 }
 
 export function ActionSheetHost() {
   const c = useTheme();
   const insets = useSafeAreaInsets();
-  const visible = useSheet((s) => s.visible);
-  const title = useSheet((s) => s.title);
-  const message = useSheet((s) => s.message);
-  const options = useSheet((s) => s.options);
-  const close = useSheet((s) => s.close);
-  const pick = useSheet((s) => s.choose);
+  const visible = useActionSheetStore((s) => s.visible);
+  const title = useActionSheetStore((s) => s.title);
+  const message = useActionSheetStore((s) => s.message);
+  const options = useActionSheetStore((s) => s.options);
+  const close = useActionSheetStore((s) => s.close);
+  const pick = useActionSheetStore((s) => s.choose);
 
   return (
     <Modal visible={visible} transparent animationType="fade" onRequestClose={close} statusBarTranslucent>

@@ -9,3 +9,4 @@ ios/
 *.jks
 .env
 .DS_Store
+coverage/

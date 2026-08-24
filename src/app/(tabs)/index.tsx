@@ -8,7 +8,7 @@ import { DotsIcon, GearIcon, PlusIcon, FolderIcon } from '../../components/icons
 import { Body, Button, Cap, Card, Row, Title } from '../../components/ui';
 import { daysAgoLabel } from '../../lib/dates';
 import { deleteRoutine, duplicateRoutine, listRoutines, type RoutineSummary } from '../../repo/routines';
-import { findUnfinishedWorkout } from '../../repo/workouts';
+import { discardWorkout, findUnfinishedWorkout } from '../../repo/workouts';
 import type { Workout } from '../../repo/types';
 import { useActiveWorkout } from '../../state/activeWorkout';
 import { useTheme } from '../../theme/ThemeContext';
@@ -79,7 +79,6 @@ export default function WorkoutTab() {
       return true;
     }
     if (choice === 'discard') {
-      const { discardWorkout } = await import('../../repo/workouts');
       await discardWorkout(existing.id);
       setDraft(null);
       return false;

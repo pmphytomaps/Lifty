@@ -457,3 +457,18 @@ describe('exercise catalogue is fully reachable', () => {
     expect(detail!.exercises[0].exercise.name).toBe('Sit'); // history intact
   });
 });
+
+describe('search tolerates what a keyboard actually sends', () => {
+  it('finds an exercise despite trailing or leading whitespace', async () => {
+    // Android appends a space when a word suggestion is accepted.
+    for (const term of ['Volleyball ', ' Volleyball', 'Volleyball  ', '  Badminton  ']) {
+      const rows = await listExercises({ search: term });
+      expect(`${JSON.stringify(term)} -> ${rows.length > 0}`).toBe(`${JSON.stringify(term)} -> true`);
+    }
+  });
+
+  it('a whitespace-only search is treated as no search', async () => {
+    const blank = await listExercises({ search: '   ' });
+    expect(blank.length).toBe((await listExercises({})).length);
+  });
+});

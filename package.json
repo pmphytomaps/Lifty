@@ -29,18 +29,28 @@
     "zustand": "5.0.15"
   },
   "devDependencies": {
+    "@react-native/jest-preset": "^0.86.2",
+    "@testing-library/react-native": "^14.0.1",
     "@types/better-sqlite3": "9.6.0",
+    "@types/jest": "^30.0.0",
     "@types/react": "~19.2.2",
     "better-sqlite3": "13.0.3",
+    "jest": "^29.7.0",
+    "jest-environment-node": "^29.7.0",
+    "jest-expo": "^57.0.4",
+    "react-test-renderer": "^19.2.3",
+    "test-renderer": "^1.2.0",
     "typescript": "~6.0.3",
     "vitest": "4.1.11"
   },
   "scripts": {
     "start": "expo start",
     "android": "expo run:android",
-    "test": "vitest run",
+    "test": "npm run test:logic && npm run test:ui",
     "typecheck": "tsc --noEmit",
-    "build:catalog": "node scripts/build-exercise-catalog.mjs"
+    "build:catalog": "node scripts/build-exercise-catalog.mjs",
+    "test:logic": "vitest run",
+    "test:ui": "jest"
   },
   "private": true
 }

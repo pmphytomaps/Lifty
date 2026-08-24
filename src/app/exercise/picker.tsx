@@ -34,7 +34,7 @@ export default function ExercisePicker() {
     const mine = ++seq.current;
     setLoadError(null);
     const timer = setTimeout(() => {
-      listExercises({ search: search || undefined, equipment, muscle })
+      listExercises({ search: search.trim() || undefined, equipment, muscle })
         .then((rows) => {
           if (seq.current === mine) setAll(rows);
         })
@@ -65,7 +65,7 @@ export default function ExercisePicker() {
   }, []));
 
   const data = useMemo(() => {
-    if (search || equipment || muscle) return all;
+    if (search.trim() || equipment || muscle) return all;
     const recentSet = new Set(recents);
     const rec = recents.map((id) => all.find((e) => e.id === id)).filter((e): e is Exercise => !!e);
     return [...rec, ...all.filter((e) => !recentSet.has(e.id))];

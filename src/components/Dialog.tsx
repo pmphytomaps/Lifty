@@ -24,7 +24,7 @@ interface DialogState {
   settle(confirmed: boolean): void;
 }
 
-const useDialog = create<DialogState>((set, get) => ({
+export const useDialogStore = create<DialogState>((set, get) => ({
   visible: false,
   opts: null,
   resolver: null,
@@ -46,7 +46,7 @@ const useDialog = create<DialogState>((set, get) => ({
  * leaving the caller awaiting forever, which is how the native Alert behaved.
  */
 export function confirm(opts: DialogOptions): Promise<boolean> {
-  return new Promise((resolve) => useDialog.getState().open(opts, resolve));
+  return new Promise((resolve) => useDialogStore.getState().open(opts, resolve));
 }
 
 /** Single-button notice. Resolves once dismissed, however it is dismissed. */
@@ -57,9 +57,9 @@ export function notify(title: string, message?: string): Promise<void> {
 export function DialogHost() {
   const c = useTheme();
   const insets = useSafeAreaInsets();
-  const visible = useDialog((s) => s.visible);
-  const opts = useDialog((s) => s.opts);
-  const settle = useDialog((s) => s.settle);
+  const visible = useDialogStore((s) => s.visible);
+  const opts = useDialogStore((s) => s.opts);
+  const settle = useDialogStore((s) => s.settle);
 
   if (!opts) return null;
   const confirmTint = opts.destructive ? c.danger : c.accent;

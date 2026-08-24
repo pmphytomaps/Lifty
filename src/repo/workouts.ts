@@ -284,6 +284,10 @@ export async function removeSet(setId: number): Promise<void> {
   await getDb().run(`DELETE FROM workout_set WHERE id = ?`, [setId]);
 }
 
+export async function setExerciseRestSeconds(workoutExerciseId: number, restSeconds: number | null): Promise<void> {
+  await getDb().run(`UPDATE workout_exercise SET rest_seconds = ? WHERE id = ?`, [restSeconds, workoutExerciseId]);
+}
+
 export async function removeWorkoutExercise(workoutExerciseId: number): Promise<void> {
   await getDb().run(`DELETE FROM workout_exercise WHERE id = ?`, [workoutExerciseId]);
 }

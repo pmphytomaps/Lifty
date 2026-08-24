@@ -10,9 +10,13 @@ export interface ExerciseFilter {
 export async function listExercises(f: ExerciseFilter = {}): Promise<Exercise[]> {
   const where: string[] = ['is_archived = 0'];
   const params: (string | number)[] = [];
-  if (f.search) {
+  // Trim here, not just at the call site: an Android word-suggestion tap appends
+  // a space, and "%Volleyball %" matches nothing while the screen still shows the
+  // trimmed text, reading as "Nothing matches" for an exercise that exists.
+  const term = f.search?.trim();
+  if (term) {
     where.push(`name LIKE ?`);
-    params.push(`%${f.search}%`);
+    params.push(`%${term}%`);
   }
   if (f.equipment) {
     where.push(`equipment = ?`);
