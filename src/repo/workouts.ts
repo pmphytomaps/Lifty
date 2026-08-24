@@ -80,17 +80,39 @@ export async function findUnfinishedWorkout(): Promise<Workout | null> {
   return getDb().get<Workout>(`SELECT * FROM workout WHERE finished_at IS NULL ORDER BY started_at DESC LIMIT 1`);
 }
 
-/** Create an empty in-progress workout. */
-export async function createWorkout(name: string, routineId: number | null): Promise<number> {
+/** Create an empty in-progress workout, optionally dated in the past. */
+export async function createWorkout(
+  name: string, routineId: number | null, startedAt: number = Date.now(),
+): Promise<number> {
   const r = await getDb().run(
     `INSERT INTO workout (routine_id, name, started_at) VALUES (?, ?, ?)`,
-    [routineId, name, Date.now()],
+    [routineId, name, startedAt],
   );
   return r.lastInsertRowId;
 }
 
+/**
+ * Move a finished workout in time. Records carry the workout's date, so they are
+ * re-stamped too; ordering-sensitive bests are rebuilt by the caller.
+ */
+export async function setWorkoutDate(workoutId: number, startedAt: number, durationS: number): Promise<void> {
+  const db = getDb();
+  await db.transaction(async () => {
+    await db.run(
+      `UPDATE workout SET started_at = ?, finished_at = ?, duration_s = ? WHERE id = ?`,
+      [startedAt, startedAt + durationS * 1000, durationS, workoutId],
+    );
+    await db.run(`UPDATE personal_record SET achieved_at = ? WHERE workout_id = ?`, [startedAt, workoutId]);
+    await db.run(
+      `UPDATE workout_set SET completed_at = ? WHERE is_completed = 1 AND workout_exercise_id IN
+         (SELECT id FROM workout_exercise WHERE workout_id = ?)`,
+      [startedAt, workoutId],
+    );
+  });
+}
+
 /** Start a workout from a routine template, prefilling from the previous session. */
-export async function startFromRoutine(routineId: number): Promise<number | null> {
+export async function startFromRoutine(routineId: number, startedAt: number = Date.now()): Promise<number | null> {
   const detail = await getRoutineDetail(routineId);
   if (!detail) return null;
   const db = getDb();
@@ -98,7 +120,7 @@ export async function startFromRoutine(routineId: number): Promise<number | null
   await db.transaction(async () => {
     const w = await db.run(
       `INSERT INTO workout (routine_id, name, started_at) VALUES (?, ?, ?)`,
-      [routineId, detail.routine.name, Date.now()],
+      [routineId, detail.routine.name, startedAt],
     );
     workoutId = w.lastInsertRowId;
     for (const re of detail.exercises) {
@@ -183,6 +205,10 @@ export interface FinishOptions {
   notes: string;
   finishedAt: number;
   bodyWeightKg: number | null;
+  /** Explicit training time. Required when backdating: elapsed wall clock is meaningless then. */
+  durationS?: number;
+  /** Move the session in time as part of finishing it. */
+  startedAt?: number;
 }
 
 export interface FinishResult { prCount: number; caloriesKcal: number; durationS: number }
@@ -203,14 +229,17 @@ export async function finishWorkout(workoutId: number, opts: FinishOptions): Pro
       [workoutId],
     );
     const w = await db.get<{ started_at: number }>(`SELECT started_at FROM workout WHERE id = ?`, [workoutId]);
-    const durationS = Math.max(0, Math.round((opts.finishedAt - (w?.started_at ?? opts.finishedAt)) / 1000));
+    const startedAt = opts.startedAt ?? w?.started_at ?? opts.finishedAt;
+    const durationS = opts.durationS != null
+      ? Math.max(0, Math.round(opts.durationS))
+      : Math.max(0, Math.round((opts.finishedAt - startedAt) / 1000));
     const totals = await computeTotals(workoutId, db);
     const cardio = await cardioSetsFor(workoutId, db);
     const kcal = workoutKcal({ durationS, cardioSets: cardio, bodyWeightKg: opts.bodyWeightKg });
     await db.run(
-      `UPDATE workout SET name = ?, notes = ?, finished_at = ?, duration_s = ?, total_volume_kg = ?, total_sets = ?, calories_kcal = ?
+      `UPDATE workout SET name = ?, notes = ?, started_at = ?, finished_at = ?, duration_s = ?, total_volume_kg = ?, total_sets = ?, calories_kcal = ?
        WHERE id = ?`,
-      [opts.name, opts.notes, opts.finishedAt, durationS, totals.volumeKg, totals.sets, kcal, workoutId],
+      [opts.name, opts.notes, startedAt, startedAt + durationS * 1000, durationS, totals.volumeKg, totals.sets, kcal, workoutId],
     );
     const prCount = await detectPrsForWorkout(workoutId, db);
     await db.run(`UPDATE workout SET pr_count = ? WHERE id = ?`, [prCount, workoutId]);

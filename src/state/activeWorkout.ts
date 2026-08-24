@@ -31,8 +31,8 @@ interface ActiveWorkoutState {
   exercises: ActiveExercise[];
   restEndsAt: number | null;
   restTotalS: number;
-  startEmpty(): Promise<void>;
-  startRoutine(routineId: number): Promise<boolean>;
+  startEmpty(startedAt?: number): Promise<void>;
+  startRoutine(routineId: number, startedAt?: number): Promise<boolean>;
   resume(workoutId: number): Promise<boolean>;
   setField(weId: number, setId: number, field: 'weightKg' | 'reps' | 'durationS', value: number | null): Promise<void>;
   toggleSet(weId: number, setId: number, defaultRestS: number): Promise<void>;
@@ -41,7 +41,10 @@ interface ActiveWorkoutState {
   addExercise(exerciseId: string, defaultRestS: number): Promise<void>;
   removeExercise(weId: number): Promise<void>;
   setExerciseRest(weId: number, restSeconds: number | null): Promise<void>;
-  finish(opts: { name: string; notes: string; finishedAt: number; bodyWeightKg: number | null }): Promise<FinishResult>;
+  finish(opts: {
+    name: string; notes: string; finishedAt: number; bodyWeightKg: number | null;
+    durationS?: number; startedAt?: number;
+  }): Promise<FinishResult>;
   discard(): Promise<void>;
   adjustRest(deltaS: number): void;
   skipRest(): void;
@@ -82,14 +85,14 @@ export const useActiveWorkout = create<ActiveWorkoutState>((set, get) => ({
   restEndsAt: null,
   restTotalS: 0,
 
-  async startEmpty() {
-    const id = await createWorkout('Workout', null);
+  async startEmpty(startedAt?: number) {
+    const id = await createWorkout('Workout', null, startedAt);
     const s = await hydrate(id);
     if (s) set({ ...s, restEndsAt: null, restTotalS: 0 });
   },
 
-  async startRoutine(routineId) {
-    const id = await startFromRoutine(routineId);
+  async startRoutine(routineId, startedAt?: number) {
+    const id = await startFromRoutine(routineId, startedAt);
     if (!id) return false;
     const s = await hydrate(id);
     if (!s) return false;

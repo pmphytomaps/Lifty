@@ -2,10 +2,12 @@ import { router } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { ScrollView, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { DateTimeField } from '../../components/DateTimeField';
 import { confirm, notify } from '../../components/Dialog';
+import { NumInput } from '../../components/NumInput';
 import { BackIcon, TrophyIcon } from '../../components/icons';
 import { Body, Button, Cap, Card, Row, Title } from '../../components/ui';
-import { fmtDate, fmtTime } from '../../lib/dates';
+import { startOfDay } from '../../lib/dates';
 import { workoutKcal } from '../../lib/calories';
 import { fmtVolume, fmtWeight } from '../../lib/units';
 import { collectPrCandidates, type PrCandidate } from '../../repo/prs';
@@ -35,9 +37,15 @@ export default function FinishScreen() {
   const [notes, setNotes] = useState('');
   const [prs, setPrs] = useState<(PrCandidate & { exerciseName: string })[]>([]);
   const [saving, setSaving] = useState(false);
+  const [startedAt, setStartedAt] = useState(store.startedAt);
+  const backdated = startOfDay(store.startedAt) < startOfDay(Date.now());
+  // Elapsed wall clock is meaningless for a session logged after the fact.
+  const [minutes, setMinutes] = useState<number | null>(
+    backdated ? 60 : Math.max(1, Math.round((Date.now() - store.startedAt) / 60000)),
+  );
 
   const totals = store.totals();
-  const durationS = Math.max(0, Math.round((Date.now() - store.startedAt) / 1000));
+  const durationS = Math.max(0, Math.round((minutes ?? 1) * 60));
   const cardioSets = store.exercises
     .filter((e) => e.exercise.category === 'cardio')
     .flatMap((e) => e.sets.filter((s) => s.isCompleted && s.durationS)
@@ -72,8 +80,10 @@ export default function FinishScreen() {
       await store.finish({
         name: name.trim() || 'Workout',
         notes: notes.trim(),
-        finishedAt: Date.now(),
+        finishedAt: startedAt + durationS * 1000,
         bodyWeightKg: bodyWeightKg ?? null,
+        durationS,
+        startedAt,
       });
       leaveToHome();
     } catch (e) {
@@ -192,12 +202,15 @@ export default function FinishScreen() {
           />
         </View>
 
-        <Card style={{ paddingHorizontal: 14, height: 54, justifyContent: 'center' }}>
-          <Row style={{ justifyContent: 'space-between' }}>
-            <Body>Date &amp; time</Body>
-            <Body style={{ color: c.emphasisLow, fontSize: 14.5 }}>
-              {fmtDate(store.startedAt)}, {fmtTime(store.startedAt)}
-            </Body>
+        <DateTimeField value={startedAt} onChange={setStartedAt} label="When" />
+
+        <Card style={{ paddingHorizontal: 14, minHeight: 54, justifyContent: 'center' }}>
+          <Row style={{ gap: 12 }}>
+            <View style={{ flex: 1, gap: 2 }}>
+              <Body>Training time</Body>
+              <Body style={{ fontSize: 11.5, color: c.dim }}>Minutes, used for the calorie estimate</Body>
+            </View>
+            <NumInput integer width={80} value={minutes} onCommit={(v) => setMinutes(v && v > 0 ? v : 1)} />
           </Row>
         </Card>
 

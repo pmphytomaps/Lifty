@@ -1,11 +1,12 @@
 import { router, useFocusEffect } from 'expo-router';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { FlatList, Pressable, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BackIcon, ChevronRightIcon, FlameIcon, GearIcon, TrophyIcon } from '../../components/icons';
 import { MonthCalendar, type CalendarDayInfo } from '../../components/MonthCalendar';
 import { Body, Cap, Card, Row, Title } from '../../components/ui';
 import { addMonths, dayKey, fmtDuration, fmtMonthYear, startOfMonth } from '../../lib/dates';
+import { mergePage, shouldSkipPage } from '../../lib/paginate';
 import { fmtVolume } from '../../lib/units';
 import { restDaysThisWeek, weekStreak } from '../../repo/stats';
 import { listFinishedWorkouts, workoutsBetween } from '../../repo/workouts';
@@ -23,15 +24,23 @@ export default function HistoryTab() {
   const unit = useSettings((s) => s.unit);
   const [view, setView] = useState<'list' | 'calendar'>('list');
   const [rows, setRows] = useState<Workout[]>([]);
-  const [hasMore, setHasMore] = useState(true);
+  const [hasMore, setHasMore] = useState(false);
   const [streak, setStreak] = useState(0);
   const [restDays, setRestDays] = useState(0);
   const [monthStart, setMonthStart] = useState(startOfMonth(Date.now()));
   const [monthDays, setMonthDays] = useState<Map<string, CalendarDayInfo>>(new Map());
   const [monthCount, setMonthCount] = useState(0);
+  const loadingMore = useRef(false);
+  const loadSeq = useRef(0);
 
   const reload = useCallback(() => {
-    listFinishedWorkouts(PAGE, 0).then((r) => { setRows(r); setHasMore(r.length === PAGE); }).catch(surface('Could not load your history.'));
+    const seq = ++loadSeq.current;
+    loadingMore.current = false;
+    listFinishedWorkouts(PAGE, 0).then((r) => {
+      if (seq !== loadSeq.current) return; // a newer reload already landed
+      setRows(r);
+      setHasMore(r.length === PAGE);
+    }).catch(surface('Could not load your history.'));
     weekStreak().then(setStreak).catch(surface('Could not load your history.'));
     restDaysThisWeek().then(setRestDays).catch(surface('Could not load your history.'));
   }, []);
@@ -48,11 +57,19 @@ export default function HistoryTab() {
   useFocusEffect(useCallback(() => { loadMonth(monthStart); }, [loadMonth, monthStart]));
 
   const more = () => {
-    if (!hasMore || view !== 'list') return;
+    // Refuse to paginate before the first page exists, while one is in flight,
+    // or when there is nothing more — any of those appends page 0 a second time.
+    if (view !== 'list') return;
+    if (shouldSkipPage({ hasMore, loading: loadingMore.current, currentCount: rows.length })) return;
+    loadingMore.current = true;
+    const seq = loadSeq.current;
     listFinishedWorkouts(PAGE, rows.length).then((r) => {
-      setRows((prev) => [...prev, ...r]);
+      if (seq !== loadSeq.current) return; // a reload superseded this page
+      setRows((prev) => mergePage(prev, r));
       setHasMore(r.length === PAGE);
-    }).catch(surface('Could not load your history.'));
+    }).catch(surface('Could not load your history.')).finally(() => {
+      loadingMore.current = false;
+    });
   };
 
   // Scrolls with the list; the tab switcher above stays fixed so it is always tappable.
@@ -150,6 +167,7 @@ export default function HistoryTab() {
       </View>
 
       <FlatList
+        testID="history-list"
         style={{ flex: 1 }}
         contentContainerStyle={{ paddingBottom: 28 }}
         data={listRows}
