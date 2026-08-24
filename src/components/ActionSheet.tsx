@@ -62,7 +62,7 @@ export function ActionSheetHost() {
     <Modal visible={visible} transparent animationType="fade" onRequestClose={close} statusBarTranslucent>
       <Pressable onPress={close} style={{ flex: 1, backgroundColor: 'rgba(0,0,0,0.6)', justifyContent: 'flex-end' }}>
         <Pressable
-          onPress={(e) => e.stopPropagation()}
+          onPress={() => {}}
           style={{
             backgroundColor: c.card,
             borderTopLeftRadius: 20,
