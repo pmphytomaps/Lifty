@@ -7,7 +7,7 @@ import { BackIcon } from '../../components/icons';
 import { Body, Button, Cap, Card, Row, Title } from '../../components/ui';
 import { countInRange, exportCsv } from '../../export/csv';
 import { createBackup } from '../../export/backup';
-import { saveToFolder, writeCacheFile } from '../../lib/fileio';
+import { FolderSaveUnsupported, saveToFolder, writeCacheFile } from '../../lib/fileio';
 import { useSettings } from '../../state/settings';
 import { useTheme } from '../../theme/ThemeContext';
 import { fonts } from '../../theme/tokens';
@@ -91,7 +91,11 @@ export default function ExportScreen() {
         Alert.alert('Saved', `${f.filename} was written to the folder you picked.`);
       }
     } catch (e) {
-      Alert.alert('Save failed', e instanceof Error ? e.message : String(e));
+      if (e instanceof FolderSaveUnsupported) {
+        Alert.alert('Not available here', 'Use "Share / send" instead — it can save to Drive, Files or anywhere else.');
+      } else {
+        Alert.alert('Save failed', e instanceof Error ? e.message : String(e));
+      }
     } finally {
       setBusy(false);
     }

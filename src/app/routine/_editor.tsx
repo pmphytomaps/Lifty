@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Alert, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { showActionSheet } from '../../components/ActionSheet';
-import { PlusIcon } from '../../components/icons';
+import { DotsIcon, PlusIcon } from '../../components/icons';
 import { NumInput } from '../../components/NumInput';
 import { Body, Button, Cap, Card, MuscleChip, Row } from '../../components/ui';
 import { setPickerHandler } from '../../lib/pickerBridge';
@@ -180,7 +180,7 @@ export function RoutineEditor({ routineId }: { routineId: number | null }) {
                   </Row>
                 </View>
                 <Pressable onPress={() => exMenu(i)} hitSlop={12}>
-                  <Body style={{ color: c.dim, fontSize: 18 }}>⋮</Body>
+                  <DotsIcon size={18} color={c.dim} />
                 </Pressable>
               </Row>
 

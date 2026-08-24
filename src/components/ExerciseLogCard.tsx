@@ -7,7 +7,7 @@ import { useSettings } from '../state/settings';
 import { useTheme } from '../theme/ThemeContext';
 import { fonts } from '../theme/tokens';
 import { showActionSheet } from './ActionSheet';
-import { CheckIcon, PlusIcon } from './icons';
+import { CheckIcon, DotsIcon, PlusIcon } from './icons';
 import { MuscleChip, Row, Body, Card } from './ui';
 import { NumInput } from './NumInput';
 
@@ -217,7 +217,7 @@ export function ExerciseLogCard({ ex }: { ex: ActiveExercise }) {
           </Row>
         </View>
         <Pressable onPress={menu} hitSlop={12}>
-          <Body style={{ color: c.dim, fontSize: 18 }}>⋮</Body>
+          <DotsIcon size={18} color={c.dim} />
         </Pressable>
       </Row>
 

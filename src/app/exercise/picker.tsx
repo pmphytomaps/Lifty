@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { FlatList, Pressable, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { showActionSheet } from '../../components/ActionSheet';
-import { CheckIcon, ChevronDownIcon, PlusIcon, SearchIcon } from '../../components/icons';
+import { CheckIcon, ChevronDownIcon, CloseIcon, PlusIcon, SearchIcon } from '../../components/icons';
 import { Body, Cap, MuscleChip, Row } from '../../components/ui';
 import { firePickerHandler, takeCreatedExercises } from '../../lib/pickerBridge';
 import { listExercises, recentExerciseIds } from '../../repo/exercises';
@@ -122,7 +122,7 @@ export default function ExercisePicker() {
           />
           {search.length > 0 && (
             <Pressable onPress={() => setSearch('')} hitSlop={10}>
-              <Body style={{ color: c.dim, fontSize: 18 }}>✕</Body>
+              <CloseIcon size={17} color={c.dim} />
             </Pressable>
           )}
         </Row>

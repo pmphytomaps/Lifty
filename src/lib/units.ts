@@ -22,7 +22,8 @@ export function fmtVolume(kg: number, unit: Unit): string {
   const v = toDisplayWeight(kg, unit);
   const rounded = Math.round(v * 10) / 10;
   const [int, dec] = rounded.toFixed(1).split('.');
-  const grouped = int.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  // A normal space: the bundled Barlow faces have no THIN SPACE glyph.
+  const grouped = int.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
   return dec === '0' ? grouped : `${grouped},${dec}`;
 }
 

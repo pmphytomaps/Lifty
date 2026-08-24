@@ -3,7 +3,7 @@ import React, { useCallback, useState } from 'react';
 import { Alert, Pressable, ScrollView, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { showActionSheet } from '../../components/ActionSheet';
-import { GearIcon, PlusIcon, FolderIcon } from '../../components/icons';
+import { DotsIcon, GearIcon, PlusIcon, FolderIcon } from '../../components/icons';
 import { Body, Button, Cap, Card, Row, Title } from '../../components/ui';
 import { daysAgoLabel } from '../../lib/dates';
 import { deleteRoutine, duplicateRoutine, listRoutines, type RoutineSummary } from '../../repo/routines';
@@ -129,7 +129,7 @@ export default function WorkoutTab() {
                 <Row style={{ justifyContent: 'space-between' }}>
                   <Title style={{ fontSize: 22 }}>{r.name}</Title>
                   <Pressable onPress={() => routineMenu(r)} hitSlop={12}>
-                    <Body style={{ color: c.dim, fontSize: 18 }}>⋮</Body>
+                    <DotsIcon size={18} color={c.dim} />
                   </Pressable>
                 </Row>
                 <Body style={{ fontSize: 12.5, color: c.secondary, marginBottom: 8 }}>

@@ -29,11 +29,16 @@ export default function ActiveWorkoutScreen() {
     return () => clearInterval(id);
   }, []);
 
-  useEffect(() => {
-    if (!store.workoutId) router.back();
-  }, [store.workoutId]);
-
-  if (!store.workoutId) return <View style={{ flex: 1, backgroundColor: c.bg }} />;
+  // No auto-navigation here: discard and finish both navigate explicitly, and a
+  // back() fired from this effect would pop the finish screen out from under itself.
+  if (!store.workoutId) {
+    return (
+      <View style={{ flex: 1, backgroundColor: c.bg, alignItems: 'center', justifyContent: 'center', gap: 16, padding: 32 }}>
+        <Body style={{ color: c.secondary, textAlign: 'center' }}>This workout is no longer open.</Body>
+        <Button label="Back to routines" kind="outline" onPress={() => router.replace('/')} style={{ paddingHorizontal: 24 }} />
+      </View>
+    );
+  }
 
   const totals = store.totals();
   const durationS = Math.max(0, (now - store.startedAt) / 1000);
