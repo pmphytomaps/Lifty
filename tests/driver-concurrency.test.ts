@@ -15,7 +15,7 @@ function makeDriver(serialized: boolean): SqlDriver & { log: string[] } {
   const log: string[] = [];
   let depth = 0;
   let tail: Promise<unknown> = Promise.resolve();
-  let inTransaction = false;
+  let txDepth = 0;
 
   const tick = () => new Promise((r) => setTimeout(r, 0));
 
@@ -39,7 +39,7 @@ function makeDriver(serialized: boolean): SqlDriver & { log: string[] } {
 
   const serialize = <T>(op: () => Promise<T>): Promise<T> => {
     if (!serialized) return op();
-    if (inTransaction) return op();
+    if (txDepth > 0) return op();
     const run = tail.then(op, op);
     tail = run.then(() => undefined, () => undefined);
     return run;
@@ -59,7 +59,8 @@ function makeDriver(serialized: boolean): SqlDriver & { log: string[] } {
     },
     transaction(fn: () => Promise<unknown>) {
       return serialize(async () => {
-        inTransaction = true;
+        if (serialized && txDepth > 0) return (await fn()) as never;
+        txDepth++;
         try {
           await raw.begin();
           // Awaits inside the body are where another operation can slip in.
@@ -72,7 +73,7 @@ function makeDriver(serialized: boolean): SqlDriver & { log: string[] } {
           await raw.rollback().catch(() => {});
           throw e;
         } finally {
-          inTransaction = false;
+          txDepth--;
         }
       });
     },
@@ -122,6 +123,26 @@ describe('database driver concurrency', () => {
     await expect(boom).rejects.toThrow('boom');
     await expect(after).resolves.toBe('ok');
     expect(db.log).toEqual(['BEGIN', 'ROLLBACK', 'BEGIN', 'COMMIT']);
+  });
+
+  it('a nested transaction joins the outer one instead of deadlocking', async () => {
+    const db = makeDriver(true);
+    const out = await Promise.race([
+      db.transaction(async () => {
+        await db.run('INSERT INTO t VALUES (1)');
+        // A repository helper that itself opens a transaction.
+        await db.transaction(async () => {
+          await db.run('INSERT INTO t VALUES (2)');
+        });
+        // The outer body must still be able to talk to the database afterwards.
+        await db.get('SELECT 1');
+        return 'done';
+      }),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('DEADLOCK')), 1500)),
+    ]);
+    expect(out).toBe('done');
+    // Exactly one BEGIN/COMMIT pair: the nested call must not issue its own.
+    expect(db.log).toEqual(['BEGIN', 'COMMIT']);
   });
 
   it('re-entrant calls inside a transaction body do not deadlock', async () => {

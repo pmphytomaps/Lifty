@@ -1,5 +1,5 @@
 import { router, useFocusEffect } from 'expo-router';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { FlatList, Pressable, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { showActionSheet } from '../../components/ActionSheet';
@@ -24,9 +24,27 @@ export default function ExercisePicker() {
   const [recents, setRecents] = useState<string[]>([]);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [reloadKey, setReloadKey] = useState(0);
+  const [loadError, setLoadError] = useState<string | null>(null);
 
+  // Debounced and sequenced: without an ordering guard a slower earlier query can
+  // land after a newer one and overwrite good results with a stale empty list,
+  // which is how a search for a real exercise ended up reading "Nothing matches".
+  const seq = useRef(0);
   useEffect(() => {
-    listExercises({ search: search || undefined, equipment, muscle }).then(setAll).catch(surface('Could not load the exercise list.'));
+    const mine = ++seq.current;
+    setLoadError(null);
+    const timer = setTimeout(() => {
+      listExercises({ search: search || undefined, equipment, muscle })
+        .then((rows) => {
+          if (seq.current === mine) setAll(rows);
+        })
+        .catch((e) => {
+          if (seq.current !== mine) return;
+          setLoadError(e instanceof Error ? e.message : String(e));
+          reportError('Could not load the exercise list.', e);
+        });
+    }, search ? 140 : 0);
+    return () => clearTimeout(timer);
   }, [search, equipment, muscle, reloadKey]);
 
   useEffect(() => {
@@ -191,12 +209,22 @@ export default function ExercisePicker() {
         }
         ListEmptyComponent={
           <View style={{ padding: 36, alignItems: 'center', gap: 14 }}>
-            <Body style={{ color: c.secondary, textAlign: 'center', lineHeight: 21 }}>
-              {search.trim()
-                ? `Nothing matches “${search.trim()}”.`
-                : 'No exercises match those filters.'}
+            <Body style={{ color: loadError ? c.danger : c.secondary, textAlign: 'center', lineHeight: 21 }}>
+              {loadError
+                ? `Could not load the exercise list.\n${loadError}`
+                : search.trim()
+                  ? `Nothing matches “${search.trim()}”.`
+                  : 'No exercises match those filters.'}
             </Body>
-            {search.trim().length > 0 && (
+            {loadError && (
+              <Pressable
+                onPress={() => setReloadKey((k) => k + 1)}
+                style={{ height: 46, paddingHorizontal: 22, borderRadius: 12, borderWidth: 1.5, borderColor: c.borderStrong, alignItems: 'center', justifyContent: 'center' }}
+              >
+                <Text style={{ fontFamily: fonts.bold, fontSize: 15, color: c.text }}>Try again</Text>
+              </Pressable>
+            )}
+            {!loadError && search.trim().length > 0 && (
               <Pressable
                 onPress={() => router.push({ pathname: '/exercise/create', params: { name: search.trim() } })}
                 style={{

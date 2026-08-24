@@ -13,13 +13,14 @@ import type { Workout } from '../../repo/types';
 import { useActiveWorkout } from '../../state/activeWorkout';
 import { useTheme } from '../../theme/ThemeContext';
 import { fonts } from '../../theme/tokens';
-import { surface } from '../../lib/reportError';
+import { reportError, surface } from '../../lib/reportError';
 
 export default function WorkoutTab() {
   const c = useTheme();
   const insets = useSafeAreaInsets();
   const [routines, setRoutines] = useState<RoutineSummary[]>([]);
   const [draft, setDraft] = useState<Workout | null>(null);
+  const [busy, setBusy] = useState(false);
   const active = useActiveWorkout();
 
   const reload = useCallback(() => {
@@ -28,15 +29,34 @@ export default function WorkoutTab() {
   }, []);
   useFocusEffect(useCallback(() => { reload(); }, [reload]));
 
+  // A busy flag stops a double tap starting two workouts, and every failure is
+  // shown rather than leaving a button that appears to do nothing.
   const startEmpty = async () => {
-    if (await guardDraft()) return;
-    await active.startEmpty();
-    router.push('/workout/active');
+    if (busy) return;
+    setBusy(true);
+    try {
+      if (await guardDraft()) return;
+      await active.startEmpty();
+      router.push('/workout/active');
+    } catch (e) {
+      reportError('Could not start a workout.', e);
+    } finally {
+      setBusy(false);
+    }
   };
 
   const startRoutine = async (id: number) => {
-    if (await guardDraft()) return;
-    if (await active.startRoutine(id)) router.push('/workout/active');
+    if (busy) return;
+    setBusy(true);
+    try {
+      if (await guardDraft()) return;
+      if (await active.startRoutine(id)) router.push('/workout/active');
+      else reportError('Could not start that routine.', new Error('The routine could not be loaded.'));
+    } catch (e) {
+      reportError('Could not start that routine.', e);
+    } finally {
+      setBusy(false);
+    }
   };
 
   /** True when the caller should stop because an existing session took over. */
@@ -68,7 +88,17 @@ export default function WorkoutTab() {
   };
 
   const resumeDraft = async () => {
-    if (draft && (await active.resume(draft.id))) router.push('/workout/active');
+    if (!draft) return;
+    try {
+      if (draft.id === active.workoutId) {
+        router.push('/workout/active');
+        return;
+      }
+      if (await active.resume(draft.id)) router.push('/workout/active');
+      else reportError('Could not reopen that workout.', new Error('It may already have been finished.'));
+    } catch (e) {
+      reportError('Could not reopen that workout.', e);
+    }
   };
 
   const routineMenu = (r: RoutineSummary) => {
@@ -110,7 +140,7 @@ export default function WorkoutTab() {
         </Pressable>
       </Row>
 
-      {draft && draft.id !== active.workoutId && (
+      {draft && (
         <Pressable onPress={resumeDraft} style={{ marginHorizontal: 16, marginBottom: 12 }}>
           <Row style={{
             minHeight: 56, borderRadius: 12, backgroundColor: c.accentSoft,

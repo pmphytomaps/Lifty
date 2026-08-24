@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { confirm, notify } from '../../components/Dialog';
+import { reportError } from '../../lib/reportError';
 import { ExerciseLogCard } from '../../components/ExerciseLogCard';
 import { ChevronDownIcon } from '../../components/icons';
 import { RestBar } from '../../components/RestBar';
@@ -46,8 +47,12 @@ export default function ActiveWorkoutScreen() {
 
   const addExercise = () => {
     setPickerHandler((ids) => {
-      (async () => {
-        for (const id of ids) await store.addExercise(id, defaultRestS);
+      void (async () => {
+        try {
+          for (const id of ids) await store.addExercise(id, defaultRestS);
+        } catch (e) {
+          reportError('Could not add that exercise to the workout.', e);
+        }
       })();
     });
     router.push('/exercise/picker');

@@ -19,10 +19,10 @@ export async function openExpoDriver(name = 'lifty.db'): Promise<SqlDriver> {
   const db = await SQLite.openDatabaseAsync(name);
 
   let tail: Promise<unknown> = Promise.resolve();
-  let inTransaction = false;
+  let txDepth = 0;
 
   const serialize = <T>(op: () => Promise<T>): Promise<T> => {
-    if (inTransaction) return op();
+    if (txDepth > 0) return op();
     const run = tail.then(op, op);
     tail = run.then(
       () => undefined,
@@ -55,7 +55,13 @@ export async function openExpoDriver(name = 'lifty.db'): Promise<SqlDriver> {
 
     transaction(fn) {
       return serialize(async () => {
-        inTransaction = true;
+        // SQLite has no nested transactions, and a depth counter rather than a
+        // boolean matters: a nested call finishing would clear a shared flag and
+        // send the OUTER body's remaining queries back into the queue, where they
+        // would wait forever on the transaction that spawned them.
+        if (txDepth > 0) return (await fn()) as never;
+
+        txDepth++;
         try {
           let out: unknown;
           // Deliberately NOT withExclusiveTransactionAsync: it opens a second
@@ -68,7 +74,7 @@ export async function openExpoDriver(name = 'lifty.db'): Promise<SqlDriver> {
           });
           return out as never;
         } finally {
-          inTransaction = false;
+          txDepth--;
         }
       });
     },
