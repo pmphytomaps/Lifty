@@ -2,7 +2,8 @@ import { router } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import { Alert, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { PlusIcon } from '../../components/icons';
+import { showActionSheet } from '../../components/ActionSheet';
+import { DotsIcon, PlusIcon } from '../../components/icons';
 import { NumInput } from '../../components/NumInput';
 import { Body, Button, Cap, Card, MuscleChip, Row } from '../../components/ui';
 import { setPickerHandler } from '../../lib/pickerBridge';
@@ -81,18 +82,29 @@ export function RoutineEditor({ routineId }: { routineId: number | null }) {
 
   const exMenu = (i: number) => {
     const e = exercises[i];
-    Alert.alert(e.exercise.name, undefined, [
-      { text: 'Move up', onPress: () => move(i, -1) },
-      { text: 'Move down', onPress: () => move(i, 1) },
-      { text: 'Rest: app default', onPress: () => patchEx(i, { restSeconds: null }) },
-      { text: 'Rest: 90 s', onPress: () => patchEx(i, { restSeconds: 90 }) },
-      { text: 'Rest: 180 s', onPress: () => patchEx(i, { restSeconds: 180 }) },
-      {
-        text: 'Remove', style: 'destructive',
-        onPress: () => setExercises((prev) => prev.filter((_, j) => j !== i)),
-      },
-      { text: 'Cancel', style: 'cancel' },
-    ]);
+    const rests: { label: string; value: number | null }[] = [
+      { label: 'Rest: app default', value: null },
+      { label: 'Rest: off', value: 0 },
+      { label: 'Rest: 90 seconds', value: 90 },
+      { label: 'Rest: 2 minutes', value: 120 },
+      { label: 'Rest: 3 minutes', value: 180 },
+    ];
+    showActionSheet({
+      title: e.exercise.name,
+      options: [
+        ...(i > 0 ? [{ label: 'Move up', onPress: () => move(i, -1) }] : []),
+        ...(i < exercises.length - 1 ? [{ label: 'Move down', onPress: () => move(i, 1) }] : []),
+        ...rests.map((r) => ({
+          label: r.label,
+          selected: e.restSeconds === r.value,
+          onPress: () => patchEx(i, { restSeconds: r.value }),
+        })),
+        {
+          label: 'Remove from routine', destructive: true,
+          onPress: () => setExercises((prev) => prev.filter((_, j) => j !== i)),
+        },
+      ],
+    });
   };
 
   const save = async () => {
@@ -168,7 +180,7 @@ export function RoutineEditor({ routineId }: { routineId: number | null }) {
                   </Row>
                 </View>
                 <Pressable onPress={() => exMenu(i)} hitSlop={12}>
-                  <Body style={{ color: c.dim, fontSize: 18 }}>⋮</Body>
+                  <DotsIcon size={18} color={c.dim} />
                 </Pressable>
               </Row>
 

@@ -57,6 +57,12 @@ export default function FinishScreen() {
 
   if (!store.workoutId) return <View style={{ flex: 1, backgroundColor: c.bg }} />;
 
+  /** Pop the active-workout stack back to the tabs. */
+  const leaveToHome = () => {
+    if (router.canDismiss()) router.dismissAll();
+    else router.replace('/');
+  };
+
   const save = async () => {
     if (saving) return;
     setSaving(true);
@@ -67,7 +73,7 @@ export default function FinishScreen() {
         finishedAt: Date.now(),
         bodyWeightKg: bodyWeightKg ?? null,
       });
-      router.dismissTo('/');
+      leaveToHome();
     } catch (e) {
       setSaving(false);
       Alert.alert('Could not save', e instanceof Error ? e.message : String(e));
@@ -77,7 +83,7 @@ export default function FinishScreen() {
   const discard = () => {
     Alert.alert('Discard workout?', 'All sets logged in this session will be lost.', [
       { text: 'Keep it', style: 'cancel' },
-      { text: 'Discard', style: 'destructive', onPress: async () => { await store.discard(); router.dismissTo('/'); } },
+      { text: 'Discard', style: 'destructive', onPress: async () => { await store.discard(); leaveToHome(); } },
     ]);
   };
 

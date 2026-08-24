@@ -1,10 +1,10 @@
 import { router } from 'expo-router';
 import React, { useState } from 'react';
-import { Pressable, ScrollView, Text, View } from 'react-native';
+import { Keyboard, Pressable, ScrollView, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { BackIcon } from '../../components/icons';
 import { NumInput } from '../../components/NumInput';
-import { Body, Cap, Card, Divider, Row, Title } from '../../components/ui';
+import { Body, Button, Cap, Card, Divider, Row, Title } from '../../components/ui';
 import { ACTIVITY_LEVELS, dailyBudget, type Profile } from '../../lib/calories';
 import { useSettings } from '../../state/settings';
 import { useTheme } from '../../theme/ThemeContext';
@@ -18,11 +18,15 @@ export default function ProfileScreen() {
   const [p, setP] = useState<Profile>(saved);
 
   const patch = (part: Partial<Profile>) => {
-    setP((prev) => {
-      const next = { ...prev, ...part };
-      updateProfile(next);
-      return next;
-    });
+    const next = { ...p, ...part };
+    setP(next);
+    updateProfile(next);
+  };
+
+  const done = () => {
+    Keyboard.dismiss();
+    updateProfile(p);
+    router.back();
   };
 
   const preview = dailyBudget(p, 0);
@@ -33,12 +37,16 @@ export default function ProfileScreen() {
         <Pressable onPress={() => router.back()} hitSlop={10} style={{ marginLeft: -6, padding: 4 }}>
           <BackIcon color={c.emphasisLow} />
         </Pressable>
-        <Title style={{ fontSize: 26 }}>Body &amp; goal</Title>
+        <Title style={{ fontSize: 26, flex: 1 }}>Body &amp; goal</Title>
+        <Pressable onPress={done} hitSlop={10}>
+          <Body style={{ color: c.accent, fontFamily: fonts.semibold, fontSize: 15.5 }}>Done</Body>
+        </Pressable>
       </Row>
 
       <ScrollView contentContainerStyle={{ padding: 16, gap: 14, paddingBottom: 40 }} keyboardShouldPersistTaps="handled">
         <Body style={{ fontSize: 13, color: c.secondary, lineHeight: 19 }}>
-          Used only to estimate calories burned and how much to eat. Everything stays on this phone.
+          Used only to estimate calories burned and how much to eat. Everything stays on this phone
+          and saves as you type.
         </Body>
 
         <Cap>Body</Cap>
@@ -136,6 +144,7 @@ export default function ProfileScreen() {
             </Body>
           </Card>
         )}
+        <Button label="Done" onPress={done} />
       </ScrollView>
     </View>
   );

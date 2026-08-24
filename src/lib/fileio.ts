@@ -44,10 +44,20 @@ export async function readTextFile(uri: string): Promise<string> {
   throw new Error('No file system API available');
 }
 
-/** Let the user pick a folder and drop the file there (Android SAF). Returns false when unsupported or cancelled. */
+export class FolderSaveUnsupported extends Error {
+  constructor() {
+    super('Saving straight to a folder is not available on this device');
+    this.name = 'FolderSaveUnsupported';
+  }
+}
+
+/**
+ * Let the user pick a folder and drop the file there (Android SAF).
+ * Returns false when the user backs out; throws when the platform can't do it.
+ */
 export async function saveToFolder(filename: string, contents: string, mimeType: string): Promise<boolean> {
   const saf = legacy?.StorageAccessFramework;
-  if (!saf?.requestDirectoryPermissionsAsync) return false;
+  if (!saf?.requestDirectoryPermissionsAsync) throw new FolderSaveUnsupported();
   const perm = await saf.requestDirectoryPermissionsAsync();
   if (!perm.granted) return false;
   const uri = await saf.createFileAsync(perm.directoryUri, filename, mimeType);
